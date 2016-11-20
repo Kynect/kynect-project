@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Testimonials</title>
+        <meta charset=utf-8 />
+
+        <link   rel="stylesheet" 
+                href="{% static "bootstrap/dist/css/bootstrap.css" %}" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
+
+        <style>
+            html, body {
+                height:100%;
+                width:100%;
+                margin:0px;
+                padding:0px;
+            }
+
+            /* NAVBAR BEGIN */
+
+            #navbar {
+                border-width:0;
+            }
+
+            .navLinks:hover {
+                background-color:#dddddd;
+            }
+
+            /* NAVBAR END */
+
+            /* FOOTER BEGIN */
+
+            #footer { 
+                background-color:#252525; 
+                color:white;
+                width:100%; 
+                padding-top:40px;
+                padding-bottom:40px;
+                overflow:hidden;
+
+                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+            }
+
+            #footerDivLeft {
+                display:block;
+                width:33%;
+                float:left;
+            }
+
+            #footerDivLeft div {
+                display:block;
+                width:60%;
+                margin-left:40%;
+            }
+
+            #footerDivLeft div span {
+                display:block;
+                width:100%;
+            }
+
+            #footerDivRight {
+                display:block;
+                width:33%;
+                float:right;
+                font-size:14px;
+            }
+
+            #footerDivRight div {
+                display:block;
+                width:100px;
+                float:right;
+                margin-right:40%;
+                border-style:solid;
+                border-width:0px;
+                border-right-width:1px;
+            }
+
+            #footerDivRight div span {
+                display:block;
+                width:100%;
+                text-align:left;
+            }
+
+            #footerDivRight div a {
+                color:#ffffff;
+            }
+
+            #footerDivRight div a:hover {
+                text-decoration:underline;
+            }
+
+            #footerDivMiddle {
+                display:block;
+                width:34%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                font-size:14px;
+            }
+
+            /* FOOTER END */
+
+            .mainContainer {
+                position:absolute;
+                top:50px;
+                bottom:0;
+                left:0;
+                right:0;
+                overflow-y:auto;
+                overflow-x:hidden;
+            }
+
+            #mainDiv1 {
+                display:block;
+                height:100%;
+                width:100%;
+            }
+
+            #imageQuoteDiv {
+                display:block;
+                height:85%;
+                width:100%;
+                clear:both;
+
+                /* cover background for homepage */
+                background: url(/static/media/site_images/dog_sunset_background.jpg) no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            #quoteContainer {
+                display:table;
+                height:100%;
+                width:100%;
+                color:#000000;
+                font-size:40px;
+            }
+
+            #quoteContainer span {
+                display:table-cell;
+                color:white;
+                width:100%;
+                text-align:left;
+                padding-right:60%;
+                padding-left:10%;
+                vertical-align:middle;
+            }
+
+            #newsStripDiv {
+                background-color:#f2f2f2;
+                display:table;
+                width:100%;
+                min-height:15%;
+            }
+
+            #newsStripDiv .row {
+                text-align:center;
+                display:table-cell;
+                vertical-align:middle;
+            }
+
+            #newsStripDiv img {
+                width:auto;
+                height:80px;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+
+            #pubQuotesContainer {
+                background-color:#ffffff;
+                display:table;
+                width:100%;
+                min-height:500px;
+            }
+
+            #pubQuotesContainer .row {
+                text-align:center;
+                display:table-cell;
+                vertical-align:middle;
+                font-size:25px;
+            }
+
+            #pubQuotesContainer span {
+                display:block;
+                width:70%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                padding-top:75px;
+                padding-bottom:75px;
+            }
+
+            #custQuotesContainer {
+                background-color:#f5f5f5;
+                display:table;
+                width:100%;
+                min-height:700px;
+            }
+
+            #custQuotesContainer > .row {
+                min-height:800px;
+                padding-top:50px;
+            }
+
+            #custQuotesContainer .custQuoteBigImage {
+                height:800px;
+                text-align:center;
+                overflow:hidden;
+            }
+
+            #custQuotesContainer .custQuoteBigImage img {
+                width:auto;
+                height:800px;
+            }
+
+            #custQuotesContainer .row .row {
+                min-height:700px;
+                padding-top:85px;
+                padding-bottom:85px;
+            }
+
+            #custQuotesContainer .botThree {
+                padding-top:40px;
+            }
+
+            .quoteBoxLeft {
+                position: relative;
+                width: 80%;
+                min-height: 115px;
+                padding: 20px;
+                font-size:18px;
+                float:left;
+                background: #00ccff;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                -webkit-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                -moz-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+            }
+
+            .quoteBoxLeft:after {
+                content:"";
+                position: absolute;
+                bottom: -15px;
+                left: 50px;
+                border-style: solid;
+                border-width: 15px 15px 0;
+                border-color: #00ccff transparent;
+                display: block;
+                width: 0;
+                z-index: 1;
+            }
+
+            .quoteBoxRight {
+                position: relative;
+                width: 80%;
+                min-height: 115px;
+                padding: 20px;
+                font-size:18px;
+                float:right;
+                background: #ffffff;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                -webkit-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                -moz-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+            }
+
+            .quoteBoxRight:after {
+                content:"";
+                position: absolute;
+                bottom: -15px;
+                right: 50px;
+                border-style: solid;
+                border-width: 15px 15px 0;
+                border-color: #ffffff transparent;
+                display: block;
+                width: 0;
+                z-index: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+
+        <div class="mainContainer">
+            <div id="mainDiv1">
+                <div id="imageQuoteDiv">
+                    <div id="quoteContainer">
+                        <span>
+                            <i>"Keeping Track of my dogs activites has never been so easy!"</i>
+                            <br>
+                            <b>- John D.</b>
+                        </span>
+                    </div>
+                </div>
+
+                <div id="newsStripDiv" class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2">
+                            <img src="/static/media/site_images/ny_times_logo.png">
+                        </div>
+
+                        <div class="col-xs-4 col-md-2">
+                            <img src="/static/media/site_images/nbc_news_logo.png">
+                        </div>
+
+                        <div class="col-xs-4 col-md-2">
+                            <img src="/static/media/site_images/abc_news_logo.png">
+                        </div>
+
+                        <div class="col-xs-4 col-md-2">
+                            <img src="/static/media/site_images/bbc_shop_logo.png">
+                        </div>
+
+                        <div class="col-xs-4 col-md-2">
+                            <img src="/static/media/site_images/tech_insider_logo.png">
+                        </div>
+
+                        <div class="col-xs-4 col-md-2">
+                            <img src="/static/media/site_images/business_insider_logo.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pubQuotesContainer" class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <span>
+                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                <br>
+                                <b>- NY Times</b>
+                            </span>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6">
+                            <span>
+                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                <br>
+                                <b>- WSJ</b>
+                            </span>
+                        </div>
+
+                        <div class="col-xs-12 col-md-12">
+                            <span>
+                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                <br>
+                                <b>- BBC News</b>
+                            </span>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6">
+                            <span>
+                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                <br>
+                                <b>- Tech Insider</b>
+                            </span>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6">
+                            <span>
+                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                <br>
+                                <b>- ABC News</b>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="custQuotesContainer" class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-1 col-md-1"></div>
+
+                        <div class="col-xs-10 col-md-5">
+                            <div class="row">
+                                <div class="col-xs-12 custQuote">
+                                    <div class="quoteBoxLeft">
+                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                        <br>
+                                        - Marco P.
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 custQuote botThree">
+                                    <div class="quoteBoxRight">
+                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                        <br>
+                                        - Charles D.
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 custQuote botThree">
+                                    <div class="quoteBoxLeft">
+                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                        <br>
+                                        - Amanda S.
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 custQuote botThree">
+                                    <div class="quoteBoxRight">
+                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                        <br>
+                                        - Jim M..
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-1 hidden-sm-up"></div>
+
+                        <div class="col-xs-12 col-md-6 custQuoteBigImage">
+                            <img src="/static/media/site_images/hand_holding_iphone.png">
+                        </div>
+
+                        <div class="col-xs-1 col-md-0"></div>
+                    </div>
+                </div>
+
+                {% include "footer.html" %}
+            </div>
+        </div>
+        
+        <!-- SCRIPTS GO HERE -->
+
+
+
+        <!-- SCIPTS END HERE -->
+    </body>
+</html>

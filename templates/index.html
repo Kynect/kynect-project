@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Eko Tracking</title>
+        <meta charset=utf-8 />
+
+        <link   rel="stylesheet" 
+                href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
+
+        <style>
+            html, body {
+                height:100%;
+                width:100%;
+                margin:0px;
+                padding:0px;
+            }
+
+            /* NAVBAR BEGIN */
+
+            #navbar {
+                border-width:0;
+            }
+
+            .navLinks:hover {
+                background-color:#dddddd;
+            }
+
+            /* NAVBAR END */
+
+            /* FOOTER BEGIN */
+
+            #footer { 
+                background-color:#252525; 
+                color:white;
+                width:100%; 
+                padding-top:40px;
+                padding-bottom:40px;
+                overflow:hidden;
+
+                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+            }
+
+            #footerDivLeft {
+                display:block;
+                width:33%;
+                float:left;
+            }
+
+            #footerDivLeft div {
+                display:block;
+                width:60%;
+                margin-left:40%;
+            }
+
+            #footerDivLeft div span {
+                display:block;
+                width:100%;
+            }
+
+            #footerDivRight {
+                display:block;
+                width:33%;
+                float:right;
+                font-size:14px;
+            }
+
+            #footerDivRight div {
+                display:block;
+                width:100px;
+                float:right;
+                margin-right:40%;
+                border-style:solid;
+                border-width:0px;
+                border-right-width:1px;
+            }
+
+            #footerDivRight div span {
+                display:block;
+                width:100%;
+                text-align:left;
+            }
+
+            #footerDivRight div a {
+                color:#ffffff;
+            }
+
+            #footerDivRight div a:hover {
+                text-decoration:underline;
+            }
+
+            #footerDivMiddle {
+                display:block;
+                width:34%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                font-size:14px;
+            }
+
+            /* FOOTER END */
+
+            .mainContainer {
+                position:absolute;
+                top:50px;
+                bottom:0;
+                left:0;
+                right:0;
+                overflow-y:auto;
+            }
+
+            #mainDiv1 {
+                display:block;
+                height:100%;
+                min-height:100%;
+                width:100%;
+                
+                /* cover background for homepage */
+                background: url(/static/media/site_images/dog_in_field.png) no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            #videoContainer {
+                display:block;
+                height:100%;
+                width:55%;
+                padding-top:360px;
+                float:right;
+                color:#ffffff;
+            }
+
+            #videoContainer span {
+                display:block;
+                width:100%;
+                text-align:center;
+            }
+
+            #youtubeButton {
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                height:70px;
+                width:70px;
+            }
+
+            #youtubeButton:hover {
+                cursor:pointer;
+                cursor:hand;
+            }
+
+            #mainDiv2 {
+                background-color:#ffffff;
+                display:block;
+                width:100%;
+                height:1020px;
+                min-height:1020px;
+                padding-top:200px;
+            }
+
+            #whatIsEkoDivContainer {
+                /*background-color:lightpink;*/
+                display:block;
+                width:80%;
+                height:100%;
+                min-height:100%;
+                margin: 0 auto;
+                text-align:center;
+            }
+
+            #image1 {
+                display:inline-block;
+                width:400px;
+                height:600px;
+                vertical-align:top;
+            }
+
+            #whatIsEkoDiv {
+                /*background-color:lightblue;*/
+                display:inline-block;
+                height:600px;
+                min-height:600px;
+                width:40%;
+                padding-top:80px;
+                margin-left:50px;
+                vertical-align:top;
+            }
+
+            #mainDiv3 {
+                background-color:#f2f2f2;
+                display:block;
+                color:#000000;
+                height:1020px;
+                min-height:1020px;
+                width:100%;
+            }
+
+            #homeHeader3 {
+                padding-top:45px;
+                padding-bottom:45px;
+                text-align:center;
+            }
+
+            .headerSeparator {
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            #featuresContainerLeft,
+            #featuresContainerRight, 
+            #featuresContainerPhoto {
+                display:block;
+                height:710px;
+                min-height:710px;
+            }
+
+            #featuresContainerLeft {
+                width:34%;
+                float:left;
+            }
+
+            #featuresContainerRight {
+                width:34%;
+                float:right;
+            }
+
+            #featuresContainerPhoto {
+                margin-left:auto;
+                margin-right:auto;
+                width:25%;
+            }
+
+            #featuresContainerLeft div {
+                display:block;
+                width:100%;
+                text-align:right;
+                font-size:16px;
+            }
+
+            #featuresContainerRight div {
+                display:block;
+                width:100%;
+                text-align:left;
+                font-size:16px;
+            }
+
+            .smallFeatureContainerLeft {
+                margin-bottom:70px;
+            }
+
+            .smallFeatureContainerRight {
+                margin-bottom:70px;
+            }
+
+            #featuresContainerLeft div img {
+                margin-left:3%;
+            }
+
+            #featuresContainerRight div img {
+                margin-right:3%;
+            }
+
+            /* BEGIN POPUP */
+
+            .ontop {
+                z-index:999;
+                width:100%;
+                height:100%;
+                padding-top:50px;
+                top:0;
+                left:0;
+                display:none;
+                position:fixed;
+                background-color:rgba(40,40,40,0.9);
+                color:#000000;
+            }
+
+            .popup {
+                width:700px;
+                height:393px;
+                color:#000000;
+                background-color:#ffffff;
+
+                /* Center Popup */
+                position: relative;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translateY(-50%) translateX(-50%);
+                -ms-transform: translateY(-50%) translate(-50%);
+                transform: translateY(-50%) translate(-50%);
+            }
+
+            .popup img {
+                position:absolute;
+                left:100%;
+                bottom:100%;
+            }
+
+            .popup img:hover {
+                cursor:pointer;
+                cursor:hand;
+            }
+
+            /* END POPUP */
+
+        </style>
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+
+        <div class="mainContainer">
+            <div id="mainDiv1">
+                <div id="videoContainer">
+                    <span style="font-size:60px;"><b>Never Lose Your Best Friend.</b></span>
+                    <span style="font-size:40px; margin-top:10px;"><b>Watch How It Works</b></span>
+
+                    <div id="youtubeButton" onclick="pop('popDiv')">
+                        <img src="/static/media/site_images/youtube_button.png" style="width:70px; height:70px; margin-top:10px;">
+                    </div>
+
+                    <!-- BEGIN POPUP DIV -->
+                    <div id="popDiv" class="ontop">
+                        <div class="popup">
+                            <img src="/static/media/site_images/closebutton.png" style="width:20px; height:20px;" onclick="hide('popDiv')">
+                        </div>
+                    </div>
+                    <!-- END POPUP DIV -->
+
+                </div>
+            </div>
+
+            <div id="mainDiv2">
+                <div id="whatIsEkoDivContainer">
+                    <div id="image1">
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:400px; height:600px;">
+                    </div>
+
+                    <div id="whatIsEkoDiv">
+                        <h1><b>What Is Eko?</b></h1>
+
+                        <div class="headerSeparator">
+                            <hr style="border:0; height:1px; width:375px; background-color:#000000;">
+                        </div>
+
+                        <p style="text-align:justify; margin-top:30px;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+
+                        <a href="/home/"><img src="/static/media/site_images/kickstarter_button.png" style="width:200px; height:90px; margin-top:60px;"></a>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div id="mainDiv3">
+
+                <div id="homeHeader3">
+                    <span style="text-align:center;"><h1>Minimized Design</h1></span>
+                    <span style="text-align:center;"><h3>The Industry's Smallest LTE Pet Tracker</h3></span>
+                    <div class="headerSeparator">
+                        <hr style="border:0; height:1px; width:550px; background-color:#000000;">
+                    </div>
+                </div>
+
+                <div id="featuresContainerLeft">
+                    <div class="smallFeatureContainerLeft">
+                        <spam>Real-Time GPS Tracking</spam>
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                    </div>
+
+                    <div class="smallFeatureContainerLeft">
+                        <spam>Geofencing Alerts</spam>
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                    </div>
+
+                    <div>
+                        <spam>Waterproof (IPX7)</spam>
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                    </div>
+                </div>
+
+                <div id="featuresContainerRight">
+                    <div class="smallFeatureContainerRight">
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <spam>Health/Activity Monitor</spam>
+                    </div>
+
+                    <div class="smallFeatureContainerRight">
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <spam>Bark Limiter</spam>
+                    </div>
+
+                    <div>
+                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <spam>Sleep Analysis</spam>
+                    </div>
+                </div>
+
+                <div id="featuresContainerPhoto">
+                    <img src="/static/media/site_images/image_placeholder_2.png" style="width:100%; height:100%;">
+                </div>
+            </div>
+
+            {% include "footer.html" %}
+        </div>
+        
+        <!-- SCRIPTS GO HERE -->
+
+        <script>
+            //Function To Display Popup
+            function pop(div) {
+                document.getElementById(div).style.display = 'block';
+            }
+
+             //Function to Hide Popup
+            function hide(div) {
+                document.getElementById(div).style.display = 'none';
+            }
+
+            //Function to detect escape button
+            document.onkeydown = function(evt) {
+                evt = evt || window.event;
+
+                if (evt.keyCode == 27) {
+                    hide('popDiv');
+                }
+            };
+        </script>
+
+        <!-- SCIPTS END HERE -->
+    </body>
+</html>

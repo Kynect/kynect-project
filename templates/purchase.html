@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Purchase</title>
+        <meta charset=utf-8 />
+
+        <link   rel="stylesheet" 
+                href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
+
+        <style>
+            html,body {
+                padding:0px;
+                margin:0px;
+                width:100%;
+                height:100%;
+            }
+
+            /* NAVBAR BEGIN */
+
+            #navbar {
+                border-width:0;
+            }
+
+            .navLinks:hover {
+                background-color:#dddddd;
+            }
+
+            /* NAVBAR END */
+
+            /* FOOTER BEGIN */
+
+            #footer {
+                background-color:#252525; 
+                color:white;
+                width:100%;
+                padding-top:40px;
+                padding-bottom:40px;
+                overflow:hidden;
+
+                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+            }
+
+            #footerDivLeft {
+                display:block;
+                width:33%;
+                float:left;
+            }
+
+            #footerDivLeft div {
+                display:block;
+                width:60%;
+                margin-left:40%;
+            }
+
+            #footerDivLeft div span {
+                display:block;
+                width:100%;
+            }
+
+            #footerDivRight {
+                display:block;
+                width:33%;
+                float:right;
+                font-size:14px;
+            }
+
+            #footerDivRight div {
+                display:block;
+                width:100px;
+                float:right;
+                margin-right:40%;
+                border-style:solid;
+                border-width:0px;
+                border-right-width:1px;
+            }
+
+            #footerDivRight div span {
+                display:block;
+                width:100%;
+                text-align:left;
+            }
+
+            #footerDivRight div a {
+                color:#ffffff;
+            }
+
+            #footerDivRight div a:hover {
+                text-decoration:underline;
+            }
+
+            #footerDivMiddle {
+                display:block;
+                width:34%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                font-size:14px;
+            }
+
+            /* FOOTER END */
+
+            .mainContainer {
+                position:absolute;
+                top:50px;
+                bottom:0;
+                left:0;
+                right:0;
+                overflow:auto;
+            }
+
+            #purchaseDetailsContainer {
+                display:block;
+                width:66%;
+                margin-left:17%;
+                margin-right:17%;
+                margin-bottom:20px;
+            }
+
+            #orderContainer {
+                display:block;
+                width:45%;
+                height:auto;
+                float:left;
+                margin-bottom:30px;
+            }
+
+            #orderContainer #productTitle {
+                display:block;
+                width:100%;
+                margin-top:30px;
+                text-align:left;
+                font-size:34px;
+                font-weight:bold;
+            }
+
+            #orderContainer p {
+                display:block;
+                width:95%;
+                margin:0px;
+                margin-top:10px;
+                margin-right:5%;
+                text-align:justify;
+                font-size:15px;
+            }
+
+            #orderContainer #includesHeader {
+                display:block;
+                width:90%;
+                margin:0px;
+                margin-top:15px;
+                margin-left:20%;
+                color:#777777;
+                font-size:15px;
+            }
+
+            #orderContainer ul {
+                list-style-type:none;
+                padding:0px;
+                margin:0px;
+                margin-left:25%;
+                padding-bottom:5px;
+                color:#777777;
+                font-size:15px;
+            }
+
+            #orderContainer hr {
+                border:0px;
+                background-color:#cccccc;
+                height:1px;
+                width:95%;
+                margin-top:15px;
+                margin-right:5%;
+                margin-bottom:15px;
+                clear:both;
+            }
+
+            #orderContainer #colorHeader {
+                display:block;
+                width:50%;
+                float:left;
+                text-align:left;
+                font-size:18px;
+            }
+
+            #orderContainer #colorLabel {
+                display:block;
+                width:45%;
+                margin-right:5%;
+                float:right;
+                text-align:right;
+                font-size:18px;
+            }
+
+            #colorChoicesContainer {
+                display:block;
+                width:95%;
+                height:20px;
+                margin-right:5%;
+                clear:both;
+                text-align:right;
+            }
+
+            #colorChoicesContainer #blackColor {
+                background-color:#000000;
+                display:block;
+                width:20px;
+                height:20px;
+                border-style:solid;
+                border-width:1px;
+                border-color:#aaaaaa;
+                float:right;
+                border-radius:10px;
+            }
+
+            #colorChoicesContainer #whiteColor {
+                background-color:#ffffff;
+                display:block;
+                width:20px;
+                height:20px;
+                margin-right:5px;
+                border-style:solid;
+                border-width:1px;
+                border-color:#aaaaaa;
+                float:right;
+                border-radius:10px;
+            }
+
+            #colorChoicesContainer div:hover {
+                cursor:pointer;
+            }
+
+            #orderContainer #quantityHeader {
+                display:block;
+                width:50%;
+                margin-bottom:15px;
+                float:left;
+                text-align:left;
+                font-size:18px;
+            }
+
+            #orderContainer #quantitySelect {
+                display:block;
+                width:45%;
+                margin-right:5%;
+                margin-bottom:15px;
+                float:right;
+                text-align:right;
+            }
+
+            .qty {
+                width: 30px;
+                height: 26px;
+                text-align: center;
+            }
+
+            input.qtyplus { 
+                width:26px; 
+                height:26px;
+            }
+
+            input.qtyminus { 
+                width:26px; 
+                height:26px;
+            }
+
+            #orderContainer #price {
+                display:block;
+                width:95%;
+                margin-right:5%;
+                margin-bottom:20px;
+                text-align:right;
+                font-size:20px;
+            }
+
+            #orderContainer #checkoutContainer {
+                display:block;
+                width:95%;
+                margin-right:5%;
+                text-align:center;
+            }
+
+            #checkoutContainer button {
+                background-color:#4dd2ff;
+                padding-left:5%;
+                padding-right:5%;
+                font-size:20px;
+            }
+
+            #imagesContainer {
+                display:block;
+                width:55%;
+                float:right;
+                overflow:hidden;
+                margin-bottom:30px;
+            }
+
+            #imagesContainer img {
+                display:block;
+                width:100%;
+                height:auto;
+                margin-top:40px;
+                margin-left:auto;
+            }
+
+            #purchaseDetailsContainer #mainSeparator {
+                border:0px;
+                background-color:#dddddd;
+                height:1px;
+                width:100%;
+                margin:0px;
+                clear:both;
+                margin-top:15px;
+            }
+
+            #productInfoContainer { 
+                background-color:#f2f2f2;
+                display:block;
+                width:100%; 
+                text-align:center;
+                clear:both;
+            }
+
+            #productInfoContainer #features {
+                background-color:#f5f5f5;
+                display:block;
+                width:100%;
+                padding-top:150px;
+                padding-bottom:150px;
+            }
+
+            #productInfoContainer #specs {
+                background-color:#f5f5f5;
+                display:none;
+                width:100%;
+                height:600px;
+            }
+
+            #productInfoContainer #reviews {
+                background-color:#f5f5f5;
+                display:none;
+                width:100%;
+                height:600px;
+            }
+
+            #features #leftFeature {
+                display:block;
+                width:33%;
+                height:auto;
+                text-align:center;
+                overflow:hidden;
+                float:left;
+                font-size:16px;
+            }
+
+            #features #rightFeature {
+                display:block;
+                width:33%;
+                height:auto;
+                text-align:center;
+                overflow:hidden;
+                float:right;
+                font-size:16px;
+            }
+
+            #features #middleFeature {
+                display:block;
+                width:33%;
+                height:auto;
+                text-align:center;
+                overflow:hidden;
+                margin-left:auto;
+                margin-right:auto;
+                font-size:16px;
+            }
+
+            #features #leftFeature img {
+                width:60%;
+                height:auto;
+            }
+
+            #features #rightFeature img {
+                width:60%;
+                height:auto;
+            }
+
+            #features #middleFeature img {
+                width:60%;
+                height:auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+
+        <div class="mainContainer">
+            <div id="purchaseDetailsContainer">
+                <div id="orderContainer">
+                    <span id="productTitle">Eko Pet Beacon</span>
+                    <!-- <hr> -->
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+
+                    <span id="includesHeader">Includes:</span>
+
+                    <ul>
+                        <li>&#8227;&nbsp;&nbsp;Lorem Ipsum is</li>
+                        <li>&#8227;&nbsp;&nbsp;Lorem Ipsum is</li>
+                        <li>&#8227;&nbsp;&nbsp;Lorem Ipsum is</li>
+                    </ul>
+
+                    <hr>
+
+                    <span id="colorHeader">Color</span>
+                    <span id="colorLabel">Black</span>
+
+                    <div id="colorChoicesContainer">
+                        <div id="blackColor" onclick="selectBlack('blackColor')"></div>
+                        <div id="whiteColor" onclick="selectWhite('whiteColor')"></div>
+                    </div>
+
+                    <hr>
+
+                    <span id="quantityHeader">Quantity</span>
+                    <span id="quantitySelect">
+                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                        <input type='text' name='quantity' value='1' class='qty' />
+                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                    </span>
+
+                    <hr>
+
+                    <span id="price">$139.99</span>
+
+                    <span id="checkoutContainer">
+                        <button type="button" class="btn btn-info">Checkout</button>
+                    </span>
+                </div>
+
+                <div id="imagesContainer">
+                    <img src="/static/media/site_images/image_placeholder_2.png">
+                </div>
+
+                <hr id="mainSeparator">
+
+                <ul class="nav nav-tabs nav-justified">
+                    <li role="presentation" onclick="showFeatures('features')"><a href="#">Features</a></li>
+                    <li role="presentation" onclick="showSpecs('specs')"><a href="#">Specifications</a></li>
+                    <li role="presentation" onclick="showReviews('reviews')"><a href="#">Reviews</a></li>
+                </ul>
+
+                <div id="productInfoContainer">
+                    <div id="features">
+                        <div id="leftFeature">
+                            <img src="/static/media/site_images/image_placeholder_2.png">
+                            <br />
+                            <span>Health / Activity Monitor</span>
+                        </div>
+
+                        <div id="rightFeature">
+                            <img src="/static/media/site_images/image_placeholder_2.png">
+                            <br />
+                            <span>Bark Limiter</span>
+                        </div>
+
+                        <div id="middleFeature">
+                            <img src="/static/media/site_images/image_placeholder_2.png">
+                            <br />
+                            <span>Sleep Monitor</span>
+                        </div>
+                    </div>
+
+                    <div id="specs">
+                        
+                    </div>
+
+                    <div id="reviews">
+                        
+                    </div>
+                </div>
+            </div>
+
+            {% include "footer.html" %}
+        </div>
+        
+        <!-- SCRIPTS GO HERE -->
+
+        <script>
+            // Function to focus features div
+            function showFeatures(div) {
+                document.getElementById(div).style.display = 'block';
+                document.getElementById('specs').style.display = 'none';
+                document.getElementById('reviews').style.display = 'none';
+            }
+
+            // Function to focus specs div
+            function showSpecs(div) {
+                document.getElementById('features').style.display = 'none';
+                document.getElementById(div).style.display = 'block';
+                document.getElementById('reviews').style.display = 'none';
+            }
+
+            // Function to focus reviews div
+            function showReviews(div) {
+                document.getElementById('features').style.display = 'none';
+                document.getElementById('specs').style.display = 'none';
+                document.getElementById(div).style.display = 'block';
+            }
+
+            // Function for Quantity Select
+            jQuery(document).ready(function(){
+                // This button will increment the value
+                $('.qtyplus').click(function(e){
+                    // Stop acting like a button
+                    e.preventDefault();
+                    // Get the field name
+                    fieldName = $(this).attr('field');
+                    // Get its current value
+                    var currentVal = parseInt($('input[name='+fieldName+']').val());
+                    // If is not undefined
+                    if (!isNaN(currentVal)) {
+                        // Increment
+                        $('input[name='+fieldName+']').val(currentVal + 1);
+                    } else {
+                        // Otherwise put a 0 there
+                        $('input[name='+fieldName+']').val(0);
+                    }
+                });
+                // This button will decrement the value till 0
+                $(".qtyminus").click(function(e) {
+                    // Stop acting like a button
+                    e.preventDefault();
+                    // Get the field name
+                    fieldName = $(this).attr('field');
+                    // Get its current value
+                    var currentVal = parseInt($('input[name='+fieldName+']').val());
+                    // If it isn't undefined or its greater than 0
+                    if (!isNaN(currentVal) && currentVal > 0) {
+                        // Decrement one
+                        $('input[name='+fieldName+']').val(currentVal - 1);
+                    } else {
+                        // Otherwise put a 0 there
+                        $('input[name='+fieldName+']').val(0);
+                    }
+                });
+            });
+
+            function selectBlack(div) {
+                document.getElementById(div).style.borderColor = 'lightblue';
+                document.getElementById('whiteColor').style.borderColor = '#aaaaaa';
+                document.getElementById('colorLabel').textContent = 'Black';
+            }
+
+            function selectWhite(div) {
+                document.getElementById(div).style.borderColor = 'lightblue';
+                document.getElementById('blackColor').style.borderColor = '#aaaaaa';
+                document.getElementById('colorLabel').textContent = 'White';
+            }
+        </script>
+
+        <!-- SCIPTS END HERE -->
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Device Analysis</title>
+        <meta charset=utf-8 />
+
+        <link   rel="stylesheet" 
+                href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
+
+        <style>
+            html,body {
+                padding:0px;
+                margin:0px;
+                width:100%;
+                height:100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+        
+        <!-- SCRIPTS GO HERE -->
+
+
+
+        <!-- SCIPTS END HERE -->
+    </body>
+</html>
