@@ -1,4 +1,4 @@
-# Location Tracker
+# Kynect
 
 ### Developing
 In order to setup your environment to run the development server and test the application, or to contribute to the project, follow the instructions below.
@@ -71,13 +71,13 @@ Run this command to install psycopg2:
 ```sh
 $ pip install psycopg2
 ```
-**5) Clone the Git Repository 
+**5) Clone the Git Repository** 
 
 - Within the root directory of your virtual environment run the following:
 
 Ubuntu:
 ```sh
-$ git clone https://github.com/EKOTracking/PetManager.git
+$ https://github.com/EKOTracking/kynect-project.git
 ```
 Windows:
 ```sh
@@ -85,7 +85,7 @@ Windows:
 ```
 **6) Run the server:**
 
-- Now you can run the server by entering the folder containing 'manage.py' and running the following:
+- Now you can run the server by entering the directory containing 'manage.py' and running the following:
 
 Ubuntu:
 ```sh
