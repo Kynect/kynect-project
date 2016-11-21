@@ -16,12 +16,12 @@ $ sudo -u postgres psql
 ```
 Windows:
 
-a) Download the Installer from EnterpriseDB (Most likely)
-b) Run the Installer as Administrator
-c) Go to Control Panel -> System and Security -> System -> Advanced System Setting --> Environment Variables
-d) Edit Path and add 2 things:
-	i) C:\Program Files\PostgreSQL\9.6\bin
-	ii) C:\Program Files\PostgreSQL\9.6\lib
+a) Download the Installer from EnterpriseDB (Most likely)  
+b) Run the Installer as Administrator  
+c) Go to Control Panel -> System and Security -> System -> Advanced System Setting --> Environment Variables  
+d) Edit Path and add 2 things:  
+	i) C:\Program Files\PostgreSQL\9.6\bin  
+	ii) C:\Program Files\PostgreSQL\9.6\lib  
 e) Run in Powershell:
 ```sh
 > psql -U postgres
@@ -61,7 +61,7 @@ $ source bin/activate
 ```
 Windows (As Administrator in Powershell):
 ```sh
-> Set-ExecutionPolicy RemoteSigned				// Changes System's Execution Policy
+> Set-ExecutionPolicy RemoteSigned				// Changes Systems Execution Policy
 > .\activate									// Run in /Scripts
 ```
 - Install Django via pip using below commands:
@@ -74,7 +74,7 @@ Windows:
 ```sh
 > pip install django
 ```
-- If you get a message "*Error loading psycopg2 module: No module named 'psycopg2'*", Run:
+- If you get a message "*Error loading psycopg2 module: No module named 'psycopg2'*", Run:  
 Ubuntu:
 ```sh
 $ pip install psycopg2
