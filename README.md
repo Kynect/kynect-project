@@ -20,8 +20,8 @@ a) Download the Installer from EnterpriseDB (Most likely)
 b) Run the Installer as Administrator  
 c) Go to Control Panel -> System and Security -> System -> Advanced System Setting --> Environment Variables  
 d) Edit Path and add 2 things:  
-	i) C:\Program Files\PostgreSQL\9.6\bin  
-	ii) C:\Program Files\PostgreSQL\9.6\lib  
+&nbsp;&nbsp;&nbsp;&nbsp;i) C:\Program Files\PostgreSQL\9.6\bin  
+&nbsp;&nbsp;&nbsp;&nbsp;ii) C:\Program Files\PostgreSQL\9.6\lib  
 e) Run in Powershell:
 ```sh
 > psql -U postgres
