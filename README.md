@@ -15,14 +15,24 @@ $ sudo apt-get install postgresql postgresql-contrib
 $ sudo -u postgres psql
 ```
 Windows:
+
+a) Download the Installer from EnterpriseDB (Most likely)
+b) Run the Installer as Administrator
+c) Go to Control Panel -> System and Security -> System -> Advanced System Setting --> Environment Variables
+d) Edit Path and add 2 things:
+	i) C:\Program Files\PostgreSQL\9.6\bin
+	ii) C:\Program Files\PostgreSQL\9.6\lib
+e) Run in Powershell:
 ```sh
-- Enter Scripts Here
+> psql -U postgres
 ```
+f) Insert password
+
 - Once accessed, setup the database with the commands below:
 ```sh
 postgres=# CREATE DATABASE testdb;
 postgres=# CREATE USER *username* WITH PASSWORD *password*;
-postgres=# GRANT ALL ON DATABASE testdb to *username*;
+postgres=# GRANT ALL ON DATABASE testdb TO *username*;
 postgres=# \c testdb;
 testdb=# \q
 ```
@@ -30,16 +40,16 @@ testdb=# \q
 
 **3) Create a Virtual Environment (Virtualenv):**
 
-- Install Virtualenv
+- Install Virtualenv (For Windows, just type: *pip install virtualenv*)
 - Create virtual environment with python 3.5 called kynect using below commands:
 
 Ubuntu:
 ```sh
-$ virtualenv -p /usr/bin/python3.5 kynect
+$ virtualenv -p /usr/bin/python3.5 venv_kynect
 ```
 Windows:
 ```sh
-- Enter Scripts Here
+> virtualenv venv_kynect
 ```
 **4) Install Necessary Packages in Virtual Environment:**
 
@@ -49,9 +59,10 @@ Ubuntu:
 ```sh
 $ source bin/activate
 ```
-Windows:
+Windows (As Administrator in Powershell):
 ```sh
-- Enter scripts here
+> Set-ExecutionPolicy RemoteSigned				// Changes System's Execution Policy
+> .\activate									// Run in /Scripts
 ```
 - Install Django via pip using below commands:
 
@@ -61,27 +72,40 @@ $ pip install django
 ```
 Windows:
 ```sh
-- Enter Scripts Here
+> pip install django
 ```
-- For Ubuntu, if you get a message like so;
-
-*Error loading psycopg2 module: No module named 'psycopg2'*
-
-Run this command to install psycopg2:
+- If you get a message "*Error loading psycopg2 module: No module named 'psycopg2'*", Run:
+Ubuntu:
 ```sh
 $ pip install psycopg2
 ```
+Windows:
+```sh
+> pip install psycopg2
+```
 **5) Clone the Git Repository** 
 
-- Within the root directory of your virtual environment run the following:
-
+- Download Git for Windows
+- If you need to set up Git, run these commands to set it up:
 Ubuntu:
 ```sh
-$ https://github.com/EKOTracking/kynect-project.git
+$ git config --global user.name "username"
+$ git config --global user.email "user@example.com"
 ```
 Windows:
 ```sh
-- Enter scripts here
+> git config --global user.name "username"
+> git config --global user.email "user@example.com"
+```
+- Now, within the root directory of your virtual environment run the following:
+
+Ubuntu:
+```sh
+$ git clone https://github.com/EKOTracking/kynect-project.git
+```
+Windows:
+```sh
+> git clone https://github.com/EKOTracking/kynect-project.git
 ```
 **6) Run the server:**
 
@@ -93,9 +117,8 @@ $ python manage.py runserver
 ```
 Windows:
 ```sh
-- Enter scripts here
+> .\manage.py runserver
 ```
-
 ### Access the Website by navigating to *localhost:8000* in your web Browser!
 
 **Testing**
