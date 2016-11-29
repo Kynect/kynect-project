@@ -31,7 +31,7 @@ f) Insert password
 - Once accessed, setup the database with the commands below:
 ```sh
 postgres=# CREATE DATABASE testdb;
-postgres=# CREATE USER *username* WITH PASSWORD *password*;
+postgres=# CREATE USER *username* WITH PASSWORD '*password*';
 postgres=# GRANT ALL ON DATABASE testdb TO *username*;
 postgres=# \c testdb;
 testdb=# \q
@@ -75,6 +75,7 @@ Windows:
 > pip install django
 ```
 - If you get a message "*Error loading psycopg2 module: No module named 'psycopg2'*", Run:  
+
 Ubuntu:
 ```sh
 $ pip install psycopg2
