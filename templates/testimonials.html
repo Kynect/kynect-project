@@ -115,12 +115,6 @@
                 overflow-x:hidden;
             }
 
-            #mainDiv1 {
-                display:block;
-                height:100%;
-                width:100%;
-            }
-
             #imageQuoteDiv {
                 display:block;
                 height:85%;
@@ -294,141 +288,139 @@
         {% include "navbar.html" %}
 
         <div class="mainContainer">
-            <div id="mainDiv1">
-                <div id="imageQuoteDiv">
-                    <div id="quoteContainer">
+            <div id="imageQuoteDiv">
+                <div id="quoteContainer">
+                    <span>
+                        <i>"Keeping Track of my dogs activites has never been so easy!"</i>
+                        <br>
+                        <b>- John D.</b>
+                    </span>
+                </div>
+            </div>
+
+            <div id="newsStripDiv" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-4 col-md-2">
+                        <img src="/static/media/site_images/ny_times_logo.png">
+                    </div>
+
+                    <div class="col-xs-4 col-md-2">
+                        <img src="/static/media/site_images/nbc_news_logo.png">
+                    </div>
+
+                    <div class="col-xs-4 col-md-2">
+                        <img src="/static/media/site_images/abc_news_logo.png">
+                    </div>
+
+                    <div class="col-xs-4 col-md-2">
+                        <img src="/static/media/site_images/bbc_shop_logo.png">
+                    </div>
+
+                    <div class="col-xs-4 col-md-2">
+                        <img src="/static/media/site_images/tech_insider_logo.png">
+                    </div>
+
+                    <div class="col-xs-4 col-md-2">
+                        <img src="/static/media/site_images/business_insider_logo.png">
+                    </div>
+                </div>
+            </div>
+
+            <div id="pubQuotesContainer" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
                         <span>
-                            <i>"Keeping Track of my dogs activites has never been so easy!"</i>
+                            <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                             <br>
-                            <b>- John D.</b>
+                            <b>- NY Times</b>
+                        </span>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <span>
+                            <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                            <br>
+                            <b>- WSJ</b>
+                        </span>
+                    </div>
+
+                    <div class="col-xs-12 col-md-12">
+                        <span>
+                            <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                            <br>
+                            <b>- BBC News</b>
+                        </span>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <span>
+                            <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                            <br>
+                            <b>- Tech Insider</b>
+                        </span>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <span>
+                            <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                            <br>
+                            <b>- ABC News</b>
                         </span>
                     </div>
                 </div>
+            </div>
 
-                <div id="newsStripDiv" class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-4 col-md-2">
-                            <img src="/static/media/site_images/ny_times_logo.png">
-                        </div>
+            <div id="custQuotesContainer" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 col-md-1"></div>
 
-                        <div class="col-xs-4 col-md-2">
-                            <img src="/static/media/site_images/nbc_news_logo.png">
-                        </div>
-
-                        <div class="col-xs-4 col-md-2">
-                            <img src="/static/media/site_images/abc_news_logo.png">
-                        </div>
-
-                        <div class="col-xs-4 col-md-2">
-                            <img src="/static/media/site_images/bbc_shop_logo.png">
-                        </div>
-
-                        <div class="col-xs-4 col-md-2">
-                            <img src="/static/media/site_images/tech_insider_logo.png">
-                        </div>
-
-                        <div class="col-xs-4 col-md-2">
-                            <img src="/static/media/site_images/business_insider_logo.png">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="pubQuotesContainer" class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <span>
-                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                <br>
-                                <b>- NY Times</b>
-                            </span>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6">
-                            <span>
-                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                <br>
-                                <b>- WSJ</b>
-                            </span>
-                        </div>
-
-                        <div class="col-xs-12 col-md-12">
-                            <span>
-                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                <br>
-                                <b>- BBC News</b>
-                            </span>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6">
-                            <span>
-                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                <br>
-                                <b>- Tech Insider</b>
-                            </span>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6">
-                            <span>
-                                <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                <br>
-                                <b>- ABC News</b>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="custQuotesContainer" class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-1 col-md-1"></div>
-
-                        <div class="col-xs-10 col-md-5">
-                            <div class="row">
-                                <div class="col-xs-12 custQuote">
-                                    <div class="quoteBoxLeft">
-                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                        <br>
-                                        - Marco P.
-                                    </div>
+                    <div class="col-xs-10 col-md-5">
+                        <div class="row">
+                            <div class="col-xs-12 custQuote">
+                                <div class="quoteBoxLeft">
+                                    <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                    <br>
+                                    - Marco P.
                                 </div>
+                            </div>
 
-                                <div class="col-xs-12 custQuote botThree">
-                                    <div class="quoteBoxRight">
-                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                        <br>
-                                        - Charles D.
-                                    </div>
+                            <div class="col-xs-12 custQuote botThree">
+                                <div class="quoteBoxRight">
+                                    <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                    <br>
+                                    - Charles D.
                                 </div>
+                            </div>
 
-                                <div class="col-xs-12 custQuote botThree">
-                                    <div class="quoteBoxLeft">
-                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                        <br>
-                                        - Amanda S.
-                                    </div>
+                            <div class="col-xs-12 custQuote botThree">
+                                <div class="quoteBoxLeft">
+                                    <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                    <br>
+                                    - Amanda S.
                                 </div>
+                            </div>
 
-                                <div class="col-xs-12 custQuote botThree">
-                                    <div class="quoteBoxRight">
-                                        <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
-                                        <br>
-                                        - Jim M..
-                                    </div>
+                            <div class="col-xs-12 custQuote botThree">
+                                <div class="quoteBoxRight">
+                                    <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
+                                    <br>
+                                    - Jim M..
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-xs-1 hidden-sm-up"></div>
-
-                        <div class="col-xs-12 col-md-6 custQuoteBigImage">
-                            <img src="/static/media/site_images/hand_holding_iphone.png">
-                        </div>
-
-                        <div class="col-xs-1 col-md-0"></div>
                     </div>
-                </div>
 
-                {% include "footer.html" %}
+                    <div class="col-xs-1 hidden-sm-up"></div>
+
+                    <div class="col-xs-12 col-md-6 custQuoteBigImage">
+                        <img src="/static/media/site_images/hand_holding_iphone.png">
+                    </div>
+
+                    <div class="col-xs-1 col-md-0"></div>
+                </div>
             </div>
+
+            {% include "footer.html" %}
         </div>
         
         <!-- SCRIPTS GO HERE -->
