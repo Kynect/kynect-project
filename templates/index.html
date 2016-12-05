@@ -10,6 +10,8 @@
                 href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
         <link   rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Raleway">
+        <link   href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" 
+                rel="stylesheet">
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
@@ -27,15 +29,27 @@
 
             #navbar {
                 border-width:0;
+                font-family: 'Alegreya Sans SC', sans-serif;
+                font-size:16px;
             }
 
-            #navLogo {
+            .navLogo {
                 font-weight: bold;
                 font-family: 'Raleway', sans-serif;
             }
 
+            .buyNow {
+                margin-right:15px;
+            }
+
             .navLinks:hover {
                 background-color:#dddddd;
+            }
+
+            .navbar-nav {
+                border:none;
+                margin-top:0;
+                margin-bottom:0;
             }
 
             /* NAVBAR END */
@@ -213,21 +227,30 @@
                 padding-bottom:90px;
             }
 
-            .kynectBriefImage {
+            .briefImage-xs {
                 text-align:center;
             }
 
-            .kynectBriefImage img {
+            .briefImage-xs img {
+                width:290px;
+                height:auto;
+            }
+
+            .briefImage-sm {
+                text-align:center;
+            }
+
+            .briefImage-sm img {
                 width:400px;
                 height:auto;
             }
 
-            .kynectBrief {
+            .brief {
                 padding-top:60px;
                 text-align:center;
             }
 
-            .kynectBrief span {
+            .brief span {
                 display:inline-block;
                 width:70%;
                 font-size:26px;
@@ -235,7 +258,7 @@
                 font-family: 'Raleway', sans-serif;
             }
 
-            .kynectBrief p {
+            .brief p {
                 display:inline-block;
                 width:90%;
                 padding-top:10px;
@@ -246,12 +269,9 @@
 
             .mainDiv3 {
                 background-color:#f9f9f9;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            .mainDiv3 > .row {
                 padding-top:70px;
                 padding-bottom:70px;
+                font-family: 'Raleway', sans-serif;
             }
 
             .featHeader {
@@ -268,46 +288,65 @@
                 font-size:14px;
             }
 
-            .featImageContainerSmall {
-                text-align:center;
-                margin-top:30px;
+            .featRow {
+                padding-top:30px;
             }
 
-            .featImageContainerSmall img {
+            .featMainImg-xs {
+                padding-left:0 !important;
+                padding-right:0 !important;
+                text-align:center;
+            }
+
+            .featMainImg-xs img {
+                width:290px;
+                height:240px;
+            }
+
+            .featMainImg-sm {
+                padding-left:0 !important;
+                padding-right:0 !important;
+                text-align:center;
+            }
+
+            .featMainImg-sm img {
                 width:550px;
                 height:450px;
             }
 
-            .featImageContainerLarge {
+            .featMainImg-lg {
                 padding-left:0 !important;
                 padding-right:0 !important;
                 text-align:center;
-                margin-top:30px;
             }
 
-            .featImageContainerLarge img {
+            .featMainImg-lg img {
                 width:380px;
                 height:310px;
-            }
-
-            .featContainerLeft {
-                margin-top:30px;
             }
 
             .featContainerLeft .row {
                 margin-top:30px;
             }
 
-            .featContainerRight {
+            .featContainerRight .row {
                 margin-top:30px;
             }
 
-            .featContainerRight .row{
-                margin-top:30px;
+            .feats-xs div {
+                display:block;
+                width:250px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            .feats-xs img {
+                margin-right:10px;
+                width:60px;
+                height:60px;
             }
 
             .featsLeft {
-                margin-top:;
                 text-align:right;
             }
 
@@ -403,11 +442,17 @@
                 <div class="row">
                     <div class="col-md-1"></div>
 
-                    <div class="col-md-5 col-xs-12 kynectBriefImage">
+                    <!-- Appears In Screen XS -->
+                    <div class="col-md-5 col-xs-12 visible-xs briefImage-xs">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
-                    <div class="col-md-5 col-xs-12 kynectBrief">
+                    <!-- Appears In Screen SM and Up -->
+                    <div class="col-md-5 col-xs-12 hidden-xs briefImage-sm">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
+                    </div>
+
+                    <div class="col-md-5 col-xs-12 brief">
                         <span>The Future of Pet Monitoring is Here.</span>
 
                         <br />
@@ -425,53 +470,115 @@
                         <span class="featHeader">Fluid Design. Feature Rich.</span>
                         <span class="featDescriptionTop">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                     </div>
+                </div>
 
-                    <!-- BEGIN:  Appears In Screen Smaller than Large -->
-                    <div class="col-xs-12 hidden-lg featImageContainerSmall">
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                    </div>
-                    <!-- END:    Appears in Screen Smaller than Large -->
-
-                    <div class="col-xs-6 col-lg-4 featContainerLeft">
-                        <div class="row">
-                            <div class="col-xs-12 featsLeft">
-                                <span>Lorem Ipsum is Simply</span>
-                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 featsLeft">
-                                <span>Lorem Ipsum is Simply</span>
-                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 featsLeft">
-                                <span>Lorem Ipsum is Simply</span>
-                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 visible-lg featImageContainerLarge">
+                <div class="row featRow">
+                    <!-- Appears In Screen XS -->
+                    <div class="col-xs-12 visible-xs featMainImg-xs">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
-                    <div class="col-xs-6 col-lg-4 featContainerRight">
+                    <!-- Appears In Screen SM to LG -->
+                    <div class="col-sm-12 hidden-xs hidden-lg featMainImg-sm">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-lg-4 featContainerLeft">
                         <div class="row">
-                            <div class="col-xs-12 featsRight">
+                            <!-- Appears in Screen XS -->
+                            <div class="col-xs-12 visible-xs feats-xs">
+                                <div>
+                                    <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                    <span>Lorem Ipsum is Simply</span>
+                                </div>
+                            </div>
+
+                            <!-- Appears in Screen SM and Up -->
+                            <div class="col-sm-12 hidden-xs featsLeft">
+                                <span>Lorem Ipsum is Simply</span>
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Appears in Screen XS -->
+                            <div class="col-xs-12 visible-xs feats-xs">
+                                <div>
+                                    <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                    <span>Lorem Ipsum is Simply</span>
+                                </div>
+                            </div>
+
+                            <!-- Appears in Screen SM and Up -->
+                            <div class="col-sm-12 hidden-xs featsLeft">
+                                <span>Lorem Ipsum is Simply</span>
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Appears in Screen XS -->
+                            <div class="col-xs-12 visible-xs feats-xs">
+                                <div>
+                                    <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                    <span>Lorem Ipsum is Simply</span>
+                                </div>
+                            </div>
+
+                            <!-- Appears in Screen SM and Up -->
+                            <div class="col-sm-12 hidden-xs featsLeft">
+                                <span>Lorem Ipsum is Simply</span>
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BEGIN:  Appears In Screen LG and Up -->
+                    <div class="col-lg-4 visible-lg featMainImg-lg">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
+                    </div>
+                    <!-- END:    Appears in Screen LG and Up -->
+
+                    <div class="col-xs-12 col-sm-6 col-lg-4 featContainerRight">
+                        <div class="row">
+                            <!-- Appears in Screen XS -->
+                            <div class="col-xs-12 visible-xs feats-xs">
+                                <div>
+                                    <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                    <span>Lorem Ipsum is Simply</span>
+                                </div>
+                            </div>
+
+                            <!-- Appears in Screen SM and Up -->
+                            <div class="col-sm-12 hidden-xs featsRight">
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                                 <span>Lorem Ipsum is Simply</span>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 featsRight">
+                            <!-- Appears in Screen XS -->
+                            <div class="col-xs-12 visible-xs feats-xs">
+                                <div>
+                                    <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                    <span>Lorem Ipsum is Simply</span>
+                                </div>
+                            </div>
+
+                            <!-- Appears in Screen SM and Up -->    
+                            <div class="col-sm-12 hidden-xs featsRight">
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                                 <span>Lorem Ipsum is Simply</span>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 featsRight">
+                            <!-- Appears in Screen XS -->
+                            <div class="col-xs-12 visible-xs feats-xs">
+                                <div>
+                                    <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                    <span>Lorem Ipsum is Simply</span>
+                                </div>
+                            </div>
+
+                            <!-- Appears in Screen SM and Up -->
+                            <div class="col-sm-12 hidden-xs featsRight">
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                                 <span>Lorem Ipsum is Simply</span>
                             </div>

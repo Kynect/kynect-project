@@ -2,16 +2,21 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/home/" style="color:#000000;">
-                <span class="glyphicon glyphicon-home"></span>
-                <span id="navLogo">&nbsp&nbspkynect</span>
-            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand navLogo" href="/home/">kynect</a>
+            <a class="buyNow navbar-text pull-right visible-xs" href="/purchase"><b>BUY NOW</b></span></a>
         </div>
 
+        <div class="navbar-collapse collapse">
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="navLinks"><a href="/purchase"><b>BUY NOW</b></span></a></li>
+                <li class="navLinks hidden-xs"><a href="/purchase"><b>BUY NOW</b></span></a></li>
                 <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
                 <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
                 <li class="navLinks"><a href="/contact_us">CONTACT US</span></a></li>
@@ -19,25 +24,24 @@
 
                 {% if user.is_authenticated %}
                     <li class="dropdown navLinks">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp&nbspACCOUNT</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp&nbsp&nbsp ACCOUNT</a>
 
-                        <ul id="dropdownList" class="dropdown-menu">
-                            <li><a href="/profile/"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspAccount Portal</a></li>
-                            <li><a href="/notifications/"><span class="glyphicon glyphicon-comment"></span>&nbsp&nbspNotifications</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="/profile/"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp&nbsp {{ user.get_username }}</a></li>
+                            <li><a href="/notifications/"><span class="glyphicon glyphicon-comment"></span>&nbsp&nbsp&nbsp Notifications</a></li>
 
-                            <li role="separator" class="divider"></li>
-
-                            <li><a href="/account_settings/"><span class="glyphicon glyphicon-cog"></span>&nbsp&nbspAccount Settings</a></li>
+                            <li><a href="/account_settings/"><span class="glyphicon glyphicon-cog"></span>&nbsp&nbsp&nbsp Account Settings</a></li>
 
                             <li role="separator" class="divider"></li>
 
-                            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp&nbspSign Out</a></li>
+                            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp Sign Out</a></li>
                         </ul>
                     </li>
-                {% else  %}
-                    <li class="navLinks"><a href="/login">LOGIN</a></li>
+                {% else  %}                                    
+                    <li class="navLinks hidden-xs"><a href="/login">LOGIN</a></li>
+                    <li class="navLinks visible-xs"><a href="/login"><b>LOGIN</b></a></li>
                 {% endif %}
             </ul>
-        </div> <!-- /.navbar-collapse -->
+        </div>
     </div> <!-- /.container-fluid -->
 </nav>
