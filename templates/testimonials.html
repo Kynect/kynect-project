@@ -8,6 +8,9 @@
 
         <link   rel="stylesheet" 
                 href="{% static "bootstrap/dist/css/bootstrap.css" %}" />
+        <link   rel="stylesheet"
+                href="https://fonts.googleapis.com/css?family=Raleway">
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
 
@@ -23,6 +26,11 @@
 
             #navbar {
                 border-width:0;
+            }
+
+            #navLogo {
+                font-weight: bold;
+                font-family: 'Raleway', sans-serif;
             }
 
             .navLinks:hover {
@@ -134,7 +142,8 @@
                 height:100%;
                 width:100%;
                 color:#000000;
-                font-size:40px;
+                font-size:36px;
+                font-family: 'Raleway', sans-serif;
             }
 
             #quoteContainer span {
@@ -172,6 +181,7 @@
                 display:table;
                 width:100%;
                 min-height:500px;
+                font-family: 'Raleway', sans-serif;
             }
 
             #pubQuotesContainer .row {
@@ -196,6 +206,7 @@
                 display:table;
                 width:100%;
                 min-height:700px;
+                font-family: 'Raleway', sans-serif;
             }
 
             #custQuotesContainer > .row {
@@ -292,7 +303,7 @@
                 <div id="quoteContainer">
                     <span>
                         <i>"Keeping Track of my dogs activites has never been so easy!"</i>
-                        <br>
+                        <br />
                         <b>- John D.</b>
                     </span>
                 </div>

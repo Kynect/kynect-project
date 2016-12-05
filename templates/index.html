@@ -3,13 +3,13 @@
 
 <html lang="en">
     <head>
-        <title>Kynect</title>
+        <title>Kynect - Monitoring Collar</title>
         <meta charset=utf-8 />
 
         <link   rel="stylesheet" 
                 href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
         <link   rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=Quicksand">
+                href="https://fonts.googleapis.com/css?family=Raleway">
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
@@ -26,8 +26,12 @@
             /* NAVBAR BEGIN */
 
             #navbar {
-                font-family: 'Quicksand', sans-serif;
                 border-width:0;
+            }
+
+            #navLogo {
+                font-weight: bold;
+                font-family: 'Raleway', sans-serif;
             }
 
             .navLinks:hover {
@@ -110,6 +114,12 @@
 
             /* FOOTER END */
 
+            /* GLOBAL STYLE BEGIN */
+
+            
+
+            /* GLOBAL STYLE END */
+
             .mainContainer {
                 position:absolute;
                 top:50px;
@@ -125,7 +135,7 @@
                 min-height:100%;
                 width:100%;
                 
-                /* cover background for homepage */
+                /* Cover background for homepage */
                 background: url(/static/media/site_images/dog_in_field.png) no-repeat center center; 
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
@@ -135,154 +145,198 @@
 
             #videoContainer {
                 display:block;
-                height:100%;
                 width:55%;
-                padding-top:360px;
-                float:right;
                 color:#ffffff;
+                font-family: 'Raleway', sans-serif;
+
+                /* VerticallyCenter Text */
+                position: relative;
+                top: 50%;
+                left: 70%;
+                -webkit-transform: translateY(-50%) translateX(-50%);
+                -ms-transform: translateY(-50%) translate(-50%);
+                transform: translateY(-50%) translate(-50%);
             }
 
-            #videoContainer span {
+            #videoContainer > span {
                 display:block;
                 width:100%;
                 text-align:center;
+                font-size:40px;
             }
 
-            #youtubeButton {
+            #videoButton {
                 display:block;
                 margin-left:auto;
                 margin-right:auto;
-                height:70px;
-                width:70px;
+                height:40px;
+                width:150px;
+                text-align:center;
+                border-style:solid;
+                border-width:3px;
+                border-radius:20px;
+                font-size:16px;
             }
 
-            #youtubeButton:hover {
+            /* The ghost, nudged to maintain perfect centering */
+            #videoButton:before {
+                content:'';
+                display:inline-block;
+                height:100%;
+                vertical-align:middle;
+                margin-right:-0.25em; /* Adjusts for spacing */
+            }
+
+            #videoButton div {
+                display:inline-block;
+                vertical-align:middle;
+            }
+
+            #videoButton span {
+                display:inline-block;
+                width:auto;
+            }
+
+            #videoButton img {
+                width:16px; 
+                height:16px;
+            }
+
+            #videoButton:hover {
+                background-color:rgba(210,210,210,0.2);
                 cursor:pointer;
                 cursor:hand;
             }
 
-            #mainDiv2 {
-                background-color:#ffffff;
-                display:block;
-                width:100%;
-                height:1020px;
-                min-height:1020px;
-                padding-top:200px;
+            .mainDiv2 > .row {
+                padding-top:90px;
+                padding-bottom:90px;
             }
 
-            #whatIsEkoDivContainer {
-                /*background-color:lightpink;*/
-                display:block;
-                width:80%;
-                height:100%;
-                min-height:100%;
-                margin: 0 auto;
+            .kynectBriefImage {
                 text-align:center;
             }
 
-            #image1 {
-                display:inline-block;
+            .kynectBriefImage img {
                 width:400px;
-                height:600px;
-                vertical-align:top;
+                height:auto;
             }
 
-            #whatIsEkoDiv {
-                /*background-color:lightblue;*/
-                display:inline-block;
-                height:600px;
-                min-height:600px;
-                width:40%;
-                padding-top:80px;
-                margin-left:50px;
-                vertical-align:top;
-            }
-
-            #mainDiv3 {
-                background-color:#f2f2f2;
-                display:block;
-                color:#000000;
-                height:1020px;
-                min-height:1020px;
-                width:100%;
-            }
-
-            #homeHeader3 {
-                padding-top:45px;
-                padding-bottom:45px;
+            .kynectBrief {
+                padding-top:60px;
                 text-align:center;
             }
 
-            .headerSeparator {
+            .kynectBrief span {
+                display:inline-block;
+                width:70%;
+                font-size:26px;
+                color:#141414;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .kynectBrief p {
+                display:inline-block;
+                width:90%;
+                padding-top:10px;
+                font-size:14px;
+                color:#999999;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .mainDiv3 {
+                background-color:#f9f9f9;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .mainDiv3 > .row {
+                padding-top:70px;
+                padding-bottom:70px;
+            }
+
+            .featHeader {
                 display:block;
-                margin-left:auto;
-                margin-right:auto;
+                text-align:center;
+                font-family: 'Raleway', sans-serif;
+                font-size:26px;
             }
 
-            #featuresContainerLeft,
-            #featuresContainerRight, 
-            #featuresContainerPhoto {
+            .featDescriptionTop {
                 display:block;
-                height:710px;
-                min-height:710px;
+                text-align:center;
+                font-family: 'Raleway', sans-serif;
+                font-size:14px;
             }
 
-            #featuresContainerLeft {
-                width:34%;
-                float:left;
+            .featImageContainerSmall {
+                text-align:center;
+                margin-top:30px;
             }
 
-            #featuresContainerRight {
-                width:34%;
-                float:right;
+            .featImageContainerSmall img {
+                width:550px;
+                height:450px;
             }
 
-            #featuresContainerPhoto {
-                margin-left:auto;
-                margin-right:auto;
-                width:25%;
+            .featImageContainerLarge {
+                padding-left:0 !important;
+                padding-right:0 !important;
+                text-align:center;
+                margin-top:30px;
             }
 
-            #featuresContainerLeft div {
-                display:block;
-                width:100%;
+            .featImageContainerLarge img {
+                width:380px;
+                height:310px;
+            }
+
+            .featContainerLeft {
+                margin-top:30px;
+            }
+
+            .featContainerLeft .row {
+                margin-top:30px;
+            }
+
+            .featContainerRight {
+                margin-top:30px;
+            }
+
+            .featContainerRight .row{
+                margin-top:30px;
+            }
+
+            .featsLeft {
+                margin-top:;
                 text-align:right;
-                font-size:16px;
             }
 
-            #featuresContainerRight div {
-                display:block;
-                width:100%;
+            .featsLeft img {
+                margin-left:10px;
+                width:60px;
+                height:60px;
+            }
+
+            .featsRight {
                 text-align:left;
-                font-size:16px;
             }
 
-            .smallFeatureContainerLeft {
-                margin-bottom:70px;
+            .featsRight img {
+                margin-right:10px;
+                width:60px;
+                height:60px;
             }
-
-            .smallFeatureContainerRight {
-                margin-bottom:70px;
-            }
-
-            #featuresContainerLeft div img {
-                margin-left:3%;
-            }
-
-            #featuresContainerRight div img {
-                margin-right:3%;
-            }
-
+            
             /* BEGIN POPUP */
 
             .ontop {
+                display:none;
                 z-index:999;
                 width:100%;
                 height:100%;
                 padding-top:50px;
                 top:0;
                 left:0;
-                display:none;
                 position:fixed;
                 background-color:rgba(40,40,40,0.9);
                 color:#000000;
@@ -325,50 +379,109 @@
         <div class="mainContainer">
             <div id="mainDiv1">
                 <div id="videoContainer">
-                    <span style="font-size:60px;"><b>Never Lose Your Best Friend.</b></span>
-                    <span style="font-size:40px; margin-top:10px;"><b>Watch How It Works</b></span>
+                    <span>Never Lose Your Best Friend</span>
 
-                    <div id="youtubeButton" onclick="pop('popDiv')">
-                        <img src="/static/media/site_images/youtube_button.png" style="width:70px; height:70px; margin-top:10px;">
-                    </div>
+                    <br />
 
-                    <!-- BEGIN POPUP DIV -->
-                    <div id="popDiv" class="ontop">
-                        <div class="popup">
-                            <img src="/static/media/site_images/closebutton.png" style="width:20px; height:20px;" onclick="hide('popDiv')">
+                    <div id="videoButton" onclick="pop('popDiv')">
+                        <div>Watch Video
+                            <span class="glyphicon glyphicon-play" style="font-size:14px;"></span>
                         </div>
                     </div>
-                    <!-- END POPUP DIV -->
+                </div>
 
+                <!-- BEGIN POPUP DIV -->
+                <div id="popDiv" class="ontop">
+                    <div class="popup">
+                        <img src="/static/media/site_images/close_button2.png" style="width:20px; height:20px;" onclick="hide('popDiv')">
+                    </div>
+                </div>
+                <!-- END POPUP DIV -->
+            </div>
+
+            <div class="mainDiv2 container-fluid">
+                <div class="row">
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-5 col-xs-12 kynectBriefImage">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
+                    </div>
+
+                    <div class="col-md-5 col-xs-12 kynectBrief">
+                        <span>The Future of Pet Monitoring is Here.</span>
+
+                        <br />
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+
+                    <div class="col-md-1"></div>
                 </div>
             </div>
 
-            <div id="mainDiv2">
-                <div id="whatIsEkoDivContainer">
-                    <div id="image1">
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:400px; height:600px;">
+            <div class="mainDiv3 container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="featHeader">Fluid Design. Feature Rich.</span>
+                        <span class="featDescriptionTop">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                     </div>
 
-                    <div id="whatIsEkoDiv">
-                        <h1><b>What Is Kynect?</b></h1>
+                    <!-- BEGIN:  Appears In Screen Smaller than Large -->
+                    <div class="col-xs-12 hidden-lg featImageContainerSmall">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
+                    </div>
+                    <!-- END:    Appears in Screen Smaller than Large -->
 
-                        <div class="headerSeparator">
-                            <hr style="border:0; height:1px; width:375px; background-color:#000000;">
+                    <div class="col-xs-6 col-lg-4 featContainerLeft">
+                        <div class="row">
+                            <div class="col-xs-12 featsLeft">
+                                <span>Lorem Ipsum is Simply</span>
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                            </div>
                         </div>
-
-                        <p style="text-align:justify; margin-top:30px;">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-
-                        <a href="/home/"><img src="/static/media/site_images/kickstarter_button.png" style="width:200px; height:90px; margin-top:60px;"></a>
+                        <div class="row">
+                            <div class="col-xs-12 featsLeft">
+                                <span>Lorem Ipsum is Simply</span>
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 featsLeft">
+                                <span>Lorem Ipsum is Simply</span>
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="col-lg-4 visible-lg featImageContainerLarge">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
+                    </div>
 
+                    <div class="col-xs-6 col-lg-4 featContainerRight">
+                        <div class="row">
+                            <div class="col-xs-12 featsRight">
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 featsRight">
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 featsRight">
+                                <img src="/static/media/site_images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!--
             <div id="mainDiv3">
-
                 <div id="homeHeader3">
                     <span style="text-align:center;"><h1>Minimized Design</h1></span>
                     <span style="text-align:center;"><h3>The Industry's Smallest LTE Pet Tracker</h3></span>
@@ -380,41 +493,41 @@
                 <div id="featuresContainerLeft">
                     <div class="smallFeatureContainerLeft">
                         <spam>Real-Time GPS Tracking</spam>
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
                     <div class="smallFeatureContainerLeft">
                         <spam>Geofencing Alerts</spam>
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
                     <div>
                         <spam>Waterproof (IPX7)</spam>
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
                 </div>
 
                 <div id="featuresContainerRight">
                     <div class="smallFeatureContainerRight">
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
                         <spam>Health/Activity Monitor</spam>
                     </div>
 
                     <div class="smallFeatureContainerRight">
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
                         <spam>Bark Limiter</spam>
                     </div>
 
                     <div>
-                        <img src="/static/media/site_images/image_placeholder_2.png" style="width:190px; height:190px;">
+                        <img src="/static/media/site_images/image_placeholder_2.png">
                         <spam>Sleep Analysis</spam>
                     </div>
                 </div>
 
                 <div id="featuresContainerPhoto">
-                    <img src="/static/media/site_images/image_placeholder_2.png" style="width:100%; height:100%;">
+                    <img src="/static/media/site_images/image_placeholder_2.png" style="width:100%;">
                 </div>
-            </div>
+            </div> -->
 
             {% include "footer.html" %}
         </div>
