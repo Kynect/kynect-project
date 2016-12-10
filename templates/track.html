@@ -8,6 +8,11 @@
 
         <link   rel="stylesheet" 
                 href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+        <link   rel="stylesheet"
+                href="https://fonts.googleapis.com/css?family=Raleway">
+        <link   href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" 
+                rel="stylesheet">
+                
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
 
@@ -19,6 +24,34 @@
                 height:100%;
                 overflow-y:hidden;
             }
+
+            /* NAVBAR BEGIN */
+
+            #navbar {
+                border-width:0;
+                font-family: 'Alegreya Sans SC', sans-serif;
+            }
+
+            .navLogo {
+                font-weight: bold;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .buyNow {
+                margin-right:15px;
+            }
+
+            .navLinks:hover {
+                background-color:#dddddd;
+            }
+
+            .navbar-nav {
+                border:none;
+                margin-top:0;
+                margin-bottom:0;
+            }
+
+            /* NAVBAR END */
 
             #mapContainer {
                 background-color:lightblue;

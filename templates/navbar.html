@@ -16,15 +16,10 @@
         <div class="navbar-collapse collapse">
         <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav navbar-right">
-                <li class="navLinks hidden-xs"><a href="/purchase"><b>BUY NOW</b></span></a></li>
-                <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
-                <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
-                <li class="navLinks"><a href="/contact_us">CONTACT US</span></a></li>
-                <li class="navLinks"><a href="/help">HELP</span></a></li>
-
                 {% if user.is_authenticated %}
-                    <li class="dropdown navLinks">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp&nbsp&nbsp ACCOUNT</a>
+                    <!-- Appears in Screen XS -->
+                    <li class="dropdown navLinks visible-xs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT&nbsp&nbsp<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span></a>
 
                         <ul class="dropdown-menu">
                             <li><a href="/profile/"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp&nbsp {{ user.get_username }}</a></li>
@@ -37,8 +32,35 @@
                             <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp Sign Out</a></li>
                         </ul>
                     </li>
-                {% else  %}                                    
-                    <li class="navLinks hidden-xs"><a href="/login">LOGIN</a></li>
+
+                    <li class="navLinks hidden-xs"><a href="/purchase"><b>BUY NOW</b></span></a></li>
+                    <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
+                    <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
+                    <li class="navLinks"><a href="/contact_us">CONTACT US</span></a></li>
+                    <li class="navLinks"><a href="/help">HELP</span></a></li>
+
+                    <!-- Appears in Screen SM and Up -->
+                    <li class="dropdown navLinks hidden-xs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:12px;"></span>&nbsp&nbsp&nbsp ACCOUNT</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="/profile/"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp&nbsp {{ user.get_username }}</a></li>
+                            <li><a href="/notifications/"><span class="glyphicon glyphicon-comment"></span>&nbsp&nbsp&nbsp Notifications</a></li>
+
+                            <li><a href="/account_settings/"><span class="glyphicon glyphicon-cog"></span>&nbsp&nbsp&nbsp Account Settings</a></li>
+
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp Sign Out</a></li>
+                        </ul>
+                    </li>
+                {% else  %}
+                    <li class="navLinks hidden-xs"><a href="/purchase"><b>BUY NOW</b></span></a></li>
+                    <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
+                    <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
+                    <li class="navLinks"><a href="/contact_us">CONTACT US</span></a></li>
+                    <li class="navLinks"><a href="/help">HELP</span></a></li>                                    
+                    <li class="navLinks hidden-xs"><a href="/login"><u>LOGIN</u></a></li>
                     <li class="navLinks visible-xs"><a href="/login"><b>LOGIN</b></a></li>
                 {% endif %}
             </ul>
