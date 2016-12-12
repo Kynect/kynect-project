@@ -52,79 +52,14 @@
 
             /* NAVBAR END */
 
-            /* FOOTER BEGIN */
+            /* GLOBAL STYLE BEGIN */
 
-            #footer {
-                background-color:#252525; 
-                color:white;
-                width:100%;
-                padding-top:40px;
-                padding-bottom:40px;
-                overflow:hidden;
-
-                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+            .noGutter {
+                padding-left:0;
+                padding-right:0;
             }
 
-            #footerDivLeft {
-                display:block;
-                width:33%;
-                float:left;
-            }
-
-            #footerDivLeft div {
-                display:block;
-                width:60%;
-                margin-left:40%;
-            }
-
-            #footerDivLeft div span {
-                display:block;
-                width:100%;
-            }
-
-            #footerDivRight {
-                display:block;
-                width:33%;
-                float:right;
-                font-size:14px;
-            }
-
-            #footerDivRight div {
-                display:block;
-                width:100px;
-                float:right;
-                margin-right:40%;
-                border-style:solid;
-                border-width:0px;
-                border-right-width:1px;
-            }
-
-            #footerDivRight div span {
-                display:block;
-                width:100%;
-                text-align:left;
-            }
-
-            #footerDivRight div a {
-                color:#ffffff;
-            }
-
-            #footerDivRight div a:hover {
-                text-decoration:underline;
-            }
-
-            #footerDivMiddle {
-                display:block;
-                width:34%;
-                margin-left:auto;
-                margin-right:auto;
-                text-align:center;
-                font-size:14px;
-            }
-
-            /* FOOTER END */
+            /* GLOBAL STYLE END */
 
             .mainContainer {
                 position:absolute;
@@ -133,101 +68,123 @@
                 left:0;
                 right:0;
                 overflow:auto;
+                font-family: 'Raleway', sans-serif;
             }
 
-            #purchaseDetailsContainer {
-                display:block;
-                width:66%;
-                margin-left:17%;
-                margin-right:17%;
-                margin-bottom:20px;
+            .purchaseDetailsContainer {
+                padding-top:50px;
+                padding-bottom:50px;
             }
 
-            #orderContainer {
-                display:block;
-                width:45%;
+            /* BEGIN Carousel */
+            #carousel-custom {
+                margin: 10px auto;
+                width: 100%;
+            }
+
+            #carousel-custom .carousel-outer {
+                position: relative;
+            }
+
+            .carousel-control.left, 
+            .carousel-control.right {
+               background-image:none !important;
+               filter:none !important;
+               opacity: 1;
+            }
+
+            #carousel-custom .carousel-indicators {
+                margin: 10px 0 0;
+                overflow: auto;
+                position: static;
+                text-align: left;
+                white-space: nowrap;
+                width: 100%;
+            }
+
+            #carousel-custom .carousel-indicators li {
+                background-color: transparent;
+                display: block;
+                float:left;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                height: auto;
+                width: auto;
+                margin: 0 !important;
+            }
+
+            #carousel-custom .carousel-indicators .indicator-wrapper {
+                width:25%;
                 height:auto;
-                float:left;
-                margin-bottom:30px;
             }
 
-            #orderContainer #productTitle {
-                display:block;
+            #carousel-custom .carousel-indicators li.active img {
+                opacity: 1;
+            }
+
+            #carousel-custom .carousel-indicators li img {
+                display: block;
                 width:100%;
-                margin-top:30px;
-                text-align:left;
-                font-size:34px;
-                font-weight:bold;
+                height:auto;
+                opacity: 0.5;
             }
 
-            #orderContainer p {
-                display:block;
-                width:95%;
-                margin:0px;
+            #carousel-custom .carousel-indicators li:hover img {
+                opacity: 0.75;
+            }
+
+            /* BEGIN Carousel */
+
+            .productTitle {
+                font-size:32px;
+            }
+
+            .productDescription {
+                font-size:14px;
                 margin-top:10px;
-                margin-right:5%;
-                text-align:justify;
-                font-size:15px;
             }
 
-            #orderContainer #includesHeader {
-                display:block;
-                width:90%;
-                margin:0px;
-                margin-top:15px;
-                margin-left:20%;
-                color:#777777;
-                font-size:15px;
-            }
-
-            #orderContainer ul {
+            .includeList {
+                margin-bottom:0;
                 list-style-type:none;
-                padding:0px;
-                margin:0px;
-                margin-left:25%;
-                padding-bottom:5px;
-                color:#777777;
-                font-size:15px;
+                clear:both;
             }
 
-            #orderContainer hr {
+            .purchaseDetailsContainer hr {
                 border:0px;
-                background-color:#cccccc;
+                border-bottom:1px solid #cccccc;
                 height:1px;
-                width:95%;
-                margin-top:15px;
-                margin-right:5%;
-                margin-bottom:15px;
+                width:auto;
+                padding-top:20px;
+                margin-top:0;
+                margin-bottom:20px;
+                margin-left:15px;
+                margin-right:15px;
                 clear:both;
             }
 
-            #orderContainer #colorHeader {
-                display:block;
-                width:50%;
-                float:left;
-                text-align:left;
-                font-size:18px;
+            .colorHeader {
+                display:inline-block;
+                width:auto;
+                font-size:16px;
             }
 
-            #orderContainer #colorLabel {
-                display:block;
-                width:45%;
-                margin-right:5%;
+            .colorLabel {
+                display:inline-block;
+                width:auto;
                 float:right;
-                text-align:right;
-                font-size:18px;
+                font-size:16px;
             }
 
-            #colorChoicesContainer {
-                display:block;
-                width:95%;
-                height:20px;
-                margin-right:5%;
-                clear:both;
-                text-align:right;
+            .colorChoicesContainer {
+                margin-top:5px;
             }
 
-            #colorChoicesContainer #blackColor {
+            .colorChoicesContainer div:hover {
+                cursor:pointer;
+            }
+
+            .colorChoicesContainer .blackCollar {
                 background-color:#000000;
                 display:block;
                 width:20px;
@@ -235,11 +192,11 @@
                 border-style:solid;
                 border-width:1px;
                 border-color:#aaaaaa;
-                float:right;
                 border-radius:10px;
+                float:right;
             }
 
-            #colorChoicesContainer #whiteColor {
+            .colorChoicesContainer .whiteCollar {
                 background-color:#ffffff;
                 display:block;
                 width:20px;
@@ -248,28 +205,31 @@
                 border-style:solid;
                 border-width:1px;
                 border-color:#aaaaaa;
-                float:right;
                 border-radius:10px;
+                float:right;
             }
 
-            #colorChoicesContainer div:hover {
-                cursor:pointer;
+            .sizeHeader {
+                display:inline-block;
+                width:auto;
+                font-size:16px;
             }
 
-            #orderContainer #quantityHeader {
+            .sizeDropdown {
+                width:200px;
+                float:right;
+                text-align:right;
+            }
+
+            .quantityHeader {
+                display:inline-block;
+                width:auto;
+                font-size:16px;
+            }
+
+            .quantitySelect {
                 display:block;
-                width:50%;
-                margin-bottom:15px;
-                float:left;
-                text-align:left;
-                font-size:18px;
-            }
-
-            #orderContainer #quantitySelect {
-                display:block;
-                width:45%;
-                margin-right:5%;
-                margin-bottom:15px;
+                width:auto;
                 float:right;
                 text-align:right;
             }
@@ -280,17 +240,13 @@
                 text-align: center;
             }
 
-            input.qtyplus { 
-                width:26px; 
-                height:26px;
-            }
-
+            input.qtyplus,
             input.qtyminus { 
                 width:26px; 
                 height:26px;
             }
 
-            #orderContainer #price {
+            /*#orderContainer #price {
                 display:block;
                 width:95%;
                 margin-right:5%;
@@ -413,7 +369,81 @@
             #features #middleFeature img {
                 width:60%;
                 height:auto;
+            }*/
+
+            /* FOOTER BEGIN */
+
+            #footer {
+                background-color:#252525; 
+                color:white;
+                width:100%;
+                padding-top:40px;
+                padding-bottom:40px;
+                overflow:hidden;
+
+                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
             }
+
+            #footerDivLeft {
+                display:block;
+                width:33%;
+                float:left;
+            }
+
+            #footerDivLeft div {
+                display:block;
+                width:60%;
+                margin-left:40%;
+            }
+
+            #footerDivLeft div span {
+                display:block;
+                width:100%;
+            }
+
+            #footerDivRight {
+                display:block;
+                width:33%;
+                float:right;
+                font-size:14px;
+            }
+
+            #footerDivRight div {
+                display:block;
+                width:100px;
+                float:right;
+                margin-right:40%;
+                border-style:solid;
+                border-width:0px;
+                border-right-width:1px;
+            }
+
+            #footerDivRight div span {
+                display:block;
+                width:100%;
+                text-align:left;
+            }
+
+            #footerDivRight div a {
+                color:#ffffff;
+            }
+
+            #footerDivRight div a:hover {
+                text-decoration:underline;
+            }
+
+            #footerDivMiddle {
+                display:block;
+                width:34%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                font-size:14px;
+            }
+
+            /* FOOTER END */
         </style>
     </head>
 
@@ -421,49 +451,132 @@
         {% include "navbar.html" %}
 
         <div class="mainContainer">
-            <div id="purchaseDetailsContainer">
-                <div id="orderContainer">
-                    <span id="productTitle">Eko Pet Beacon</span>
-                    <!-- <hr> -->
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
+            <div class="container-fluid">
+                <div class="row purchaseDetailsContainer">
+                    <div class="col-md-1"></div>
 
-                    <span id="includesHeader">Includes:</span>
+                    <div class="col-md-5">
+                        <div id='carousel-custom' class='carousel slide' data-interval="false" data-ride='carousel'>
+                            <div class='carousel-outer'>
+                                <!-- Wrapper for slides -->
+                                <div class='carousel-inner'>
+                                    <div class='item active'>
+                                        <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                    </div>
 
-                    <ul>
-                        <li>&#8227;&nbsp;&nbsp;Lorem Ipsum is</li>
-                        <li>&#8227;&nbsp;&nbsp;Lorem Ipsum is</li>
-                        <li>&#8227;&nbsp;&nbsp;Lorem Ipsum is</li>
-                    </ul>
+                                    <div class='item'>
+                                        <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                    </div>
 
-                    <hr>
+                                    <div class='item'>
+                                        <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                    </div>
+                                        
+                                    <div class='item'>
+                                        <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                    </div>
+                                </div>
+                                    
+                                <!-- Controls -->
+                                <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+                                    <span class='glyphicon glyphicon-chevron-left'></span>
+                                </a>
 
-                    <span id="colorHeader">Color</span>
-                    <span id="colorLabel">Black</span>
+                                <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+                                    <span class='glyphicon glyphicon-chevron-right'></span>
+                                </a>
+                            </div>
+                            
+                            <!-- Indicators -->
+                            <ol class='carousel-indicators'>
+                                <li data-target='#carousel-custom' data-slide-to='0' class='active indicator-wrapper'>
+                                    <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                </li>
 
-                    <div id="colorChoicesContainer">
-                        <div id="blackColor" onclick="selectBlack('blackColor')"></div>
-                        <div id="whiteColor" onclick="selectWhite('whiteColor')"></div>
+                                <li data-target='#carousel-custom' data-slide-to='1' class="indicator-wrapper">
+                                    <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                </li>
+
+                                <li data-target='#carousel-custom' data-slide-to='2' class="indicator-wrapper">
+                                    <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                </li>
+
+                                <li data-target='#carousel-custom' data-slide-to='3' class="indicator-wrapper">
+                                    <img src='/static/media/site_images/image_placeholder_2.png' alt='' />
+                                </li>
+                            </ol>
+                        </div>
                     </div>
 
-                    <hr>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-xs-12 productTitle">
+                                <span>Kynect Monitoring Collar</span>
+                            </div>
 
-                    <span id="quantityHeader">Quantity</span>
-                    <span id="quantitySelect">
-                        <input type='button' value='-' class='qtyminus' field='quantity' />
-                        <input type='text' name='quantity' value='1' class='qty' />
-                        <input type='button' value='+' class='qtyplus' field='quantity' />
-                    </span>
+                            <div class="col-xs-12 productDescription">
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                </p>
+                            </div>
 
-                    <hr>
+                            <div class="col-xs-12">
+                                <ul class="includeList">
+                                    <li>- Lorem Ipsum is simply dummy</li>
+                                    <li>- Lorem Ipsum is</li>
+                                    <li>- Lorem Ipsum is simply</li>
+                                    <li>- Lorem Ipsum is simply dummy text</li>
+                                </ul>
+                            </div>
 
-                    <span id="price">$139.99</span>
+                            <hr>
 
-                    <span id="checkoutContainer">
-                        <button type="button" class="btn btn-info">Checkout</button>
-                    </span>
+                            <div class="col-xs-12">
+                                <div class="colorHeader"><b>Color:</b>&nbsp;&nbsp;</div>
+                                <div class="colorLabel" id="colorLabel">Black</div>
+                            </div>
+
+                            <div class="col-xs-12 colorChoicesContainer">
+                                <div class="blackCollar" id="blackCollar" onclick="selectBlack('blackCollar')"></div>
+                                <div class="whiteCollar" id="whiteCollar" onclick="selectWhite('whiteCollar')"></div>
+                            </div>
+
+                            <hr>
+
+                            <div class="col-xs-12">
+                                <div class="sizeHeader"><b>Size:</b>&nbsp;&nbsp;</div>
+
+                                <select class="form-control sizeDropdown">
+                                    <option>Small</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                    <option>Extra Large</option>
+                                </select>
+
+                            </div>
+
+                            <hr>
+
+                            <div class="col-xs-12">
+                                <div class="quantityHeader"><b>Quantity:</b>&nbsp;&nbsp;</div>
+
+                                <div class="quantitySelect">
+                                    <input type='button' value='-' class='qtyminus' field='quantity' />
+                                    <input type='text' name='quantity' value='1' class='qty' />
+                                    <input type='button' value='+' class='qtyplus' field='quantity' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1"></div>
                 </div>
+            </div>
+
+            {% include "footer.html" %}
+        </div>
+
+        <!--
 
                 <div id="imagesContainer">
                     <img src="/static/media/site_images/image_placeholder_2.png">
@@ -509,7 +622,7 @@
             </div>
 
             {% include "footer.html" %}
-        </div>
+        </div> -->
         
         <!-- SCRIPTS GO HERE -->
 
@@ -535,8 +648,25 @@
                 document.getElementById(div).style.display = 'block';
             }
 
-            // Function for Quantity Select
+            // Function to select black collar
+            function selectBlack(div) {
+                document.getElementById(div).style.borderColor = 'lightblue';
+                document.getElementById('whiteCollar').style.borderColor = '#aaaaaa';
+                document.getElementById('colorLabel').textContent = 'Black';
+            }
+
+            // Function to select white collar
+            function selectWhite(div) {
+                document.getElementById(div).style.borderColor = 'lightblue';
+                document.getElementById('blackCollar').style.borderColor = '#aaaaaa';
+                document.getElementById('colorLabel').textContent = 'White';
+            }
+
+
+
+            // JQuery Functions
             jQuery(document).ready(function(){
+                // BEGIN Function for Quantity Select
                 // This button will increment the value
                 $('.qtyplus').click(function(e){
                     // Stop acting like a button
@@ -550,8 +680,8 @@
                         // Increment
                         $('input[name='+fieldName+']').val(currentVal + 1);
                     } else {
-                        // Otherwise put a 0 there
-                        $('input[name='+fieldName+']').val(0);
+                        // Otherwise put a 1 there
+                        $('input[name='+fieldName+']').val(1);
                     }
                 });
                 // This button will decrement the value till 0
@@ -563,27 +693,16 @@
                     // Get its current value
                     var currentVal = parseInt($('input[name='+fieldName+']').val());
                     // If it isn't undefined or its greater than 0
-                    if (!isNaN(currentVal) && currentVal > 0) {
+                    if (!isNaN(currentVal) && currentVal > 1) {
                         // Decrement one
                         $('input[name='+fieldName+']').val(currentVal - 1);
                     } else {
                         // Otherwise put a 0 there
-                        $('input[name='+fieldName+']').val(0);
+                        $('input[name='+fieldName+']').val(1);
                     }
                 });
+                // END Function for Quantity Select
             });
-
-            function selectBlack(div) {
-                document.getElementById(div).style.borderColor = 'lightblue';
-                document.getElementById('whiteColor').style.borderColor = '#aaaaaa';
-                document.getElementById('colorLabel').textContent = 'Black';
-            }
-
-            function selectWhite(div) {
-                document.getElementById(div).style.borderColor = 'lightblue';
-                document.getElementById('blackColor').style.borderColor = '#aaaaaa';
-                document.getElementById('colorLabel').textContent = 'White';
-            }
         </script>
 
         <!-- SCIPTS END HERE -->
