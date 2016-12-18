@@ -26,14 +26,28 @@
 
             /* NAVBAR BEGIN */
 
-            #navbar {
+            .navbar {
                 border-width:0;
                 font-family: 'Alegreya Sans SC', sans-serif;
             }
 
-            .navLogo {
+            .navBrandName {
+                padding-top:10px;
+                padding-bottom:10px;
                 font-weight: bold;
+                font-size:24px;
                 font-family: 'Raleway', sans-serif;
+            }
+
+            .navBrandName img {
+                display:inline-block;
+                width:30px;
+                height:30px;
+                margin-right:5px;
+            }
+
+            .navBrandName span {
+                vertical-align:middle;
             }
 
             .buyNow {
@@ -51,6 +65,239 @@
             }
 
             /* NAVBAR END */
+
+            .mainContainer {
+                position:absolute;
+                top:50px;
+                bottom:0;
+                left:0;
+                right:0;
+                overflow-y:auto;
+                overflow-x:hidden;
+            }
+
+            .mainDiv1 {
+                display:block;
+                height:85%;
+                width:100%;
+                clear:both;
+
+                /* cover background for homepage */
+                background: url(/static/media/site_images/dog_sunset_background.jpg) no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .quoteContainer {
+                display:table;
+                height:100%;
+                width:100%;
+                color:#000000;
+                font-size:34px;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .quoteContainer span {
+                display:table-cell;
+                color:white;
+                width:100%;
+                text-align:left;
+                padding-right:60%;
+                padding-left:10%;
+                vertical-align:middle;
+            }
+
+            .quoteContainer span b {
+                font-size:32px;
+            }
+
+            .newsStripDiv {
+                background-color:#f2f2f2;
+                display:table;
+                width:100%;
+                min-height:15%;
+            }
+
+            .newsStripDiv .row {
+                text-align:center;
+                display:table-cell;
+                vertical-align:middle;
+            }
+
+            .newsStripDiv img {
+                width:auto;
+                height:68px;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+
+            .mainDiv2 {
+                background-color:#ffffff;
+                display:table;
+                width:100%;
+                min-height:500px;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .mainDiv2 .row {
+                display:table-cell;
+                padding-top:45px;
+                padding-bottom:45px;
+                text-align:center;
+                vertical-align:middle;
+                font-size:25px;
+            }
+
+            .mainDiv2 span {
+                display:block;
+                width:80%;
+                margin:35px auto;
+                text-align:center;
+            }
+
+            .mainDiv3 {
+                background-color:#f5f5f5;
+                display:table;
+                width:100%;
+                min-height:700px;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .custQuotesHeaderContainer {
+                background-color:#00ccff; /*#862d86 <-- Purple*/
+                padding-top:40px;
+                padding-bottom:40px;
+            }
+
+            .custQuotesHeaderContainer .custQuotesHeader {
+                display:block;
+                text-align:center;
+                font-size:40px;
+                color:#ffffff;
+            }
+
+            .custQuotesHeaderContainer .custQuotesDescription {
+                display:block;
+                text-align:center;
+                font-size:14px;
+                color:#ffffff;
+            }
+
+            .custQuotesContainer {
+                padding-top:35px;
+                padding-bottom:35px;
+            }
+
+            .custTest {
+                margin-top:35px;
+                margin-bottom:35px;
+                padding-left:5%;
+                padding-right:5%;
+            }
+
+            .custTest img {
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                width:200px;
+            }
+
+            .custTest p {
+                display:block;
+                text-align:center;
+                margin-top:20px;
+            }
+
+            .custTest span {
+                display:block;
+                text-align:center;
+                margin-top:5px;
+            }
+
+            /*.mainDiv3 .custQuotesContainer {
+                min-height:800px;
+                padding-top:50px;
+            }
+
+            .mainDiv3 .custQuoteBigImage {
+                height:800px;
+                text-align:center;
+                overflow:hidden;
+            }
+
+            .mainDiv3 .custQuoteBigImage img {
+                width:auto;
+                height:800px;
+                vertical-align:bottom;
+            }
+
+            .mainDiv3 .custQuotesContainer .row {
+                margin-top:60px;
+            }
+
+            .mainDiv3 .botThree {
+                padding-top:40px;
+            }
+
+            .quoteBoxLeft {
+                position: relative;
+                width: 80%;
+                min-height: 115px;
+                padding: 20px;
+                font-size:18px;
+                float:left;
+                background: #b3f0ff;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                -webkit-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                -moz-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+            }
+
+            .quoteBoxLeft:after {
+                content:"";
+                position: absolute;
+                bottom: -15px;
+                left: 50px;
+                border-style: solid;
+                border-width: 15px 15px 0;
+                border-color: #b3f0ff transparent;
+                display: block;
+                width: 0;
+                z-index: 1;
+            }
+
+            .quoteBoxRight {
+                position: relative;
+                width: 80%;
+                min-height: 115px;
+                padding: 20px;
+                font-size:18px;
+                float:right;
+                background: #ffffff;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                -webkit-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                -moz-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+                box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
+            }
+
+            .quoteBoxRight:after {
+                content:"";
+                position: absolute;
+                bottom: -15px;
+                right: 50px;
+                border-style: solid;
+                border-width: 15px 15px 0;
+                border-color: #ffffff transparent;
+                display: block;
+                width: 0;
+                z-index: 1;
+            }*/
 
             /* FOOTER BEGIN */
 
@@ -126,185 +373,24 @@
 
             /* FOOTER END */
 
-            .mainContainer {
-                position:absolute;
-                top:50px;
-                bottom:0;
-                left:0;
-                right:0;
-                overflow-y:auto;
-                overflow-x:hidden;
+            /* BEGIN MEDIA QUERIES */
+
+            @media (max-width: 768px) {             /* For XS and SM screens  */
+                .quoteContainer {
+                    font-size:28px;
+                }
+
+                .quoteContainer span {
+                    padding-right:38%;
+                    padding-left:4%;
+                }
+
+                .quoteContainer span b {
+                    font-size:26px;
+                }   
             }
 
-            #imageQuoteDiv {
-                display:block;
-                height:85%;
-                width:100%;
-                clear:both;
-
-                /* cover background for homepage */
-                background: url(/static/media/site_images/dog_sunset_background.jpg) no-repeat center center; 
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-
-            #quoteContainer {
-                display:table;
-                height:100%;
-                width:100%;
-                color:#000000;
-                font-size:36px;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            #quoteContainer span {
-                display:table-cell;
-                color:white;
-                width:100%;
-                text-align:left;
-                padding-right:60%;
-                padding-left:10%;
-                vertical-align:middle;
-            }
-
-            #newsStripDiv {
-                background-color:#f2f2f2;
-                display:table;
-                width:100%;
-                min-height:15%;
-            }
-
-            #newsStripDiv .row {
-                text-align:center;
-                display:table-cell;
-                vertical-align:middle;
-            }
-
-            #newsStripDiv img {
-                width:auto;
-                height:80px;
-                padding-top:20px;
-                padding-bottom:20px;
-            }
-
-            #pubQuotesContainer {
-                background-color:#ffffff;
-                display:table;
-                width:100%;
-                min-height:500px;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            #pubQuotesContainer .row {
-                text-align:center;
-                display:table-cell;
-                vertical-align:middle;
-                font-size:25px;
-            }
-
-            #pubQuotesContainer span {
-                display:block;
-                width:70%;
-                margin-left:auto;
-                margin-right:auto;
-                text-align:center;
-                padding-top:75px;
-                padding-bottom:75px;
-            }
-
-            #custQuotesContainer {
-                background-color:#f5f5f5;
-                display:table;
-                width:100%;
-                min-height:700px;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            #custQuotesContainer > .row {
-                min-height:800px;
-                padding-top:50px;
-            }
-
-            #custQuotesContainer .custQuoteBigImage {
-                height:800px;
-                text-align:center;
-                overflow:hidden;
-            }
-
-            #custQuotesContainer .custQuoteBigImage img {
-                width:auto;
-                height:800px;
-            }
-
-            #custQuotesContainer .row .row {
-                min-height:700px;
-                padding-top:85px;
-                padding-bottom:85px;
-            }
-
-            #custQuotesContainer .botThree {
-                padding-top:40px;
-            }
-
-            .quoteBoxLeft {
-                position: relative;
-                width: 80%;
-                min-height: 115px;
-                padding: 20px;
-                font-size:18px;
-                float:left;
-                background: #00ccff;
-                -webkit-border-radius: 6px;
-                -moz-border-radius: 6px;
-                border-radius: 6px;
-                -webkit-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
-                -moz-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
-                box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
-            }
-
-            .quoteBoxLeft:after {
-                content:"";
-                position: absolute;
-                bottom: -15px;
-                left: 50px;
-                border-style: solid;
-                border-width: 15px 15px 0;
-                border-color: #00ccff transparent;
-                display: block;
-                width: 0;
-                z-index: 1;
-            }
-
-            .quoteBoxRight {
-                position: relative;
-                width: 80%;
-                min-height: 115px;
-                padding: 20px;
-                font-size:18px;
-                float:right;
-                background: #ffffff;
-                -webkit-border-radius: 6px;
-                -moz-border-radius: 6px;
-                border-radius: 6px;
-                -webkit-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
-                -moz-box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
-                box-shadow: 3px 3px 13px 0px rgba(60, 60, 60, 0.2);
-            }
-
-            .quoteBoxRight:after {
-                content:"";
-                position: absolute;
-                bottom: -15px;
-                right: 50px;
-                border-style: solid;
-                border-width: 15px 15px 0;
-                border-color: #ffffff transparent;
-                display: block;
-                width: 0;
-                z-index: 1;
-            }
+            /* END MEDIA QUERIES */
         </style>
     </head>
 
@@ -312,48 +398,48 @@
         {% include "navbar.html" %}
 
         <div class="mainContainer">
-            <div id="imageQuoteDiv">
-                <div id="quoteContainer">
+            <div class="mainDiv1">
+                <div class="quoteContainer">
                     <span>
-                        <i>"Keeping Track of my dogs activites has never been so easy!"</i>
+                        <i>"Keeping Track of my dog has never been so easy!"</i>
                         <br />
                         <b>- John D.</b>
                     </span>
                 </div>
             </div>
 
-            <div id="newsStripDiv" class="container-fluid">
+            <div class="container-fluid newsStripDiv">
                 <div class="row">
-                    <div class="col-xs-4 col-md-2">
+                    <div class="col-xs-6 col-sm-2">
                         <img src="/static/media/site_images/ny_times_logo.png">
                     </div>
 
-                    <div class="col-xs-4 col-md-2">
+                    <div class="col-xs-6 col-sm-2">
                         <img src="/static/media/site_images/nbc_news_logo.png">
                     </div>
 
-                    <div class="col-xs-4 col-md-2">
+                    <div class="col-xs-6  col-sm-2">
                         <img src="/static/media/site_images/abc_news_logo.png">
                     </div>
 
-                    <div class="col-xs-4 col-md-2">
+                    <div class="col-xs-6 col-sm-2">
                         <img src="/static/media/site_images/bbc_shop_logo.png">
                     </div>
 
-                    <div class="col-xs-4 col-md-2">
+                    <div class="col-xs-6 col-sm-2">
                         <img src="/static/media/site_images/tech_insider_logo.png">
                     </div>
 
-                    <div class="col-xs-4 col-md-2">
+                    <div class="col-xs-6 col-sm-2">
                         <img src="/static/media/site_images/business_insider_logo.png">
                     </div>
                 </div>
             </div>
 
-            <div id="pubQuotesContainer" class="container-fluid">
+            <div class="container-fluid mainDiv2">
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
-                        <span>
+                        <span class="firstQuote">
                             <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                             <br>
                             <b>- NY Times</b>
@@ -361,7 +447,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6">
-                        <span>
+                        <span class="middleQuote">
                             <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                             <br>
                             <b>- WSJ</b>
@@ -369,7 +455,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-12">
-                        <span>
+                        <span class="middleQuote">
                             <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                             <br>
                             <b>- BBC News</b>
@@ -377,7 +463,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6">
-                        <span>
+                        <span class="middleQuote">
                             <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                             <br>
                             <b>- Tech Insider</b>
@@ -385,7 +471,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6">
-                        <span>
+                        <span class="lastQuote">
                             <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                             <br>
                             <b>- ABC News</b>
@@ -394,9 +480,80 @@
                 </div>
             </div>
 
-            <div id="custQuotesContainer" class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
+            <div class="container-fluid mainDiv3">
+                <div class="row custQuotesHeaderContainer">
+                    <div class="col-xs-12">
+                        <span class="custQuotesHeader">CUSTOMER TESTIMONIALS</span>
+                        <span class="custQuotesDescription">See what customers say about the Kynect Monitoring Collar</span>
+                    </div>
+                </div>
+
+                <div class="row custQuotesContainer">
+                    <div class="col-xs-12 col-sm-6 col-md-4 custTest">
+                        <img src="/static/media/site_images/placeholder_testimonial_portrait_circle_2.png">
+
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                        </p>
+
+                        <span><b>- Marco P.</b></span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 custTest">
+                        <img src="/static/media/site_images/placeholder_testimonial_portrait_circle_2.png">
+
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+                        </p>
+
+                        <span><b>- Charles D.</b></span>
+                    </div>
+
+                    <!-- YET TO IMPLEMENT - Ghost: Prevents wierd stacking of columns when shrinking screen *** --> 
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 custTest">
+                        <img src="/static/media/site_images/placeholder_testimonial_portrait_circle_2.png">
+
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s."
+                        </p>
+
+                        <span><b>- Amanda S.</b></span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 custTest">
+                        <img src="/static/media/site_images/placeholder_testimonial_portrait_circle_2.png">
+
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+                        </p>
+
+                        <span><b>- Jim M.</b></span>
+                    </div>
+
+                    <!-- YET TO IMPLEMENT - Ghost: Prevents wierd stacking of columns when shrinking screen -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 custTest">
+                        <img src="/static/media/site_images/placeholder_testimonial_portrait_circle_2.png">
+
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s."
+                        </p>
+
+                        <span><b>- Duncan S.</b></span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 custTest">
+                        <img src="/static/media/site_images/placeholder_testimonial_portrait_circle_2.png">
+
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                        </p>
+
+                        <span><b>- Joe K.</b></span>
+                    </div>
+
+                    <!-- <div class="col-xs-1 col-md-1"></div>
 
                     <div class="col-xs-10 col-md-5">
                         <div class="row">
@@ -428,19 +585,19 @@
                                 <div class="quoteBoxRight">
                                     <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</i>
                                     <br>
-                                    - Jim M..
+                                    - Jim M.
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xs-1 hidden-sm-up"></div>
+                    <div class="col-xs-1"></div>
 
-                    <div class="col-xs-12 col-md-6 custQuoteBigImage">
+                    <div class="col-sm-12 col-md-6 hidden-xs custQuoteBigImage">
                         <img src="/static/media/site_images/hand_holding_iphone.png">
                     </div>
 
-                    <div class="col-xs-1 col-md-0"></div>
+                    <div class="col-xs-1 col-md-0"></div> -->
                 </div>
             </div>
 

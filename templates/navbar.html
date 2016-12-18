@@ -2,22 +2,30 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed dropdownButton" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand navLogo" href="/home/">kynect</a>
-            <a class="buyNow navbar-text pull-right visible-xs" href="/purchase"><b>BUY NOW</b></span></a>
+            <a class="navbar-brand nav-brand-name" href="/home/">
+                <img src="/static/media/site_images/kynect_logo_1.png">
+                <span>kynect</span>
+            </a>
+
+            <button type="button" class="btn btn-default navbar-btn pull-right visible-xs nav-button" onClick="document.getElementById('subscribeId').scrollIntoView();">UPDATED ME</button>
+            
+            <!-- IMPLEMENT THIS LINE BELOW WHEN BACKEND IS BEING SET UP
+            <a class="navbar-text pull-right visible-xs buyNow" href="/purchase"><b>BUY NOW</b></a> -->
         </div>
 
         <div class="navbar-collapse collapse">
-        <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
-                    <!-- Appears in Screen XS -->
+                <!-- BEGIN: IMPLEMENT THIS WHEN BACKEND IS BEING SET UP -->
+
+                <!-- {% if user.is_authenticated %}
                     <li class="dropdown navLinks visible-xs">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT&nbsp&nbsp<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span></a>
 
@@ -33,13 +41,12 @@
                         </ul>
                     </li>
 
-                    <li class="navLinks hidden-xs"><a href="/purchase"><b>BUY NOW</b></span></a></li>
-                    <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
-                    <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
-                    <li class="navLinks"><a href="/contact_us">CONTACT US</span></a></li>
-                    <li class="navLinks"><a href="/help">HELP</span></a></li>
+                    <li class="navLinks hidden-xs"><a href="/purchase"><span><b>BUY NOW</b></span></a></li>
+                    <li class="navLinks"><a href="/testimonials"><span>TESTIMONIALS</span></a></li>
+                    <li class="navLinks"><a href="/team"><span>OUR TEAM</span></a></li>
+                    <li class="navLinks"><a href="/contact_us"><span>CONTACT US</span></a></li>
+                    <li class="navLinks"><a href="/help"><span>HELP</span></a></li>
 
-                    <!-- Appears in Screen SM and Up -->
                     <li class="dropdown navLinks hidden-xs">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:12px;"></span>&nbsp&nbsp&nbsp ACCOUNT</a>
 
@@ -55,14 +62,22 @@
                         </ul>
                     </li>
                 {% else  %}
-                    <li class="navLinks hidden-xs"><a href="/purchase"><b>BUY NOW</b></span></a></li>
-                    <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
-                    <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
-                    <li class="navLinks"><a href="/contact_us">CONTACT US</span></a></li>
-                    <li class="navLinks"><a href="/help">HELP</span></a></li>                                    
-                    <li class="navLinks hidden-xs"><a href="/login"><u>LOGIN</u></a></li>
-                    <li class="navLinks visible-xs"><a href="/login"><b>LOGIN</b></a></li>
+                    <li class="navLinks hidden-xs"><a href="/purchase"><span><b>BUY NOW</b></span></a></li>
+                    <li class="navLinks"><a href="/testimonials"><span>TESTIMONIALS</span></a></li>
+                    <li class="navLinks"><a href="/team"><span>OUR TEAM</span></a></li>
+                    <li class="navLinks"><a href="/contact_us"><span>CONTACT US</span></a></li>
+                    <li class="navLinks"><a href="/help"><span>HELP</span></a></li>                                    
+                    <li class="navLinks hidden-xs"><a href="/login"><span><u>LOGIN</u></span></a></li>
+                    <li class="navLinks visible-xs"><a href="/login"><span><b>LOGIN</b></span></a></li>
                 {% endif %}
+
+                <!-- END: IMPLEMENT THIS WHEN BACKEND IS BEING SET UP -->
+
+                <li class="hidden-xs"><button type="button" class="btn btn-default navbar-btn nav-button" onClick="document.getElementById('subscribeId').scrollIntoView();">UPDATE ME</button></li>
+                <li class="nav-links"><a href="/how_it_works"><span>HOW IT WORKS</span></a></li>
+                <li class="nav-links"><a href="/features"><span>FEATURES</span></a></li>
+                <li class="nav-links"><a href="/about_us"><span>ABOUT US</span></a></li>
+                <li class="nav-links"><a href="/FAQ"><span>FAQ</span></a></li>
             </ul>
         </div>
     </div> <!-- /.container-fluid -->

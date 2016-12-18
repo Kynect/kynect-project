@@ -17,56 +17,52 @@ def home(request):
 
 	return render(request, 'index.html', context)
 
-def help(request):
-	return render(request, 'help.html')
+def how_it_works(request):
+	return render(request, 'how_it_works.html')
 
-def testimonials(request):
-	return render(request, 'testimonials.html')
+def features(request):
+	return render(request, 'features.html')
 
-def team(request):
-	return render(request, 'team.html')
+def about_us(request):
+	return render(request, 'about_us.html')
 
-def contact_us(request):
-	return render(request, 'contact_us.html')
+def FAQ(request):
+	return render(request, 'FAQ.html')
 
-def purchase(request):
-	return render(request, 'purchase.html')
+# *** IMPLEMENT BELOW WHEN BACK END IS BEING SET UP ***
 
-def profile(request):
-	if not request.user.is_authenticated():
-		return redirect('/home')
+# def profile(request):
+# 	if not request.user.is_authenticated():
+# 		return redirect('/home')
 
-	current_user = request.user
+# 	current_user = request.user
 
-	context = {
-		# include contexts here
-	}
+# 	context = {
+# 		# include contexts here
+# 	}
 
-	return render(request, 'profile.html', context)
+# 	return render(request, 'profile.html', context)
 
-def notifications(request):
-	if not request.user.is_authenticated():
-		return redirect('/home')
+# def notifications(request):
+# 	if not request.user.is_authenticated():
+# 		return redirect('/home')
 
-	current_user = request.user
+# 	current_user = request.user
 
-	context = {
-		# include contexts here
-	}
+# 	context = {
+# 		# include contexts here
+# 	}
 
-	return render(request, 'notifications.html', context)
+# 	return render(request, 'notifications.html', context)
 
-def account_settings(request):
-	if not request.user.is_authenticated():
-		return redirect('/home')
+# def account_settings(request):
+# 	if not request.user.is_authenticated():
+# 		return redirect('/home')
 
-	current_user = request.user
+# 	current_user = request.user
 
-	context = {
-		# include contexts here
-	}
+# 	context = {
+# 		# include contexts here
+# 	}
 
-	return render(request, 'account_settings.html', context)
-
-def sign_up(request):
-	return render(request, 'sign_up.html')
+# 	return render(request, 'account_settings.html', context)

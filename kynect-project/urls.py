@@ -23,15 +23,13 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', kynect.views.home, name="home"),
 	url(r'^home/', kynect.views.home),
-    url(r'^help/', kynect.views.help),
-    url(r'^team/', kynect.views.team),
-    url(r'^contact_us/', kynect.views.contact_us),
-    url(r'^testimonials/', kynect.views.testimonials),
-    url(r'^purchase/', kynect.views.purchase),
-    url(r'^login/$', views.login, {'template_name': 'login.html', 'authentication_form': LoginForm}, name="login"),
-    url(r'^logout/', views.logout, {'next_page': '/home'}),
-    url(r'^profile/', kynect.views.profile),
-    url(r'^notifications/', kynect.views.notifications),
-    url(r'^account_settings/', kynect.views.account_settings),
-    url(r'^sign_up/', kynect.views.sign_up),
+    url(r'^how_it_works/', kynect.views.how_it_works),
+    url(r'^features/', kynect.views.features),
+    url(r'^about_us/', kynect.views.about_us),
+    url(r'^FAQ/', kynect.views.FAQ),
+
+    # *** IMPLEMENT BELOW ONCE BACKEND IS BEING SET UP ***
+
+    # url(r'^login/$', views.login, {'template_name': 'login.html', 'authentication_form': LoginForm}, name="login"),
+    # url(r'^logout/', views.logout, {'next_page': '/home'}),
 ]

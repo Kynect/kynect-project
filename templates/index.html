@@ -6,445 +6,76 @@
         <title>Kynect - Monitoring Collar</title>
         <meta charset=utf-8 />
 
+        <!-- Bootstrap Stylesheets -->
         <link   rel="stylesheet" 
                 href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+
+        <!-- Master Stylesheet -->
+        <link   rel="stylesheet" 
+                href="{% static "css/master.css" %}" />
+
+        <!-- Google Web Fonts -->
         <link   rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=Raleway">
+                href="https://fonts.googleapis.com/css?family=">
         <link   href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" 
                 rel="stylesheet">
+        <link   href="https://fonts.googleapis.com/css?family=Muli" 
+                rel="stylesheet">    
 
+        <!-- JQuery & JavaScript -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
-
-
-        <style>
-            html, body {
-                height:100%;
-                width:100%;
-                margin:0px;
-                padding:0px;
-            }
-
-            /* NAVBAR BEGIN */
-
-            #navbar {
-                border-width:0;
-                font-family: 'Alegreya Sans SC', sans-serif;
-            }
-
-            .navLogo {
-                font-weight: bold;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            .buyNow {
-                margin-right:15px;
-            }
-
-            .navLinks:hover {
-                background-color:#dddddd;
-            }
-
-            .navbar-nav {
-                border:none;
-                margin-top:0;
-                margin-bottom:0;
-            }
-
-            /* NAVBAR END */
-
-            .mainContainer {
-                position:absolute;
-                top:50px;
-                bottom:0;
-                left:0;
-                right:0;
-                overflow-y:auto;
-            }
-
-            #mainDiv1 {
-                display:block;
-                height:100%;
-                min-height:100%;
-                width:100%;
-                
-                /* Cover background for homepage */
-                background: url(/static/media/site_images/dog_in_field.png) no-repeat center center; 
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-
-            #videoContainer {
-                display:block;
-                width:55%;
-                color:#ffffff;
-                font-family: 'Raleway', sans-serif;
-
-                /* VerticallyCenter Text */
-                position: relative;
-                top: 50%;
-                left: 70%;
-                -webkit-transform: translateY(-50%) translateX(-50%);
-                -ms-transform: translateY(-50%) translate(-50%);
-                transform: translateY(-50%) translate(-50%);
-            }
-
-            #videoContainer > span {
-                display:block;
-                width:100%;
-                text-align:center;
-                font-size:40px;
-            }
-
-            #videoButton {
-                display:block;
-                margin-left:auto;
-                margin-right:auto;
-                height:40px;
-                width:150px;
-                text-align:center;
-                border-style:solid;
-                border-width:3px;
-                border-radius:20px;
-                font-size:16px;
-            }
-
-            /* The ghost, nudged to maintain perfect centering */
-            #videoButton:before {
-                content:'';
-                display:inline-block;
-                height:100%;
-                vertical-align:middle;
-                margin-right:-0.25em; /* Adjusts for spacing */
-            }
-
-            #videoButton div {
-                display:inline-block;
-                vertical-align:middle;
-            }
-
-            #videoButton span {
-                display:inline-block;
-                width:auto;
-            }
-
-            #videoButton img {
-                width:16px; 
-                height:16px;
-            }
-
-            #videoButton:hover {
-                background-color:rgba(210,210,210,0.2);
-                cursor:pointer;
-                cursor:hand;
-            }
-
-            /* BEGIN POPUP */
-
-            .ontop {
-                display:none;
-                z-index:999;
-                width:100%;
-                height:100%;
-                padding-top:50px;
-                top:0;
-                left:0;
-                position:fixed;
-                background-color:rgba(40,40,40,0.9);
-                color:#000000;
-            }
-
-            .popup {
-                width:700px;
-                height:393px;
-                color:#000000;
-                background-color:#ffffff;
-
-                /* Center Popup */
-                position: relative;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translateY(-50%) translateX(-50%);
-                -ms-transform: translateY(-50%) translate(-50%);
-                transform: translateY(-50%) translate(-50%);
-            }
-
-            .popup img {
-                position:absolute;
-                left:100%;
-                bottom:100%;
-            }
-
-            .popup img:hover {
-                cursor:pointer;
-                cursor:hand;
-            }
-
-            /* END POPUP */
-
-            .mainDiv2 > .row {
-                padding-top:100px;
-                padding-bottom:100px;
-            }
-
-            .briefImage-xs {
-                text-align:center;
-            }
-
-            .briefImage-xs img {
-                width:290px;
-                height:auto;
-            }
-
-            .briefImage-sm {
-                text-align:center;
-            }
-
-            .briefImage-sm img {
-                width:400px;
-                height:auto;
-            }
-
-            .brief {
-                padding-top:60px;
-                text-align:center;
-            }
-
-            .brief span {
-                display:inline-block;
-                width:70%;
-                font-size:26px;
-                color:#141414;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            .brief p {
-                display:inline-block;
-                width:90%;
-                padding-top:10px;
-                font-size:14px;
-                color:#999999;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            .mainDiv3 {
-                background-color:#f9f9f9;
-                padding-top:100px;
-                padding-bottom:100px;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            .featHeader {
-                display:block;
-                text-align:center;
-                font-family: 'Raleway', sans-serif;
-                font-size:26px;
-            }
-
-            .featDescriptionTop {
-                display:block;
-                text-align:center;
-                font-family: 'Raleway', sans-serif;
-                font-size:14px;
-            }
-
-            .featRow {
-                padding-top:40px;
-            }
-
-            .featMainImg-xs {
-                padding-left:0 !important;
-                padding-right:0 !important;
-                text-align:center;
-            }
-
-            .featMainImg-xs img {
-                width:290px;
-                height:240px;
-            }
-
-            .featMainImg-sm {
-                padding-left:0 !important;
-                padding-right:0 !important;
-                text-align:center;
-            }
-
-            .featMainImg-sm img {
-                width:550px;
-                height:450px;
-            }
-
-            .featMainImg-lg {
-                padding-left:0 !important;
-                padding-right:0 !important;
-                text-align:center;
-            }
-
-            .featMainImg-lg img {
-                width:380px;
-                height:310px;
-            }
-
-            .featContainerLeft .row {
-                margin-top:30px;
-            }
-
-            .featContainerRight .row {
-                margin-top:30px;
-            }
-
-            .feats-xs div {
-                display:block;
-                width:250px;
-                margin-left:auto;
-                margin-right:auto;
-            }
-
-            .feats-xs img {
-                margin-right:10px;
-                width:60px;
-                height:60px;
-            }
-
-            .featsLeft {
-                text-align:right;
-            }
-
-            .featsLeft img {
-                margin-left:10px;
-                width:60px;
-                height:60px;
-            }
-
-            .featsRight {
-                text-align:left;
-            }
-
-            .featsRight img {
-                margin-right:10px;
-                width:60px;
-                height:60px;
-            }
-
-            /* FOOTER BEGIN */
-
-            #footer { 
-                background-color:#252525; 
-                color:white;
-                width:100%; 
-                padding-top:40px;
-                padding-bottom:40px;
-                overflow:hidden;
-
-                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-            }
-
-            #footerDivLeft {
-                display:block;
-                width:33%;
-                float:left;
-            }
-
-            #footerDivLeft div {
-                display:block;
-                width:60%;
-                margin-left:40%;
-            }
-
-            #footerDivLeft div span {
-                display:block;
-                width:100%;
-            }
-
-            #footerDivRight {
-                display:block;
-                width:33%;
-                float:right;
-                font-size:14px;
-            }
-
-            #footerDivRight div {
-                display:block;
-                width:100px;
-                float:right;
-                margin-right:40%;
-                border-style:solid;
-                border-width:0px;
-                border-right-width:1px;
-            }
-
-            #footerDivRight div span {
-                display:block;
-                width:100%;
-                text-align:left;
-            }
-
-            #footerDivRight div a {
-                color:#ffffff;
-            }
-
-            #footerDivRight div a:hover {
-                text-decoration:underline;
-            }
-
-            #footerDivMiddle {
-                display:block;
-                width:34%;
-                margin-left:auto;
-                margin-right:auto;
-                text-align:center;
-                font-size:14px;
-            }
-
-            /* FOOTER END */
-        </style>
     </head>
 
     <body>
         {% include "navbar.html" %}
 
-        <div class="mainContainer">
-            <div id="mainDiv1">
-                <div id="videoContainer">
+        <div class="main-container">
+            <div class="index-section-1"> 
+                <div class="alert index-banner-top" role="alert">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+
+                <div class="index-video-container">
                     <span>Never Lose Your Best Friend</span>
 
                     <br />
 
-                    <div id="videoButton" onclick="pop('popDiv')">
+                    <div class="index-video-button" onclick="pop('popDiv')">
                         <div>Watch Video
-                            <span class="glyphicon glyphicon-play" style="font-size:14px;"></span>
+                            <span class="glyphicon glyphicon-play"></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- BEGIN POPUP DIV -->
-                <div id="popDiv" class="ontop">
-                    <div class="popup">
-                        <img src="/static/media/site_images/close_button2.png" style="width:20px; height:20px;" onclick="hide('popDiv')">
+                <div class="index-popup-container" id="popDiv">
+                    <div class="index-popup">
+                        <div>
+                            <img src="/static/media/site_images/close_button2.png" onclick="hide('popDiv')">
+
+                            <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI?autoplay=0" frameborder='0' allowFullScreen></iframe>
+                        </div>
                     </div>
                 </div>
                 <!-- END POPUP DIV -->
             </div>
 
-            <div class="mainDiv2 container-fluid">
+            <div class="index-section-2 container-fluid">
                 <div class="row">
-                    <div class="col-md-1"></div>
+                    <div class="col-md-1 hidden-xs hidden-sm"></div>
 
                     <!-- Appears In Screen XS -->
-                    <div class="col-md-5 col-xs-12 visible-xs briefImage-xs">
+                    <div class="col-xs-12 col-md-5 visible-xs index-summary-image-xs">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
                     <!-- Appears In Screen SM and Up -->
-                    <div class="col-md-5 col-xs-12 hidden-xs briefImage-sm">
+                    <div class="col-xs-12 col-md-5 hidden-xs index-summary-image-sm">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
-                    <div class="col-md-5 col-xs-12 brief">
+                    <div class="col-xs-12 col-md-5 index-summary">
                         <span>The Future of Pet Monitoring is Here.</span>
 
                         <br />
@@ -456,26 +87,26 @@
                 </div>
             </div>
 
-            <div class="mainDiv3 container-fluid">
+            <div class="index-section-3 container-fluid">
                 <div class="row">
                     <div class="col-xs-12">
-                        <span class="featHeader">Fluid Design. Feature Rich.</span>
-                        <span class="featDescriptionTop">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                        <span class="index-features-header">Fluid Design. Feature Rich.</span>
+                        <span class="index-features-subheader">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                     </div>
                 </div>
 
-                <div class="row featRow">
+                <div class="row feats-row">
                     <!-- Appears In Screen XS -->
-                    <div class="col-xs-12 visible-xs featMainImg-xs">
+                    <div class="col-xs-12 visible-xs index-features-img-container-xs">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
                     <!-- Appears In Screen SM to LG -->
-                    <div class="col-sm-12 hidden-xs hidden-lg featMainImg-sm">
+                    <div class="col-sm-12 hidden-xs hidden-lg index-features-img-container-sm">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
 
-                    <div class="col-xs-12 col-sm-6 col-lg-4 featContainerLeft">
+                    <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-left">
                         <div class="row">
                             <!-- Appears in Screen XS -->
                             <div class="col-xs-12 visible-xs feats-xs">
@@ -486,11 +117,12 @@
                             </div>
 
                             <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs featsLeft">
+                            <div class="col-sm-12 hidden-xs feats-left">
                                 <span>Lorem Ipsum is Simply</span>
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                             </div>
                         </div>
+
                         <div class="row">
                             <!-- Appears in Screen XS -->
                             <div class="col-xs-12 visible-xs feats-xs">
@@ -501,11 +133,12 @@
                             </div>
 
                             <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs featsLeft">
+                            <div class="col-sm-12 hidden-xs feats-left">
                                 <span>Lorem Ipsum is Simply</span>
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                             </div>
                         </div>
+
                         <div class="row">
                             <!-- Appears in Screen XS -->
                             <div class="col-xs-12 visible-xs feats-xs">
@@ -516,7 +149,7 @@
                             </div>
 
                             <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs featsLeft">
+                            <div class="col-sm-12 hidden-xs feats-left">
                                 <span>Lorem Ipsum is Simply</span>
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                             </div>
@@ -524,12 +157,12 @@
                     </div>
 
                     <!-- BEGIN:  Appears In Screen LG and Up -->
-                    <div class="col-lg-4 visible-lg featMainImg-lg">
+                    <div class="col-lg-4 visible-lg index-features-img-container-lg">
                         <img src="/static/media/site_images/image_placeholder_2.png">
                     </div>
                     <!-- END:    Appears in Screen LG and Up -->
 
-                    <div class="col-xs-12 col-sm-6 col-lg-4 featContainerRight">
+                    <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-right">
                         <div class="row">
                             <!-- Appears in Screen XS -->
                             <div class="col-xs-12 visible-xs feats-xs">
@@ -540,11 +173,12 @@
                             </div>
 
                             <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs featsRight">
+                            <div class="col-sm-12 hidden-xs feats-right">
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                                 <span>Lorem Ipsum is Simply</span>
                             </div>
                         </div>
+
                         <div class="row">
                             <!-- Appears in Screen XS -->
                             <div class="col-xs-12 visible-xs feats-xs">
@@ -555,11 +189,12 @@
                             </div>
 
                             <!-- Appears in Screen SM and Up -->    
-                            <div class="col-sm-12 hidden-xs featsRight">
+                            <div class="col-sm-12 hidden-xs feats-right">
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                                 <span>Lorem Ipsum is Simply</span>
                             </div>
                         </div>
+
                         <div class="row">
                             <!-- Appears in Screen XS -->
                             <div class="col-xs-12 visible-xs feats-xs">
@@ -570,7 +205,7 @@
                             </div>
 
                             <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs featsRight">
+                            <div class="col-sm-12 hidden-xs feats-right">
                                 <img src="/static/media/site_images/feat_image_placeholder.jpg">
                                 <span>Lorem Ipsum is Simply</span>
                             </div>
@@ -578,55 +213,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--
-            <div id="mainDiv3">
-                <div id="homeHeader3">
-                    <span style="text-align:center;"><h1>Minimized Design</h1></span>
-                    <span style="text-align:center;"><h3>The Industry's Smallest LTE Pet Tracker</h3></span>
-                    <div class="headerSeparator">
-                        <hr style="border:0; height:1px; width:550px; background-color:#000000;">
-                    </div>
-                </div>
-
-                <div id="featuresContainerLeft">
-                    <div class="smallFeatureContainerLeft">
-                        <spam>Real-Time GPS Tracking</spam>
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                    </div>
-
-                    <div class="smallFeatureContainerLeft">
-                        <spam>Geofencing Alerts</spam>
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                    </div>
-
-                    <div>
-                        <spam>Waterproof (IPX7)</spam>
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                    </div>
-                </div>
-
-                <div id="featuresContainerRight">
-                    <div class="smallFeatureContainerRight">
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                        <spam>Health/Activity Monitor</spam>
-                    </div>
-
-                    <div class="smallFeatureContainerRight">
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                        <spam>Bark Limiter</spam>
-                    </div>
-
-                    <div>
-                        <img src="/static/media/site_images/image_placeholder_2.png">
-                        <spam>Sleep Analysis</spam>
-                    </div>
-                </div>
-
-                <div id="featuresContainerPhoto">
-                    <img src="/static/media/site_images/image_placeholder_2.png" style="width:100%;">
-                </div>
-            </div> -->
 
             {% include "footer.html" %}
         </div>

@@ -26,14 +26,28 @@
 
             /* NAVBAR BEGIN */
 
-            #navbar {
+            .navbar {
                 border-width:0;
                 font-family: 'Alegreya Sans SC', sans-serif;
             }
 
-            .navLogo {
+            .navBrandName {
+                padding-top:10px;
+                padding-bottom:10px;
                 font-weight: bold;
+                font-size:24px;
                 font-family: 'Raleway', sans-serif;
+            }
+
+            .navBrandName img {
+                display:inline-block;
+                width:30px;
+                height:30px;
+                margin-right:5px;
+            }
+
+            .navBrandName span {
+                vertical-align:middle;
             }
 
             .buyNow {
@@ -59,6 +73,12 @@
                 padding-right:0;
             }
 
+            .btn-outline {
+                background-color: transparent;
+                color: inherit;
+                transition: all .4s;
+            }
+
             /* GLOBAL STYLE END */
 
             .mainContainer {
@@ -73,12 +93,12 @@
 
             .purchaseDetailsContainer {
                 padding-top:50px;
-                padding-bottom:50px;
+                padding-bottom:30px;
             }
 
             /* BEGIN Carousel */
             #carousel-custom {
-                margin: 10px auto;
+                margin: 0px auto;
                 width: 100%;
             }
 
@@ -149,7 +169,7 @@
                 list-style-type:none;
                 clear:both;
             }
-
+                
             .purchaseDetailsContainer hr {
                 border:0px;
                 border-bottom:1px solid #cccccc;
@@ -246,130 +266,44 @@
                 height:26px;
             }
 
-            /*#orderContainer #price {
-                display:block;
-                width:95%;
-                margin-right:5%;
-                margin-bottom:20px;
+            .priceContainer {
+                margin-top:20px;
                 text-align:right;
                 font-size:20px;
             }
 
-            #orderContainer #checkoutContainer {
-                display:block;
-                width:95%;
-                margin-right:5%;
+            .priceLabel {
+                display:inline-block;
+                width:auto;
+            }
+
+            .price {
+                display:inline-block;
+                width:auto;
+            }
+
+            .addToCartContainer {
+                margin-top:20px;
+                color:#002a80;
                 text-align:center;
             }
 
-            #checkoutContainer button {
-                background-color:#4dd2ff;
-                padding-left:5%;
-                padding-right:5%;
-                font-size:20px;
+            .addToCartContainer button {
+                width:200px;
+
             }
 
-            #imagesContainer {
-                display:block;
-                width:55%;
-                float:right;
-                overflow:hidden;
-                margin-bottom:30px;
+            .addToCartContainer button:focus {
+                outline:0;
             }
 
-            #imagesContainer img {
-                display:block;
-                width:100%;
-                height:auto;
-                margin-top:40px;
-                margin-left:auto;
+            .productDetailsContainer {
+                background-color:#f9f9f9;
+                padding-top:30px;
+                padding-bottom:30px;
+                margin:0;
+                margin-bottom:50px;
             }
-
-            #purchaseDetailsContainer #mainSeparator {
-                border:0px;
-                background-color:#dddddd;
-                height:1px;
-                width:100%;
-                margin:0px;
-                clear:both;
-                margin-top:15px;
-            }
-
-            #productInfoContainer { 
-                background-color:#f2f2f2;
-                display:block;
-                width:100%; 
-                text-align:center;
-                clear:both;
-            }
-
-            #productInfoContainer #features {
-                background-color:#f5f5f5;
-                display:block;
-                width:100%;
-                padding-top:150px;
-                padding-bottom:150px;
-            }
-
-            #productInfoContainer #specs {
-                background-color:#f5f5f5;
-                display:none;
-                width:100%;
-                height:600px;
-            }
-
-            #productInfoContainer #reviews {
-                background-color:#f5f5f5;
-                display:none;
-                width:100%;
-                height:600px;
-            }
-
-            #features #leftFeature {
-                display:block;
-                width:33%;
-                height:auto;
-                text-align:center;
-                overflow:hidden;
-                float:left;
-                font-size:16px;
-            }
-
-            #features #rightFeature {
-                display:block;
-                width:33%;
-                height:auto;
-                text-align:center;
-                overflow:hidden;
-                float:right;
-                font-size:16px;
-            }
-
-            #features #middleFeature {
-                display:block;
-                width:33%;
-                height:auto;
-                text-align:center;
-                overflow:hidden;
-                margin-left:auto;
-                margin-right:auto;
-                font-size:16px;
-            }
-
-            #features #leftFeature img {
-                width:60%;
-                height:auto;
-            }
-
-            #features #rightFeature img {
-                width:60%;
-                height:auto;
-            }
-
-            #features #middleFeature img {
-                width:60%;
-                height:auto;
-            }*/
 
             /* FOOTER BEGIN */
 
@@ -444,6 +378,50 @@
             }
 
             /* FOOTER END */
+
+            /* BEGIN MEDIA QUERIES */
+
+            @media (max-width: 992px) {             /* For XS and SM screens  */
+                .productTitle {
+                    font-size:32px;
+                    margin-bottom:10px;
+                }
+
+                .productDescription {
+                    margin-top:20px;
+                }
+
+                .colorContainer {
+                    margin-top:30px;
+                }
+            }
+
+            @media (min-width: 768px) and (max-width: 992px) {
+                .addToCartContainer button {
+                    width:400px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .addToCartContainer button {
+                    width:100%;
+                }
+            }
+
+            @media (max-width: 992px) {             /* For XS and SM screens */
+                .productDescription {
+                    font-size:14px;
+                    margin-top:30px;
+                }
+
+                .includeList {
+                    margin-bottom:10px;
+                    list-style-type:none;
+                    clear:both;
+                }
+            }
+
+            /* END MEDIA QUERIES */
         </style>
     </head>
 
@@ -453,9 +431,11 @@
         <div class="mainContainer">
             <div class="container-fluid">
                 <div class="row purchaseDetailsContainer">
-                    <div class="col-md-1"></div>
+                    <div class="col-xs-10 visible-xs visible-sm col-xs-offset-1 col-sm-offset-1 productTitle">
+                        <span>Kynect Monitoring Collar</span>
+                    </div>
 
-                    <div class="col-md-5">
+                    <div class="col-xs-10 col-md-5 col-xs-offset-1 col-sm-offset-1 carouselContainer">
                         <div id='carousel-custom' class='carousel slide' data-interval="false" data-ride='carousel'>
                             <div class='carousel-outer'>
                                 <!-- Wrapper for slides -->
@@ -508,19 +488,19 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5">
+                    <div class="col-xs-10 col-md-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-0">
                         <div class="row">
-                            <div class="col-xs-12 productTitle">
+                            <div class="col-xs-12 visible-md visible-lg productTitle">
                                 <span>Kynect Monitoring Collar</span>
                             </div>
 
-                            <div class="col-xs-12 productDescription">
+                            <div class="col-xs-12 hidden-xs hidden-sm productDescription">
                                 <p>
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
                                 </p>
                             </div>
 
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 hidden-xs hidden-sm">
                                 <ul class="includeList">
                                     <li>- Lorem Ipsum is simply dummy</li>
                                     <li>- Lorem Ipsum is</li>
@@ -529,9 +509,9 @@
                                 </ul>
                             </div>
 
-                            <hr>
+                            <hr class="hidden-xs hidden-sm">
 
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 colorContainer">
                                 <div class="colorHeader"><b>Color:</b>&nbsp;&nbsp;</div>
                                 <div class="colorLabel" id="colorLabel">Black</div>
                             </div>
@@ -566,63 +546,66 @@
                                     <input type='button' value='+' class='qtyplus' field='quantity' />
                                 </div>
                             </div>
+
+                            <div class="col-xs-12 priceContainer">
+                                <div class="priceLabel"><b>Total: </b></div>
+                                <div class="price"><b>$219.99</b></div>
+                            </div>
+
+                            <div class="col-xs-12 addToCartContainer">
+                                <button type="button" class="btn btn-primary btn-outline"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;<b>Add To Cart</b></button>
+                            </div>
+
+                            <div class="col-xs-12 visible-xs visible-sm productDescription">
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 visible-xs visible-sm">
+                                <ul class="includeList">
+                                    <li>- Lorem Ipsum is simply dummy</li>
+                                    <li>- Lorem Ipsum is</li>
+                                    <li>- Lorem Ipsum is simply</li>
+                                    <li>- Lorem Ipsum is simply dummy text</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-md-1"></div>
+                    <div class="col-sm-1"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-1"></div>
+
+                    <div class="col-xs-10">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li role="presentation" onclick="showFeatures('featuresContainer')"><a href="#">Features</a></li>
+                            <li role="presentation" onclick="showSpecs('specsContainer')"><a href="#">Specifications</a></li>
+                            <li role="presentation" onclick="showReviews('reviewsContainer')"><a href="#">Reviews</a></li>
+                        </ul>
+
+                        <div class="row productDetailsContainer">
+                            <div class="col-xs-12 featuresContainer">
+                                
+                            </div>
+
+                            <div class="col-xs-12 specsContainer">
+                                
+                            </div>
+
+                            <div class="col-xs-12 reviewsContainer">
+                                
+                            </div>
+                        </div>
+
+                    <div class="col-xs-1"></div>
                 </div>
             </div>
 
             {% include "footer.html" %}
         </div>
-
-        <!--
-
-                <div id="imagesContainer">
-                    <img src="/static/media/site_images/image_placeholder_2.png">
-                </div>
-
-                <hr id="mainSeparator">
-
-                <ul class="nav nav-tabs nav-justified">
-                    <li role="presentation" onclick="showFeatures('features')"><a href="#">Features</a></li>
-                    <li role="presentation" onclick="showSpecs('specs')"><a href="#">Specifications</a></li>
-                    <li role="presentation" onclick="showReviews('reviews')"><a href="#">Reviews</a></li>
-                </ul>
-
-                <div id="productInfoContainer">
-                    <div id="features">
-                        <div id="leftFeature">
-                            <img src="/static/media/site_images/image_placeholder_2.png">
-                            <br />
-                            <span>Health / Activity Monitor</span>
-                        </div>
-
-                        <div id="rightFeature">
-                            <img src="/static/media/site_images/image_placeholder_2.png">
-                            <br />
-                            <span>Bark Limiter</span>
-                        </div>
-
-                        <div id="middleFeature">
-                            <img src="/static/media/site_images/image_placeholder_2.png">
-                            <br />
-                            <span>Sleep Monitor</span>
-                        </div>
-                    </div>
-
-                    <div id="specs">
-                        
-                    </div>
-
-                    <div id="reviews">
-                        
-                    </div>
-                </div>
-            </div>
-
-            {% include "footer.html" %}
-        </div> -->
         
         <!-- SCRIPTS GO HERE -->
 
@@ -630,21 +613,21 @@
             // Function to focus features div
             function showFeatures(div) {
                 document.getElementById(div).style.display = 'block';
-                document.getElementById('specs').style.display = 'none';
-                document.getElementById('reviews').style.display = 'none';
+                document.getElementById('specsContainer').style.display = 'none';
+                document.getElementById('reviewsContainer').style.display = 'none';
             }
 
             // Function to focus specs div
             function showSpecs(div) {
-                document.getElementById('features').style.display = 'none';
+                document.getElementById('featuresContainer').style.display = 'none';
                 document.getElementById(div).style.display = 'block';
-                document.getElementById('reviews').style.display = 'none';
+                document.getElementById('reviewsContainer').style.display = 'none';
             }
 
             // Function to focus reviews div
             function showReviews(div) {
-                document.getElementById('features').style.display = 'none';
-                document.getElementById('specs').style.display = 'none';
+                document.getElementById('featuresContainer').style.display = 'none';
+                document.getElementById('specsContainer').style.display = 'none';
                 document.getElementById(div).style.display = 'block';
             }
 
@@ -661,8 +644,6 @@
                 document.getElementById('blackCollar').style.borderColor = '#aaaaaa';
                 document.getElementById('colorLabel').textContent = 'White';
             }
-
-
 
             // JQuery Functions
             jQuery(document).ready(function(){

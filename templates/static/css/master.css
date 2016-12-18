@@ -1,0 +1,13 @@
+/*
+filename: 			master.css
+
+Description: 		Master stylesheet containing calls to all external 
+					stylesheets
+
+Application Range:	Applies to all pages
+
+****************************** CSS BEGINS BELOW *******************************/
+
+
+@import url("reset.css");
+@import url("global.css");
