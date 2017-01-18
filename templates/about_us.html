@@ -6,378 +6,134 @@
         <title>About Us</title>
         <meta charset=utf-8 />
 
+        <!-- Bootstrap Stylesheets -->
         <link   rel="stylesheet" 
-                href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+                href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+
+        <!-- External Stylesheets -->
+        <link   rel="stylesheet" 
+                type="text/css"
+                href="{% static 'css/master.css' %}">
+
+        <!-- Google Web Fonts -->
         <link   rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Raleway">
         <link   href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" 
                 rel="stylesheet">
-                
+        <link   href="https://fonts.googleapis.com/css?family=Muli" 
+                rel="stylesheet">    
+
+        <!-- JQuery & JavaScript -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
-
-        <style>
-            html,body {
-                padding:0px;
-                margin:0px;
-                width:100%;
-                height:100%;
-            }
-
-            /* NAVBAR BEGIN */
-
-            .navbar {
-                border-width:0;
-                font-family: 'Alegreya Sans SC', sans-serif;
-            }
-
-            .navBrandName {
-                padding-top:10px;
-                padding-bottom:10px;
-                font-weight: bold;
-                font-size:24px;
-                font-family: 'Raleway', sans-serif;
-            }
-
-            .navBrandName img {
-                display:inline-block;
-                width:30px;
-                height:30px;
-                margin-right:5px;
-            }
-
-            .navBrandName span {
-                vertical-align:middle;
-            }
-
-            .buyNow {
-                margin-right:15px;
-            }
-
-            .navLinks:hover {
-                background-color:#dddddd;
-            }
-
-            .navbar-nav {
-                border:none;
-                margin-top:0;
-                margin-bottom:0;
-            }
-
-            /* NAVBAR END */
-
-            /* FOOTER BEGIN */
-
-            #footer {
-                background-color:#252525; 
-                color:white;
-                width:100%;
-                padding-top:40px;
-                padding-bottom:40px;
-                overflow:hidden; 
-
-                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
-            }
-
-            #footerDivLeft {
-                display:block;
-                width:33%;
-                float:left;
-            }
-
-            #footerDivLeft div {
-                display:block;
-                width:60%;
-                margin-left:40%;
-            }
-
-            #footerDivLeft div span {
-                display:block;
-                width:100%;
-            }
-
-            #footerDivRight {
-                display:block;
-                width:33%;
-                float:right;
-                font-size:14px;
-            }
-
-            #footerDivRight div {
-                display:block;
-                width:100px;
-                float:right;
-                margin-right:40%;
-                border-style:solid;
-                border-width:0px;
-                border-right-width:1px;
-            }
-
-            #footerDivRight div span {
-                display:block;
-                width:100%;
-                text-align:left;
-            }
-
-            #footerDivRight div a {
-                color:#ffffff;
-            }
-
-            #footerDivRight div a:hover {
-                text-decoration:underline;
-            }
-
-            #footerDivMiddle {
-                display:block;
-                width:34%;
-                margin-left:auto;
-                margin-right:auto;
-                text-align:center;
-                font-size:14px;
-            }
-
-            /* FOOTER END */
-
-            .mainContainer {
-                background-color:#ffffff;
-                position:absolute;
-                top:50px;
-                bottom:0;
-                left:0;
-                right:0;
-                overflow:auto;
-            }
-
-            .headerTeam {
-                display:block;
-                width:100%;
-                padding-left:18%;
-                padding-right:18%;
-                padding-top:30px;
-            }
-
-            .headerTeam hr {
-                border:0; 
-                height:1px; 
-                width:64%; 
-                background-color:#aaaaaa; 
-                margin:0px;
-                padding-left:18%;
-                padding-right:18%;
-            }
-
-            .headerTeam .headerTextTeam {
-                display:block;
-                width:auto;
-                float:left;
-                font-size:30px;
-            }
-
-            .bioContainer {
-                display:block;
-                width:92%;
-                margin-left:auto;
-                margin-right:auto;
-                margin-top:40px;
-                margin-bottom:20px;
-                text-align:justify;
-                overflow:hidden;
-                padding-left:18%;
-                padding-right:18%;
-                font-size:16px;
-            }
-
-            .bioContainer .portraitContainer {
-                display:block;
-                width:20%;
-                height:auto;
-                float:left;
-                margin-right:5%;
-                margin-bottom:10px;
-            }
-            
-            .bioContainer img {
-                display:block;
-                width:100%;
-                height:auto;
-                margin-right:auto;
-                margin-left:auto;
-            }
-
-            .bioContainer .bioHeader {
-                display:block;
-                width:75%;
-                font-size:24px;
-                float:left;
-                margin:0px;
-                margin-bottom:20px;
-                text-align:left;
-            }
-
-            .bioContainer #bioPositionJim {
-                display:inline-block;
-                width:342px;
-                font-size:16px;
-                color:#888888;
-            }
-
-            .bioContainer #bioPositionMarco {
-                display:inline-block;
-                width:340px;
-                font-size:16px;
-                color:#888888;
-            }
-
-            .bioContainer #bioPositionDuncan {
-                display:inline-block;
-                width:342px;
-                font-size:16px;
-                color:#888888;
-            }
-
-            #acceleratorsContainer {
-                display:block;
-                width:92%;
-                margin-left:auto;
-                margin-right:auto;
-                margin-top:40px;
-                margin-bottom:40px;
-                padding-left:18%;
-                padding-right:18%;
-            }
-
-            #image_left {
-                display:block;
-                width:30%;
-                height:auto;
-                float:left;
-            }
-
-            #image_right {
-                display:block;
-                width:30%;
-                height:auto;
-                float:right;
-            }
-
-            #image_center {
-                display:block;
-                width:30%;
-                height:auto;
-                margin-right:auto;
-                margin-left:auto;
-            }
-
-            #acceleratorsContainer div img {
-                display:block;
-                width:100%;
-                height:auto;
-            }
-        </style>
+        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
     </head>
-
+        
     <body>
         {% include "navbar.html" %}
 
-        <div class="mainContainer">
-            <div class="headerTeam">
-                <span class="headerTextTeam">Our Team</span>
+        <div class="main-container">
+            <div class="container-fluid font-raleway">
+                <div class="row about-us-top-header"></div>
 
-                <hr>
-            </div>
+                <div class="row about-us-section-1">
+                    <div class="col-xs-1"></div>
 
-            <div class="bioContainer">
-                <div class="portraitContainer">
-                    <img src="/static/media/site_images/portrait_placeholder.png">
+                    <div class="col-xs-10 about-us-story-container">
+                        <span class="section-header-title">Our Story</span>
+                        
+                        <hr>
+
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            <br><br>
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+                        </p>
+                    </div>
+
+                    <div class="col-xs-1"></div>
                 </div>
 
-                <h3 class="bioHeader">Jim McGlade
-                    <small id="bioPositionJim">Co-Founder and CEO of Eko Tracking Solutions</small>
-                </h3>
-
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. 
-                </p>
-            </div>
-
-            <div class="bioContainer">
-                <div class="portraitContainer">
-                    <img src="/static/media/site_images/portrait_placeholder.png">
+                <div class="row section-header-container background-purple">
+                    <div class="col-xs-12">
+                        <span class="section-header-title">OUR TEAM</span>
+                        <span class="section-header-subheader">Have a look at who is behind the Kynect Monitoring Collar</span>
+                    </div>
                 </div>
 
-                <h3 class="bioHeader">Marco Prouve
-                    <small id="bioPositionMarco">Co-Founder and CTO of Eko Tracking Solutions</small>
-                </h3>
+                <div class="row about-us-section-2">
+                    <div class="col-xs-1"></div>
 
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. 
-                </p>
-            </div>
+                    <div class="col-xs-10 about-us-team-container">
+                        <!-- <span>Our Team</span>
 
-            <div class="headerTeam">
-                <span class="headerTextTeam">Our Board and Advisors</span>
+                        <hr> -->
 
-                <hr>
-            </div>
+                        <div class="row">
+                            <!-- Jim McGlade Information -->
+                            <div class="col-md-3 about-us-portrait-container">
+                                <img src="/static/media/site_images/portrait_placeholder_1.png">
+                            </div>
 
-            <div class="bioContainer">
-                <div class="portraitContainer">
-                    <img src="/static/media/site_images/portrait_placeholder.png">
-                </div>
+                            <div class="col-md-9 about-us-team-description">
+                                <h3>Jim McGlade <small>Co-Founder, CEO, and Chief of Business Development</small></h3>
 
-                <h3 class="bioHeader">Duncan 
-                    <small id="bioPositionDuncan">A little bit of background Information</small>
-                </h3>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                        </div>
 
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                </p>
-            </div> 
+                        <div class="row">
+                            <!-- Marco Prouve Information -->
+                            <div class="col-md-3 about-us-portrait-container">
+                                <img src="/static/media/site_images/portrait_placeholder_1.png">
+                            </div>
 
-            <div class="bioContainer">
-                <div class="portraitContainer">
-                    <img src="/static/media/site_images/portrait_placeholder.png">
-                </div>
+                            <div class="col-md-9 about-us-team-description">
+                                <h3>Marco Prouve <small>Co-Founder, CTO, and Chief Software Engineer</small></h3>
 
-                <h3 class="bioHeader">Some Name 
-                    <small id="bioPositionDuncan">A little bit of background Information</small>
-                </h3>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                        </div>
 
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                </p>
-            </div>
+                        <div class="row">
+                            <!-- Mehdi Shokoueinejad Information -->
+                            <div class="col-md-3 about-us-portrait-container">
+                                <img src="/static/media/site_images/portrait_placeholder_1.png">
+                            </div>
 
-            <div class="headerTeam">
-                    <span class="headerTextTeam">Our Investors and Accelerator Programs</span>
+                            <div class="col-md-9 about-us-team-description">
+                                <h3>Mehdi Shokoueinejad <small>Chief of Hardware Development</small></h3>
 
-                    <hr>
-            </div>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                        </div>
 
-            <div id="acceleratorsContainer">
-                <div id="image_left">
-                    <img src="/static/media/site_images/image_placeholder_wide.png">
-                </div>
+                        <div class="row">
+                            <!-- Fa Wang Information -->
+                            <div class="col-md-3 about-us-portrait-container">
+                                <img src="/static/media/site_images/portrait_placeholder_1.png">
+                            </div>
 
-                <div id="image_right">
-                    <img src="/static/media/site_images/image_placeholder_wide.png">
-                </div>
+                            <div class="col-md-9 about-us-team-description">
+                                <h3>Fa Wang <small>Lead Hardware Engineer</small></h3>
 
-                <div id="image_center">
-                    <img src="/static/media/site_images/image_placeholder_wide.png">
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-1"></div>
                 </div>
             </div>
 
             {% include "footer.html" %}
         </div>
-        
-        
-        <!-- SCRIPTS GO HERE -->
-
-
-
-        <!-- SCIPTS END HERE -->
     </body>
 </html>

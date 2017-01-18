@@ -25,12 +25,28 @@ TABLE OF CONTENTS:
 
 
 .main-container {
-    position:absolute;
-    top:50px;
-    bottom:0;
-    left:0;
-    right:0;
-    overflow-y:auto; }
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto; }
+
+.section-header-container {
+    padding-top: 30px;
+    padding-bottom: 30px; }
+
+	.section-header-container .section-header-title {
+		display: block;
+        text-align: center;
+        font-size: 40px;
+        color: #ffffff; }
+
+	.section-header-container .section-header-subheader {
+		display: block;
+        text-align: center;
+        font-size: 14px;
+        color: #ffffff; }
 
 
 /*----------------------------------------------------------------------------*/
@@ -39,41 +55,41 @@ TABLE OF CONTENTS:
 
 
 .navbar {
-    border-width:0;
+    border-width: 0;
     font-family: 'Alegreya Sans SC', sans-serif; }
 
 .navbar-default .navbar-brand{
     color: #000000; }
 
 .nav-brand-name {
-	padding:10px 0px 10px 10px !important;
-    font-size:22px;
+	padding: 10px 0px 10px 10px !important;
+    font-size: 22px;
     font-family: 'Muli', sans-serif; }
 
 	.nav-brand-name img {
-	    display:inline-block;
-	    width:30px;
-	    height:30px;
-	    margin-right:5px; }
+	    display: inline-block;
+	    width: 30px;
+	    height: 30px;
+	    margin-right: 5px; }
 
 	.nav-brand-name span {
-	    vertical-align:middle; }
+	    vertical-align: middle; }
 
 .navbar-nav {
-    border:none;
-    margin-top:0;
-    margin-bottom:0; }
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .nav-button {
-    margin-right:15px;
-    margin-left:15px; }
+    margin-right: 15px;
+    margin-left: 15px; }
 
 .nav-button:focus,
 .nav-button:active {
-    outline:none !important; }
+    outline: none !important; }
 
 .nav-links:hover {
-    background-color:#dddddd; }
+    background-color: #dddddd; }
 
 
 /*----------------------------------------------------------------------------*/
@@ -82,10 +98,11 @@ TABLE OF CONTENTS:
 
 
 .footer { 
-    background-color:#252525; 
-    padding:80px 0;
-    color:white;
-    width:100%; 
+    background-color: #252525; 
+    display: block;
+    padding: 80px 0;
+    color: white;
+    width: 100%; 
 
     -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
@@ -98,10 +115,10 @@ TABLE OF CONTENTS:
 
 
 .index-section-1 {
-    display:block;
-    height:100%;
-    min-height:100%;
-    width:100%; 
+    display: block;
+    height: 100%;
+    min-height: 100%;
+    width: 100%; 
 
 	/* Cover background for homepage */
 	background: url(/static/media/site_images/dog_in_field.png) no-repeat center center; 
@@ -111,20 +128,20 @@ TABLE OF CONTENTS:
 	background-size: cover; }
 
 .index-banner-top {
-	background-color:rgba(0,0,0,0.3);
-    width:100%;
-    padding:10px 10px;
-    position:absolute;
-    top:0;
-    left:0;
-    border-radius:0 !important;
-    text-align:center;
-    color:#ffffff; }
+	background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    padding: 8px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 !important;
+    text-align: center;
+    color: #ffffff; }
 
 .index-video-container {
-    display:block;
-    width:55%;
-    color:#ffffff;
+    display: block;
+    width: 55%;
+    color: #ffffff;
     font-family: 'Raleway', sans-serif;
 
     /* Vertically Center Text */
@@ -135,62 +152,51 @@ TABLE OF CONTENTS:
     -ms-transform: translateY(-50%) translate(-50%);
     transform: translateY(-50%) translate(-50%); }
 
-	.index-video-container > span {
-		display:block;
-		width:100%;
-		text-align:center;
-		font-size:40px; }
-
 .index-video-button {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    height:40px;
-    width:150px;
-    text-align:center;
-    border-style:solid;
-    border-width:3px;
-    border-radius:20px;
-    font-size:16px; }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px;
+    font-size: 16px; }
 
 /* The ghost, nudged to maintain perfect centering */
 .index-video-button:before {
-    content:'';
-    display:inline-block;
-    height:100%;
-    vertical-align:middle;
-    margin-right:-0.25em; } 	/* Adjusts for spacing */
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; } 	/* Adjusts for spacing */
 
 .index-video-button:hover {
     background-color: rgba(210,210,210,0.2);
-    cursor:pointer;
-    cursor:hand; }
+    cursor: pointer;
+    cursor: hand; }
 
 	.index-video-button > div {
-        display:inline-block;
-        vertical-align:middle; }
-
-	.index-video-button span {
-        display:inline-block;
-        width:auto; 
-    	font-size:14px; }
+        display: inline-block;
+        vertical-align: middle; }
 
 .index-popup-container {
-    background-color:rgba(40,40,40,0.9);
-    display:none;
-    width:100%;
-    height:100%;
-    padding-top:50px;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:999;
-    color:#000000; }
+    background-color: rgba(40,40,40,0.9);
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    color: #000000; }
 
 .index-popup {
-    background-color:rgba(40,40,40,1);
-    width:65%;
-    color:#000000;
+    background-color: rgba(40,40,40,1);
+    width: 65%;
+    color: #000000;
 
     /* Center Popup */
     position: relative;
@@ -201,60 +207,107 @@ TABLE OF CONTENTS:
     transform: translateY(-50%) translate(-50%); }
 
     .index-popup > div {
-        background-color:rgba(40,40,40,1);
-        height:0;
-        padding:0;
-        padding-bottom:56.25%; }
+        background-color: rgba(40,40,40,1);
+        height: 0;
+        padding: 0;
+        padding-bottom: 56.25%; }
 
 .index-section-2 {}
 
 	.index-section-2 > .row {
-	    padding-top:100px;
-	    padding-bottom:100px; }
+	    padding-top: 100px;
+	    padding-bottom: 100px; }
 
 .index-summary-image-xs {
-    padding-left:0 !important;
-    padding-right:0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     text-align:center; }
 
 .index-summary-image-sm {
     text-align:center; }
 
 .index-summary {
-    padding-top:60px;
+    padding-top: 60px;
     text-align:center; }
 
 .index-section-3 {
-	background-color:#f9f9f9;
-	padding-top:100px;
-	padding-bottom:100px;
+	background-color: #f9f9f9;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	font-family: 'Raleway', sans-serif; }
 
 .index-section-3 > .feats-row {
-    padding-top:40px; }
+    padding-top: 40px; }
 
 .index-features-img-container-xs,
 .index-features-img-container-sm,
 .index-features-img-container-lg {
-    padding-left:0 !important;
-    padding-right:0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     text-align:center; }
 
 .feat-container-left > .row,
 .feat-container-right > .row {
-    margin-top:30px; }
+    margin-top: 30px; }
 
 .feats-xs div {
-    display:block;
-    width:250px;
-    margin-left:auto;
-    margin-right:auto; }
+    display: block;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto; }
 
 .feats-left {
-    text-align:right; }
+    text-align: right; }
 
 .feats-right {
-    text-align:left; }
+    text-align: left; }
+
+.about-us-top-header {
+    padding: 175px 0; 
+
+    /* Cover background for about-us */
+    background: url(/static/media/site_images/dog_sunset_background.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.about-us-section-1 {
+    padding: 70px 0px; }
+
+.about-us-story-container {
+    text-align: center;
+    color: #777777; }
+
+    .about-us-story-container hr {
+        border-color: #862d86;
+        border-width: 1.5px;
+        width: 75px;
+        margin: 20px auto; }
+
+.about-us-section-2 {
+	padding: 40px 0px; }
+
+.about-us-team-container {}
+
+	/*.about-us-team-container > hr {
+		margin: 0; }*/
+
+	.about-us-team-container > .row {
+		padding: 15px 0px; }
+
+@media (min-width: 992px) {
+	.about-us-team-description {
+		padding-left: 0px; }
+}
+
+@media (max-width: 991px) {
+    .about-us-team-container > .row {
+        padding: 15px 0px; }
+
+	.about-us-team-description {
+		margin-top:25px; }
+}
 
 
 /*----------------------------------------------------------------------------*/
@@ -270,32 +323,65 @@ TABLE OF CONTENTS:
 /*----------------------------------------------------------------------------*/
 
 
+.index-video-container > span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 40px; }
+
+.index-video-button span {
+        display: inline-block;
+        width: auto; 
+        font-size: 14px; }
+
 .index-summary > span {
-    display:inline-block;
-    width:70%;
-    font-size:26px;
-    color:#141414;
+    display: inline-block;
+    width: 70%;
+    font-size: 26px;
+    color: #141414;
     font-family: 'Raleway', sans-serif; }
 
 .index-summary > p {
-    display:inline-block;
-    width:90%;
-    padding-top:10px;
-    font-size:14px;
-    color:#999999;
+    display: inline-block;
+    width: 90%;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #999999;
     font-family: 'Raleway', sans-serif; }
 
 span.index-features-header {
-    display:block;
-    text-align:center;
+    display: block;
+    text-align: center;
     font-family: 'Raleway', sans-serif;
-    font-size:26px; }
+    font-size: 26px; }
 
 span.index-features-subheader {
-    display:block;
-    text-align:center;
+    display: block;
+    text-align: center;
     font-family: 'Raleway', sans-serif;
-    font-size:14px; }
+    font-size: 14px; }
+
+/*.about-us-team-container > span {
+	font-size: 28px; }*/
+
+.about-us-story-container span {
+    width: auto;
+    font-size: 34px; }
+
+.about-us-story-container p {
+    padding: 0 10%;
+    /*color: #888888;*/ }
+
+@media (max-width: 768px) {
+    .about-us-story-container p {
+        padding: 0; }
+}
+
+.about-us-team-description > h3 {
+	font-size: 24px; }
+
+.about-us-team-description > p {
+	margin-top: 10px; }
 
 
 /*----------------------------------------------------------------------------*/
@@ -312,59 +398,79 @@ span.index-features-subheader {
 
 
 .index-popup img {
-	width:20px; 
-    height:20px;
-    position:absolute;
-    left:100%;
-    bottom:100%;}
+	width: 20px; 
+    height: 20px;
+    position: absolute;
+    left: 100%;
+    bottom: 100%; }
 
 .index-popup img:hover {
-    cursor:pointer;
-    cursor:hand; }
+    cursor: pointer;
+    cursor: hand; }
 
 .index-popup iframe {
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%; }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 .index-summary-image-xs img {
-    width:270px;
-    height:auto; }
+    width: 270px;
+    height: auto; }
 
 .index-summary-image-sm img {
-    width:400px;
-    height:auto; }
+    width: 400px;
+    height: auto; }
 
 .index-features-img-container-xs img {
-    width:270px;
-    height:auto; }
+    width: 270px;
+    height: auto; }
 
 .index-features-img-container-sm img {
-    width:550px;
-    height:auto; }
+    width: 550px;
+    height: auto; }
 
 .index-features-img-container-lg img {
-    width:380px;
-    height:auto; }
+    width: 380px;
+    height: auto; }
 
 .feats-xs img {
-    margin-right:10px;
-    width:60px;
-    height:60px; }
+    margin-right: 10px;
+    width: 60px;
+    height: 60px; }
 
 .feats-left img {
-    margin-left:10px;
-    width:60px;
-    height:60px; }
+    margin-left: 10px;
+    width: 60px;
+    height: 60px; }
 
 .feats-right img {
-    margin-right:10px;
-    width:60px;
-    height:60px; }
+    margin-right: 10px;
+    width: 60px;
+    height: 60px; }
+
+.about-us-portrait-container img {
+	display:block;
+	width: 160px;
+	height: 180px; 
+	margin: auto;
+	border-radius: 5px; }
 
 
 /*----------------------------------------------------------------------------*/
 /*---------------------------- GENERAL STYLES --------------------------------*/
 /*----------------------------------------------------------------------------*/
+
+
+.font-raleway {
+	font-family: 'Raleway', sans-serif; }
+
+.background-purple {
+	background-color: #862d86; }
+
+.background-blue {
+    background-color: #00ccff; } 
+
+.background-grey {
+    background-color: #444444; }
