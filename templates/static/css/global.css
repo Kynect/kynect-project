@@ -23,6 +23,7 @@ TABLE OF CONTENTS:
 /*------------------------ COMMON SHARED FORMATTING --------------------------*/
 /*----------------------------------------------------------------------------*/
 
+
 .section-header-container {
     padding-top: 30px;
     padding-bottom: 30px; }
@@ -49,7 +50,7 @@ TABLE OF CONTENTS:
     border-width: 0;
     font-family: 'Alegreya Sans SC', sans-serif; }
 
-.navbar-default .navbar-brand{
+.navbar-default .navbar-brand {
     color: #000000; }
 
 .nav-brand-name {
@@ -74,11 +75,26 @@ TABLE OF CONTENTS:
 .nav-button {
     margin-right: 15px;
     margin-left: 15px;
-    width: 140px; }
+    width: 140px;  
+
+    /* APPLY TRANSITION DELAY FOR BACKGROUND_COLOR */
+
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out; }
 
 .nav-button:focus,
 .nav-button:active {
     outline: none !important; }
+
+.nav-links {
+    /* APPLY TRANSITION DELAY FOR BACKGROUND_COLOR */
+
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out; }
 
 .nav-links:hover {
     background-color: #dddddd; }
@@ -111,6 +127,7 @@ TABLE OF CONTENTS:
     height: 100%;
     min-height: 100%;
     width: 100%; 
+    padding-top: 50px;
 
 	/* Cover background for homepage */
 	background: url(/static/media/images/dog_in_field.png) no-repeat center center; 
@@ -217,16 +234,21 @@ TABLE OF CONTENTS:
 	    padding-top: 100px;
 	    padding-bottom: 100px; }
 
-.index-summary-image {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    text-align: center; }
-
 .index-summary {
-    padding-top: 60px;
+    padding-top: 100px;
     text-align: center; }
 
-.index-summary > p{
+@media (min-width: 1200px) {
+    .index-summary {
+        padding-top: 100px; }
+}
+
+@media (max-width: 1199px) {
+    .index-summary {
+        padding-top: 60px; }
+}
+
+.index-summary > p {
     clear: both; }
 
 .index-section-2 .updateme {
@@ -265,6 +287,11 @@ TABLE OF CONTENTS:
         display: inline-block;
         vertical-align: middle; }
 
+.index-summary-image {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center; }
+
 .index-section-4 {
 	background-color: #f9f9f9;
 	padding-top: 100px;
@@ -298,7 +325,8 @@ TABLE OF CONTENTS:
     text-align: left; }
 
 .about-us-top-header {
-    height: 50%; 
+    height: 50%;
+    margin-top: 50px; 
 
     /* Cover background for about-us */
     background: url(/static/media/images/dog_sunset_background.jpg) no-repeat center center; 
@@ -413,16 +441,12 @@ span.index-features-subheader {
     font-family: 'Raleway', sans-serif;
     font-size: 14px; }
 
-/*.about-us-team-container > span {
-	font-size: 28px; }*/
-
 .about-us-story-container span {
     width: auto;
     font-size: 40px; }
 
 .about-us-story-container p {
-    padding: 0 10%;
-    /*color: #888888;*/ }
+    padding: 0 10%; }
 
 @media (max-width: 768px) {
     .about-us-story-container p {

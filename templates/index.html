@@ -17,20 +17,20 @@
 
         <!-- Google Web Fonts -->
         <link   rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=">
+                href="https://fonts.googleapis.com/css?family=Raleway">
         <link   href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" 
                 rel="stylesheet">
         <link   href="https://fonts.googleapis.com/css?family=Muli" 
                 rel="stylesheet">    
 
         <!-- JQuery & JavaScript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
     </head>
 
     <body>
         {% include "navbar.html" %}
-        
+
         <div class="index-section-1"> 
             <div class="index-banner-top">
                 <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
@@ -78,7 +78,21 @@
 
         <div class="index-section-2 container-fluid" id="index-section-2">
             <div class="row">
-                <div class="col-lg-1 visible-lg hidden-sm"></div>
+                <div class="col-lg-1 visible-lg"></div>
+
+                <div class="col-lg-5 visible-lg index-summary">
+                    <span>The Future of Pet Monitoring is Here.</span>
+
+                    <br />
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+                    <br /><br />
+
+                    <div class="updateme background-blue">
+                        <div>UPDATE ME</div>
+                    </div>
+                </div>
 
                 <!-- Appears In Screen XS -->
                 <div class="col-xs-12 visible-xs index-summary-image">
@@ -100,21 +114,19 @@
                     <img src="/static/media/images/image_placeholder_2.png">
                 </div>
 
-                <div class="col-xs-12 col-lg-4 index-summary">
+                <div class="col-xs-12 hidden-lg index-summary">
                     <span>The Future of Pet Monitoring is Here.</span>
 
                     <br />
 
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
-                    <br /><br />
+                    <br />
 
                     <div class="updateme background-blue">
                         <div>UPDATE ME</div>
                     </div>
                 </div>
-
-                <div class="col-lg-1 visible-lg"></div>
             </div>
         </div>
 
@@ -258,9 +270,7 @@
                     scrollTop: $("#"+id).offset().top - 50},
                     'slow');
             }
-        </script>
 
-        <script>
             // ***REVISIT BELOW FOR POPUP VIDEO***
 
             // //Function To Display Popup
