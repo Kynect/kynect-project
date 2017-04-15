@@ -24,233 +24,263 @@
                 rel="stylesheet">    
 
         <!-- JQuery & JavaScript -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
     </head>
 
     <body>
         {% include "navbar.html" %}
+        
+        <div class="index-section-1"> 
+            <div class="index-banner-top">
+                <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+            </div>
 
-        <div class="main-container">
-            <div class="index-section-1"> 
-                <div class="index-banner-top">
-                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+            <div class="index-topheading-container">
+                <span class="index-heading">Stay Kynected to Your Best Friend</span>
+                <span class="index-subheading">Don't Wait Until It's Too Late</span>
+
+                <br />
+
+                <div class="index-learnmore-button" onclick="goToByScroll('index-section-2')">
+                    <div>Learn More</div>
                 </div>
 
-                <div class="index-video-container">
-                    <span>Never Lose Your Best Friend</span>
+                <!-- BEGIN POPUP VIDEO -->
+
+                <!--
+                <div class="index-video-button" onclick="pop('popDiv')">
+                    <div>Watch Video
+                        <span class="glyphicon glyphicon-play"></span>
+                    </div>
+                </div>
+                -->
+
+                <!-- END POPUP VIDEO -->
+            </div>
+
+            <!-- BEGIN POPUP DIV -->
+
+            <!--
+            <div class="index-popup-container" id="popDiv">
+                <div class="index-popup">
+                    <div>
+                        <img src="/static/media/images/close_button2.png" onclick="hide('popDiv')">
+
+                        <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI?autoplay=0" frameborder='0' allowFullScreen></iframe>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <!-- END POPUP DIV -->
+        </div>
+
+        <div class="index-section-2 container-fluid" id="index-section-2">
+            <div class="row">
+                <div class="col-lg-1 visible-lg hidden-sm"></div>
+
+                <!-- Appears In Screen XS -->
+                <div class="col-xs-12 visible-xs index-summary-image">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen SM and Up -->
+                <div class="col-sm-12 visible-sm index-summary-image">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen MD and Up -->
+                <div class="col-md-12 visible-md index-summary-image">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen LG and Up -->
+                <div class="col-lg-6 visible-lg index-summary-image">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <div class="col-xs-12 col-lg-4 index-summary">
+                    <span>The Future of Pet Monitoring is Here.</span>
 
                     <br />
 
-                    <div class="index-video-button" onclick="pop('popDiv')">
-                        <div>Watch Video
-                            <span class="glyphicon glyphicon-play"></span>
-                        </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+                    <br /><br />
+
+                    <div class="updateme background-blue">
+                        <div>UPDATE ME</div>
                     </div>
                 </div>
 
-                <!-- BEGIN POPUP DIV -->
-                <div class="index-popup-container" id="popDiv">
-                    <div class="index-popup">
-                        <div>
-                            <img src="/static/media/images/close_button2.png" onclick="hide('popDiv')">
-
-                            <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI?autoplay=0" frameborder='0' allowFullScreen></iframe>
-                        </div>
-                    </div>
-                </div>
-                <!-- END POPUP DIV -->
+                <div class="col-lg-1 visible-lg"></div>
             </div>
-
-            <div class="index-section-2 container-fluid">
-                <div class="row">
-                    <div class="col-lg-1 visible-lg hidden-sm"></div>
-
-                    <!-- Appears In Screen XS -->
-                    <div class="col-xs-12 visible-xs index-summary-image">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-
-                    <!-- Appears In Screen SM and Up -->
-                    <div class="col-sm-12 visible-sm index-summary-image">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-
-                    <!-- Appears In Screen MD and Up -->
-                    <div class="col-md-12 visible-md index-summary-image">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-
-                    <!-- Appears In Screen LG and Up -->
-                    <div class="col-lg-6 visible-lg index-summary-image">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-
-                    <div class="col-xs-12 col-lg-4 index-summary">
-                        <span>The Future of Pet Monitoring is Here.</span>
-
-                        <br />
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </div>
-
-                    <div class="col-lg-1 visible-lg"></div>
-                </div>
-            </div>
-
-            <div class="index-section-3 container-fluid"></div>
-
-            <div class="index-section-4 container-fluid">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <span class="index-features-header">Fluid Design. Feature Rich.</span>
-                        <span class="index-features-subheader">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
-                    </div>
-                </div>
-
-                <div class="row feats-row">
-                    <!-- Appears In Screen XS -->
-                    <div class="col-xs-12 visible-xs index-features-img-container-xs">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-
-                    <!-- Appears In Screen SM to LG -->
-                    <div class="col-sm-12 hidden-xs hidden-lg index-features-img-container-sm">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-
-                    <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-left">
-                        <div class="row">
-                            <!-- Appears in Screen XS -->
-                            <div class="col-xs-12 visible-xs feats-xs">
-                                <div>
-                                    <img src="/static/media/images/feat_image_placeholder.jpg">
-                                    <span>Lorem Ipsum is Simply</span>
-                                </div>
-                            </div>
-
-                            <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs feats-left">
-                                <span>Lorem Ipsum is Simply</span>
-                                <img src="/static/media/images/feat_image_placeholder.jpg">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Appears in Screen XS -->
-                            <div class="col-xs-12 visible-xs feats-xs">
-                                <div>
-                                    <img src="/static/media/images/feat_image_placeholder.jpg">
-                                    <span>Lorem Ipsum is Simply</span>
-                                </div>
-                            </div>
-
-                            <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs feats-left">
-                                <span>Lorem Ipsum is Simply</span>
-                                <img src="/static/media/images/feat_image_placeholder.jpg">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Appears in Screen XS -->
-                            <div class="col-xs-12 visible-xs feats-xs">
-                                <div>
-                                    <img src="/static/media/images/feat_image_placeholder.jpg">
-                                    <span>Lorem Ipsum is Simply</span>
-                                </div>
-                            </div>
-
-                            <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs feats-left">
-                                <span>Lorem Ipsum is Simply</span>
-                                <img src="/static/media/images/feat_image_placeholder.jpg">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- BEGIN:  Appears In Screen LG and Up -->
-                    <div class="col-lg-4 visible-lg index-features-img-container-lg">
-                        <img src="/static/media/images/image_placeholder_2.png">
-                    </div>
-                    <!-- END:    Appears in Screen LG and Up -->
-
-                    <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-right">
-                        <div class="row">
-                            <!-- Appears in Screen XS -->
-                            <div class="col-xs-12 visible-xs feats-xs">
-                                <div>
-                                    <img src="/static/media/images/feat_image_placeholder.jpg">
-                                    <span>Lorem Ipsum is Simply</span>
-                                </div>
-                            </div>
-
-                            <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs feats-right">
-                                <img src="/static/media/images/feat_image_placeholder.jpg">
-                                <span>Lorem Ipsum is Simply</span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Appears in Screen XS -->
-                            <div class="col-xs-12 visible-xs feats-xs">
-                                <div>
-                                    <img src="/static/media/images/feat_image_placeholder.jpg">
-                                    <span>Lorem Ipsum is Simply</span>
-                                </div>
-                            </div>
-
-                            <!-- Appears in Screen SM and Up -->    
-                            <div class="col-sm-12 hidden-xs feats-right">
-                                <img src="/static/media/images/feat_image_placeholder.jpg">
-                                <span>Lorem Ipsum is Simply</span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Appears in Screen XS -->
-                            <div class="col-xs-12 visible-xs feats-xs">
-                                <div>
-                                    <img src="/static/media/images/feat_image_placeholder.jpg">
-                                    <span>Lorem Ipsum is Simply</span>
-                                </div>
-                            </div>
-
-                            <!-- Appears in Screen SM and Up -->
-                            <div class="col-sm-12 hidden-xs feats-right">
-                                <img src="/static/media/images/feat_image_placeholder.jpg">
-                                <span>Lorem Ipsum is Simply</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {% include "footer.html" %}
         </div>
+
+        <div class="index-section-3 container-fluid"></div>
+
+        <div class="index-section-4 container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span class="index-features-header">Fluid Design. Feature Rich.</span>
+                    <span class="index-features-subheader">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                </div>
+            </div>
+
+            <div class="row feats-row">
+                <!-- Appears In Screen XS -->
+                <div class="col-xs-12 visible-xs index-features-img-container-xs">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen SM to LG -->
+                <div class="col-sm-12 hidden-xs hidden-lg index-features-img-container-sm">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-left">
+                    <div class="row">
+                        <!-- Appears in Screen XS -->
+                        <div class="col-xs-12 visible-xs feats-xs">
+                            <div>
+                                <img src="/static/media/images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+
+                        <!-- Appears in Screen SM and Up -->
+                        <div class="col-sm-12 hidden-xs feats-left">
+                            <span>Lorem Ipsum is Simply</span>
+                            <img src="/static/media/images/feat_image_placeholder.jpg">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Appears in Screen XS -->
+                        <div class="col-xs-12 visible-xs feats-xs">
+                            <div>
+                                <img src="/static/media/images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+
+                        <!-- Appears in Screen SM and Up -->
+                        <div class="col-sm-12 hidden-xs feats-left">
+                            <span>Lorem Ipsum is Simply</span>
+                            <img src="/static/media/images/feat_image_placeholder.jpg">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Appears in Screen XS -->
+                        <div class="col-xs-12 visible-xs feats-xs">
+                            <div>
+                                <img src="/static/media/images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+
+                        <!-- Appears in Screen SM and Up -->
+                        <div class="col-sm-12 hidden-xs feats-left">
+                            <span>Lorem Ipsum is Simply</span>
+                            <img src="/static/media/images/feat_image_placeholder.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEGIN:  Appears In Screen LG and Up -->
+                <div class="col-lg-4 visible-lg index-features-img-container-lg">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+                <!-- END:    Appears in Screen LG and Up -->
+
+                <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-right">
+                    <div class="row">
+                        <!-- Appears in Screen XS -->
+                        <div class="col-xs-12 visible-xs feats-xs">
+                            <div>
+                                <img src="/static/media/images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+
+                        <!-- Appears in Screen SM and Up -->
+                        <div class="col-sm-12 hidden-xs feats-right">
+                            <img src="/static/media/images/feat_image_placeholder.jpg">
+                            <span>Lorem Ipsum is Simply</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Appears in Screen XS -->
+                        <div class="col-xs-12 visible-xs feats-xs">
+                            <div>
+                                <img src="/static/media/images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+
+                        <!-- Appears in Screen SM and Up -->    
+                        <div class="col-sm-12 hidden-xs feats-right">
+                            <img src="/static/media/images/feat_image_placeholder.jpg">
+                            <span>Lorem Ipsum is Simply</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Appears in Screen XS -->
+                        <div class="col-xs-12 visible-xs feats-xs">
+                            <div>
+                                <img src="/static/media/images/feat_image_placeholder.jpg">
+                                <span>Lorem Ipsum is Simply</span>
+                            </div>
+                        </div>
+
+                        <!-- Appears in Screen SM and Up -->
+                        <div class="col-sm-12 hidden-xs feats-right">
+                            <img src="/static/media/images/feat_image_placeholder.jpg">
+                            <span>Lorem Ipsum is Simply</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
         
         <!-- SCRIPTS GO HERE -->
 
         <script>
-            //Function To Display Popup
-            function pop(div) {
-                document.getElementById(div).style.display = 'block';
+            function goToByScroll(id) {
+                // Scroll
+                $('body').animate({
+                    scrollTop: $("#"+id).offset().top - 50},
+                    'slow');
             }
+        </script>
 
-             //Function to Hide Popup
-            function hide(div) {
-                document.getElementById(div).style.display = 'none';
-            }
+        <script>
+            // ***REVISIT BELOW FOR POPUP VIDEO***
 
-            //Function to detect escape button
-            document.onkeydown = function(evt) {
-                evt = evt || window.event;
+            // //Function To Display Popup
+            // function pop(div) {
+            //     document.getElementById(div).style.display = 'block';
+            // }
 
-                if (evt.keyCode == 27) {
-                    hide('popDiv');
-                }
-            };
+            //  //Function to Hide Popup
+            // function hide(div) {
+            //     document.getElementById(div).style.display = 'none';
+            // }
+
+            // //Function to detect escape button
+            // document.onkeydown = function(evt) {
+            //     evt = evt || window.event;
+
+            //     if (evt.keyCode == 27) {
+            //         hide('popDiv');
+            //     }
+            // };
         </script>
 
         <!-- SCIPTS END HERE -->
