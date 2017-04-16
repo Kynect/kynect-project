@@ -72,6 +72,9 @@ TABLE OF CONTENTS:
     margin-top: 0;
     margin-bottom: 0; }
 
+.navbar-nav > li > .nav-updateme {
+    padding: 0 !important; }
+
 .nav-button {
     margin-right: 15px;
     margin-left: 15px;
@@ -180,22 +183,34 @@ TABLE OF CONTENTS:
         -o-transition: background-color 300ms ease-out;
         transition: background-color 300ms ease-out; }
 
-/* The ghost, nudged to maintain perfect centering */
-.index-topheading-container > div:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; } 	/* Adjusts for spacing */
+    /* The ghost, nudged to maintain perfect centering */
+    .index-topheading-container > div:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em; } 	/* Adjusts for spacing */
 
-.index-topheading-container > div:hover {
-    background-color: rgba(210,210,210,0.2);
-    cursor: pointer;
-    cursor: hand; }
+    .index-topheading-container > div:hover {
+        background-color: rgba(210,210,210,0.2);
+        cursor: pointer;
+        cursor: hand; }
 
 	.index-topheading-container > div > div {
         display: inline-block;
         vertical-align: middle; }
+
+    .index-topheading-container > .index-heading {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 40px; }
+
+    .index-topheading-container > .index-subheading {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 20px; }
 
 /*.index-popup-container {                         *** REVISIT FOR POPUP VIDEO ***
     background-color: rgba(40,40,40,0.9);
@@ -495,6 +510,112 @@ TABLE OF CONTENTS:
 		margin-top: 25px; }
 }
 
+.subscribe-main-section {
+    display: block;
+    height: 100%;
+    min-height: 100%;
+    width: 100%; 
+    padding-top: 50px;
+
+    /* Cover background for homepage */
+    background: url(/static/media/images/dog_background_blur_2.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.subscribe-form-container {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+
+    /* Vertically Center Text */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translate(-50%);
+    transform: translateY(-50%) translate(-50%); }
+
+    .subscribe-form-container > .subscribe-form-heading {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 40px; }
+
+    .subscribe-form-container > .subscribe-form-subheading {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 20px; }
+
+    .subscribe-form-container .subscribe-name-input {
+        height: 35px; }
+
+    .subscribe-form-container .subscribe-email-input {
+        height: 35px; }
+
+    .subscribe-form-container .subscribe-submit-btn {
+        background-color: #49cae7;
+        height: 35px;
+        border-color: #49cae7;
+
+        /* APPLY TRANSITION DELAY FOR BACKGROUND_COLOR */
+
+        -webkit-transition: background-color 300ms ease-out;
+        -moz-transition: background-color 300ms ease-out;
+        -o-transition: background-color 300ms ease-out;
+        transition: background-color 300ms ease-out; }
+
+    .subscribe-form-container .subscribe-submit-btn:hover {
+        background-color: #1aabcb;
+        border-color: #1aabcb; }
+
+@media (max-width: 767px) {
+    .subscribe-form-container {
+        text-align: center; }
+
+    .subscribe-form-container form {
+        display: inline-block; }
+
+    .subscribe-form-container .subscribe-name-input {
+        display: block;
+        width: 300px; }
+
+    .subscribe-form-container .subscribe-email-input {
+        display: block;
+        width: 300px;
+        margin-top: 15px; }
+
+    .subscribe-form-container .subscribe-submit-btn {
+        display: inline-block;
+        width: 300px;
+        margin-top: 15px; }
+}
+
+@media (min-width: 768px) {
+    .subscribe-form-container {
+        text-align: center; }
+
+    .subscribe-form-container form {
+        display: inline-block; }
+
+    .subscribe-form-container .subscribe-name-input {
+        display: inline-block;
+        width: 150px; 
+        margin-right: 5px; }
+
+    .subscribe-form-container .subscribe-email-input {
+        display: inline-block;
+        width: 300px; 
+        margin-right: 5px; }
+
+    .subscribe-form-container .subscribe-submit-btn {
+        display: inline-block;
+        width: 125px; }
+}
+
 
 /*----------------------------------------------------------------------------*/
 /*-------------------------------- LINKS -------------------------------------*/
@@ -518,18 +639,6 @@ TABLE OF CONTENTS:
 /*------------------------------ TYPOGRAPHY ----------------------------------*/
 /*----------------------------------------------------------------------------*/
 
-
-.index-topheading-container > .index-heading {
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 40px; }
-
-.index-topheading-container > .index-subheading {
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 20px; }
 
 /*.index-video-button span {                *** REVISIT FOR POPUP VIDEO ***
     display: inline-block;

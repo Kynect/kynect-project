@@ -14,10 +14,10 @@
                 <span>kynect</span>
             </a>
 
-            <button type="button" 
-                    class="btn btn-default navbar-btn pull-right visible-xs nav-button" 
-                    onClick="document.getElementById('subscribeId').scrollIntoView();">UPDATE ME
-            </button>
+            <a href="/subscribe/">
+                <button type="button" 
+                        class="btn btn-default navbar-btn pull-right visible-xs nav-button">UPDATE ME</button>
+            </a>
             
             <!-- IMPLEMENT THIS LINE BELOW WHEN BACKEND IS BEING SET UP
             <a class="navbar-text pull-right visible-xs buyNow" href="/purchase"><b>BUY NOW</b></a> -->
@@ -76,10 +76,22 @@
 
                 <!-- END: IMPLEMENT THIS WHEN BACKEND IS BEING SET UP -->
 
-                <li class="hidden-xs"><button type="button" class="btn btn-default navbar-btn nav-button" onClick="document.getElementById('subscribeId').scrollIntoView();">UPDATE ME</button></li>
+                <li class="hidden-xs">
+                    <a class="nav-updateme" href="/subscribe/">
+                        <button type="button" 
+                                class="btn btn-default navbar-btn nav-button">UPDATE ME</button>
+                    </a>
+                </li>
+
                 <!-- <li class="nav-links"><a href="/how_it_works"><span>HOW IT WORKS</span></a></li> -->
-                <li class="nav-links"><a href="/features"><span>FEATURES</span></a></li>
-                <li class="nav-links"><a href="/about_us"><span>ABOUT US</span></a></li>
+
+                <li class="nav-links">
+                    <a href="/features"><span>FEATURES</span></a>
+                </li>
+
+                <li class="nav-links">
+                    <a href="/about_us"><span>ABOUT US</span></a>
+                </li>
                 <!-- <li class="nav-links"><a href="/FAQ"><span>FAQ</span></a></li> -->
             </ul>
         </div>

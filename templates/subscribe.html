@@ -33,7 +33,31 @@
     <body>
         {% include "navbar.html" %}
 
-        
+        <div class="subscribe-main-section">
+            <div class="subscribe-form-container">
+                <span class="subscribe-form-heading">Stay Kynected to Your Best Friend</span>
+
+                <span class="subscribe-form-subheading">Don't Wait Until It's Too Late</span>
+
+                <br />
+
+                <form action="#" method="post">
+                    {% csrf_token %}
+
+                    <input  type="text" 
+                            class="form-control subscribe-name-input" 
+                            id="name"  
+                            placeholder="First Name">
+
+                    <input  type="email" 
+                            class="form-control subscribe-email-input has-feedback has-success" 
+                            id="email" 
+                            placeholder="yourname@email.com">
+
+                    <button type="submit" class="btn btn-primary subscribe-submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
 
         {% include "footer.html" %}
         
