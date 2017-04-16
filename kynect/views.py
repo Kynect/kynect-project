@@ -29,6 +29,9 @@ def about_us(request):
 def FAQ(request):
 	return render(request, 'FAQ.html')
 
+def subscribe(request):
+	return render(request, 'subscribe.html')
+
 # *** IMPLEMENT BELOW WHEN BACK END IS BEING SET UP ***
 
 # def profile(request):

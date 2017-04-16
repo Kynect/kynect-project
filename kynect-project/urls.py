@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^features/', kynect.views.features),
     url(r'^about_us/', kynect.views.about_us),
     url(r'^FAQ/', kynect.views.FAQ),
+    url(r'^subscribe/', kynect.views.subscribe),
 
     # *** IMPLEMENT BELOW ONCE BACKEND IS BEING SET UP ***
 

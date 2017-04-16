@@ -8,7 +8,7 @@
 
         <!-- Bootstrap Stylesheets -->
         <link   rel="stylesheet" 
-                href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- External Stylesheets -->
         <link   rel="stylesheet"
@@ -23,9 +23,11 @@
         <link   href="https://fonts.googleapis.com/css?family=Muli" 
                 rel="stylesheet">    
 
-        <!-- JQuery & JavaScript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <!-- JQuery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <!-- Bootstrap Javascript Library -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -42,7 +44,7 @@
 
                 <br />
 
-                <div class="index-learnmore-button" onclick="goToByScroll('index-section-2')">
+                <div onclick="goToByScroll('index-section-2')">
                     <div>Learn More</div>
                 </div>
 
@@ -80,7 +82,7 @@
             <div class="row">
                 <div class="col-lg-1 visible-lg"></div>
 
-                <div class="col-lg-5 visible-lg index-summary">
+                <div class="col-lg-5 visible-lg description-container">
                     <span>The Future of Pet Monitoring is Here.</span>
 
                     <br />
@@ -89,50 +91,154 @@
 
                     <br /><br />
 
-                    <div class="updateme background-blue">
-                        <div>UPDATE ME</div>
-                    </div>
+                    <a href="/subscribe/">
+                        <div class="updateme background-blue">
+                            <div>UPDATE ME</div>
+                        </div>
+                    </a>
                 </div>
 
                 <!-- Appears In Screen XS -->
-                <div class="col-xs-12 visible-xs index-summary-image">
+                <div class="col-xs-12 visible-xs image-container">
                     <img src="/static/media/images/image_placeholder_2.png">
                 </div>
 
                 <!-- Appears In Screen SM and Up -->
-                <div class="col-sm-12 visible-sm index-summary-image">
+                <div class="col-sm-12 visible-sm image-container">
                     <img src="/static/media/images/image_placeholder_2.png">
                 </div>
 
                 <!-- Appears In Screen MD and Up -->
-                <div class="col-md-12 visible-md index-summary-image">
+                <div class="col-md-12 visible-md image-container">
                     <img src="/static/media/images/image_placeholder_2.png">
                 </div>
 
                 <!-- Appears In Screen LG and Up -->
-                <div class="col-lg-6 visible-lg index-summary-image">
+                <div class="col-lg-6 visible-lg image-container">
                     <img src="/static/media/images/image_placeholder_2.png">
                 </div>
 
-                <div class="col-xs-12 hidden-lg index-summary">
+                <div class="col-xs-12 hidden-lg description-container">
                     <span>The Future of Pet Monitoring is Here.</span>
 
                     <br />
 
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
-                    <br />
+                    <br /><br />
 
-                    <div class="updateme background-blue">
-                        <div>UPDATE ME</div>
-                    </div>
+                    <a href="/subscribe/">
+                        <div class="background-blue">
+                            <div>UPDATE ME</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="index-section-3 container-fluid"></div>
+        <div class="index-section-3 container-fluid background-lightgrey">
+            <div class="row">
+                <div class="col-xs-2"></div>
+
+                <div class="col-xs-8 col-sm-4 col-lg-2">
+                    <img src="/static/media/images/placeholder_image_square.png">
+
+                    <span>Health Monitoring</span>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+
+                    <a href="/features/">Learn More</a>
+                </div>
+
+                <div class="col-xs-2 visible-xs"></div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-xs-2 visible-xs"></div>
+
+                <div class="col-xs-8 col-sm-4 col-lg-2">
+                    <img src="/static/media/images/placeholder_image_square.png">
+
+                    <span>Safety & Security</span>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+
+                    <a href="/features/">Learn More</a>
+                </div>
+
+                <div class="col-xs-2 hidden-lg"></div>
+                <div class="clearfix hidden-lg"></div>
+                <div class="col-xs-2 hidden-lg"></div>
+
+                <div class="col-xs-8 col-sm-4 col-lg-2">
+                    <img src="/static/media/images/placeholder_image_square.png">
+
+                    <span>GPS Location</span>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+
+                    <a href="/features/">Learn More</a>
+                </div>
+
+                <div class="col-xs-2 visible-xs"></div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-xs-2 visible-xs"></div>
+
+                <div class="col-xs-8 col-sm-4 col-lg-2">
+                    <img src="/static/media/images/placeholder_image_square.png">
+
+                    <span>Activity Tracking</span>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+
+                    <a href="/features/">Learn More</a>
+                </div>
+
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
 
         <div class="index-section-4 container-fluid">
+            <div class="row">
+                <!-- Appears In Screen XS -->
+                <div class="col-xs-12 visible-xs image-container">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen SM and Up -->
+                <div class="col-sm-12 visible-sm image-container">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen MD and Up -->
+                <div class="col-md-12 visible-md image-container">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <!-- Appears In Screen LG and Up -->
+                <div class="col-lg-6 visible-lg image-container">
+                    <img src="/static/media/images/image_placeholder_2.png">
+                </div>
+
+                <div class="col-xs-12 col-lg-5 description-container">
+                    <span>Wellness Platform</span>
+
+                    <br />
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+                    <br /><br />
+
+                    <a href="/how_it_works/">
+                        <div class="border-blue">
+                            <div>Learn More</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-1 visible-lg"></div>
+            </div>
+        </div>
+
+        <div class="index-section-5 container-fluid background-lightgrey">
             <div class="row">
                 <div class="col-xs-12">
                     <span class="index-features-header">Fluid Design. Feature Rich.</span>
@@ -141,18 +247,12 @@
             </div>
 
             <div class="row feats-row">
-                <!-- Appears In Screen XS -->
-                <div class="col-xs-12 visible-xs index-features-img-container-xs">
-                    <img src="/static/media/images/image_placeholder_2.png">
-                </div>
-
-                <!-- Appears In Screen SM to LG -->
-                <div class="col-sm-12 hidden-xs hidden-lg index-features-img-container-sm">
-                    <img src="/static/media/images/image_placeholder_2.png">
+                <div class="col-xs-12 hidden-lg main-image-container">
+                    <img src="/static/media/images/placeholder_image_square.png">
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-left">
-                    <div class="row">
+                    <div class="row row1">
                         <!-- Appears in Screen XS -->
                         <div class="col-xs-12 visible-xs feats-xs">
                             <div>
@@ -168,7 +268,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row row2">
                         <!-- Appears in Screen XS -->
                         <div class="col-xs-12 visible-xs feats-xs">
                             <div>
@@ -184,7 +284,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row row3">
                         <!-- Appears in Screen XS -->
                         <div class="col-xs-12 visible-xs feats-xs">
                             <div>
@@ -202,13 +302,13 @@
                 </div>
 
                 <!-- BEGIN:  Appears In Screen LG and Up -->
-                <div class="col-lg-4 visible-lg index-features-img-container-lg">
-                    <img src="/static/media/images/image_placeholder_2.png">
+                <div class="col-lg-4 visible-lg main-image-container">
+                    <img src="/static/media/images/placeholder_image_square.png">
                 </div>
                 <!-- END:    Appears in Screen LG and Up -->
 
                 <div class="col-xs-12 col-sm-6 col-lg-4 feat-container-right">
-                    <div class="row">
+                    <div class="row row1">
                         <!-- Appears in Screen XS -->
                         <div class="col-xs-12 visible-xs feats-xs">
                             <div>
@@ -224,7 +324,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row row2">
                         <!-- Appears in Screen XS -->
                         <div class="col-xs-12 visible-xs feats-xs">
                             <div>
@@ -240,7 +340,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row row3">
                         <!-- Appears in Screen XS -->
                         <div class="col-xs-12 visible-xs feats-xs">
                             <div>
