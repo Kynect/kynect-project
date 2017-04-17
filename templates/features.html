@@ -37,31 +37,167 @@
             <div class="row">
                 <div class="col-md-1 hidden-xs hidden-sm"></div>
 
-                <!-- Appears In Screen XS to MD-->
-                <div class="col-xs-12 hidden-md hidden-lg image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
-                </div>
-
-                <!-- Appears In Screen LG and Up -->
                 <div class="col-md-5 hidden-xs hidden-sm image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="/static/media/images/image_placeholder_2.png">
                 </div>
 
-                <div class="col-xs-12 col-md-5 features-container">
-                    <div>
+                <div id="carousel" class="carousel hidden-md hidden-lg" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="item image-container active">
+                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="First slide">
+
+                            <div class="col-xs-12 col-md-5 features-container">
+                                <div>
+                                    <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                                    <span class="feature-section-1-heading">Health Monitoring</span>
+
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+                                    <span class="features-learnmore" onclick="goToByScroll('features-health')">Learn More ></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item image-container">
+                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="Second slide">
+
+                            <div class="col-xs-12 col-md-5 features-container">
+                                <div>
+                                    <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                                    <span class="feature-section-1-heading">Location Services</span>
+
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+                                    <span class="features-learnmore" onclick="goToByScroll('features-location')">Learn More ></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item image-container">
+                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="Third slide">
+
+                            <div class="col-xs-12 col-md-5 features-container">
+                                <div>
+                                    <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                                    <span class="feature-section-1-heading">Activity Tracking</span>
+
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+                                    <span class="features-learnmore" onclick="goToByScroll('features-activity')">Learn More ></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item image-container">
+                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="Fourth slide">
+
+                            <div class="col-xs-12 col-md-5 features-container">
+                                <div>
+                                    <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                                    <span class="feature-section-1-heading">Safety & Security</span>
+
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+                                    <span class="features-learnmore" onclick="goToByScroll('features-safety')">Learn More ></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control left" href="#carousel" role="button" data-slide="prev">
+                        <img src="/static/media/images/menu-arrow-left.png">
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control right" href="#carousel" role="button" data-slide="next">
+                        <img src="/static/media/images/menu-arrow-right.png">
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-md-5 hidden-xs hidden-sm features-container">
+                    <div class="featureHealth" id="featureHealth">
                         <img src="/static/media/images/feat_image_placeholder.jpg">
 
                         <br />
 
-                        <span>Health Monitoring</span>
+                        <span class="feature-section-1-heading">Health Monitoring</span>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
-                        <a href="/features/#features-activity">Learn More</a>
+                        <span class="features-learnmore" onclick="goToByScroll('features-health')">Learn More ></span>
+                    </div>
+
+                    <div class="featureLocation" id="featureLocation">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <br />
+
+                        <span class="feature-section-1-heading">Location Services</span>
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+                        <span class="features-learnmore" onclick="goToByScroll('features-location')">Learn More ></span>
+                    </div>
+
+                    <div class="featureActivity" id="featureActivity">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <br />
+
+                        <span class="feature-section-1-heading">Activity Tracking</span>
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+                        <span class="features-learnmore" onclick="goToByScroll('features-activity')">Learn More ></span>
+                    </div>
+
+                    <div class="featureSafety" id="featureSafety">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <br />
+
+                        <span class="feature-section-1-heading">Safety & Security</span>
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+                        <span class="features-learnmore" onclick="goToByScroll('features-safety')">Learn More ></span>
                     </div>
                 </div>
 
                 <div class="col-lg-1 visible-lg"></div>
+            </div>
+
+            <div class="row hidden-xs hidden-sm selector-container">
+                <div>
+                    <div class="health" id="health" onclick="changeHealth()">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <span><b>Health Monitoring</b></span>
+                    </div>
+
+                    <div  id="location" onclick="changeLocation()">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <span><b>Location Services</b></span>
+                    </div>
+
+                    <div  id="activity" onclick="changeActivity()">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <span><b>Activity Tracking</b></span>
+                    </div>
+
+                    <div  id="safety" onclick="changeSafety()">
+                        <img src="/static/media/images/feat_image_placeholder.jpg">
+
+                        <span><b>Safety & Security</b></span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -157,7 +293,66 @@
         
         <!-- SCRIPTS GO HERE -->
 
-        
+        <script>
+
+            // FUNCTION TO SCROLL TO SECTION BELOW
+            function goToByScroll(id) {
+                // Scroll
+                $('body').animate({
+                    scrollTop: $("#"+id).offset().top - 50},
+                    'slow');
+            }
+
+            // GROUP OF FUNCTIONS TO CHANGE MAIN FEATURE DESCRIPTIONIN SECTION 1
+            function changeHealth() {
+                document.getElementById('featureHealth').style.display = 'block';
+                document.getElementById('featureLocation').style.display = 'none';
+                document.getElementById('featureActivity').style.display = 'none';
+                document.getElementById('featureSafety').style.display = 'none';
+
+                document.getElementById('health').style.borderColor = '#49cae7';
+                document.getElementById('location').style.borderColor = '#e6e6e6';
+                document.getElementById('activity').style.borderColor = '#e6e6e6';
+                document.getElementById('safety').style.borderColor = '#e6e6e6';
+            }
+
+            function changeLocation() {
+                document.getElementById('featureHealth').style.display = 'none';
+                document.getElementById('featureLocation').style.display = 'block';
+                document.getElementById('featureActivity').style.display = 'none';
+                document.getElementById('featureSafety').style.display = 'none';
+
+                document.getElementById('health').style.borderColor = '#e6e6e6';
+                document.getElementById('location').style.borderColor = '#49cae7';
+                document.getElementById('activity').style.borderColor = '#e6e6e6';
+                document.getElementById('safety').style.borderColor = '#e6e6e6';
+            }
+
+            function changeActivity() {
+                document.getElementById('featureHealth').style.display = 'none';
+                document.getElementById('featureLocation').style.display = 'none';
+                document.getElementById('featureActivity').style.display = 'block';
+                document.getElementById('featureSafety').style.display = 'none';
+
+                document.getElementById('health').style.borderColor = '#e6e6e6';
+                document.getElementById('location').style.borderColor = '#e6e6e6';
+                document.getElementById('activity').style.borderColor = '#49cae7';
+                document.getElementById('safety').style.borderColor = '#e6e6e6';
+            }
+
+            function changeSafety() {
+                document.getElementById('featureHealth').style.display = 'none';
+                document.getElementById('featureLocation').style.display = 'none';
+                document.getElementById('featureActivity').style.display = 'none';
+                document.getElementById('featureSafety').style.display = 'block';
+
+                document.getElementById('health').style.borderColor = '#e6e6e6';
+                document.getElementById('location').style.borderColor = '#e6e6e6';
+                document.getElementById('activity').style.borderColor = '#e6e6e6';
+                document.getElementById('safety').style.borderColor = '#49cae7';
+            }
+
+        </script>
 
         <!-- SCIPTS END HERE -->
     </body>
