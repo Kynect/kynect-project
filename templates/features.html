@@ -424,7 +424,59 @@
                 <div class="col-xs-12 col-md-5 feature-description-container">
                     <span class="hidden-xs hidden-sm">Safety & Security</span>
 
-                    
+                    <div class="safety-features">
+                        <input type="radio" name="rGroup" value="1" id="r1" checked="checked" />
+                        <label class="radio safety-r1" for="r1" onclick="changeTemp()"></label>
+
+                        <input type="radio" name="rGroup" value="1" id="r2"/>
+                        <label class="radio safety-r2" for="r2" onclick="changeImpact()"></label>
+
+                        <input type="radio" name="rGroup" value="1" id="r3"/>
+                        <label class="radio safety-r3" for="r3" onclick="changeWater()"></label>
+
+                        <input type="radio" name="rGroup" value="1" id="r4"/>
+                        <label class="radio safety-r4" for="r4" onclick="changeLED()"></label>
+                    </div>
+
+                    <div class="media safety-temp" id="safety-temp">
+                        <img class="d-flex" src="/static/media/images/placeholder_image_square.png" alt="Generic placeholder image">
+
+                        <div class="media-body">
+                            <span>Temperature Monitoring</span>
+
+                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        </div>
+                    </div>
+
+                    <div class="media safety-impact" id="safety-impact">
+                        <img class="d-flex" src="/static/media/images/placeholder_image_square.png" alt="Generic placeholder image">
+
+                        <div class="media-body">
+                            <span>Impact Detection</span>
+
+                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        </div>
+                    </div>
+
+                    <div class="media safety-water" id="safety-water">
+                        <img class="d-flex" src="/static/media/images/placeholder_image_square.png" alt="Generic placeholder image">
+
+                        <div class="media-body">
+                            <span>Water Sensing</span>
+
+                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        </div>
+                    </div>
+
+                    <div class="media safety-led" id="safety-led">
+                        <img class="d-flex" src="/static/media/images/placeholder_image_square.png" alt="Generic placeholder image">
+
+                        <div class="media-body">
+                            <span>LED Lighting</span>
+
+                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-1 hidden-xs hidden-sm"></div>
@@ -492,6 +544,34 @@
                 document.getElementById('location').style.borderColor = '#e6e6e6';
                 document.getElementById('activity').style.borderColor = '#e6e6e6';
                 document.getElementById('safety').style.borderColor = '#49cae7';
+            }
+
+            function changeTemp() {
+                document.getElementById('safety-temp').style.display = 'block';
+                document.getElementById('safety-impact').style.display = 'none';
+                document.getElementById('safety-water').style.display = 'none';
+                document.getElementById('safety-led').style.display = 'none';
+            }
+
+            function changeImpact() {
+                document.getElementById('safety-temp').style.display = 'none';
+                document.getElementById('safety-impact').style.display = 'block';
+                document.getElementById('safety-water').style.display = 'none';
+                document.getElementById('safety-led').style.display = 'none';
+            }
+
+            function changeWater() {
+                document.getElementById('safety-temp').style.display = 'none';
+                document.getElementById('safety-impact').style.display = 'none';
+                document.getElementById('safety-water').style.display = 'block';
+                document.getElementById('safety-led').style.display = 'none';
+            }
+
+            function changeLED() {
+                document.getElementById('safety-temp').style.display = 'none';
+                document.getElementById('safety-impact').style.display = 'none';
+                document.getElementById('safety-water').style.display = 'none';
+                document.getElementById('safety-led').style.display = 'block';
             }
 
         </script>
