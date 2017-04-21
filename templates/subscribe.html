@@ -34,36 +34,100 @@
         {% include "navbar.html" %}
 
         <div class="subscribe-main-section">
-            <div class="subscribe-form-container">
+            <div class="subscribe-form-container color-white">
                 <span class="subscribe-form-heading">Stay Kynected to Your Best Friend</span>
 
                 <span class="subscribe-form-subheading">Don't Wait Until It's Too Late</span>
 
                 <br />
 
-                <form action="#" method="post">
+                <form   action="" 
+                        method="POST"
+                        name="subscribe-form"
+                        target="no-target"
+                        id="subscribe-form">
                     {% csrf_token %}
 
-                    <input  type="text" 
+                    <input  type="text"
+                            name="fname"  
+                            placeholder="First Name"
                             class="form-control subscribe-name-input" 
-                            id="name"  
-                            placeholder="First Name">
+                            id="fname"
+                            required>
+
+                    <input  type="text" 
+                            name="lname"  
+                            placeholder="Last Name"
+                            class="form-control subscribe-name-input" 
+                            id="lname"
+                            required>
 
                     <input  type="email" 
-                            class="form-control subscribe-email-input has-feedback has-success" 
+                            name="email"
+                            class="form-control subscribe-email-input" 
                             id="email" 
-                            placeholder="example@domain.com">
+                            placeholder="example@domain.com"
+                            required>
 
-                    <button type="submit" class="btn btn-primary subscribe-submit-btn">Submit</button>
+                    <button type="submit" 
+                            value="SUBMIT" 
+                            name="submit" 
+                            class="btn btn-primary subscribe-submit-btn border-blue background-blue"
+                            id="submit-button">Submit</button>
                 </form>
+
+                <!-- Hack that prevents submit from going to another page -->
+                <iframe src="#" id="no-target" name="no-target" style="display: none"></iframe>
             </div>
+
+            <!-- BEGIN POPUP DIV -->
+            <div class="subscribe-popup-container" id="popDiv">
+                <div class="subscribe-popup background-white">
+                    <div>
+                        <span>Thank You for Signing Up!</span>
+
+                        <p class="color-darkgrey">Thank you for signing up for updates on the development of the Kynect collar. We are very excited to share our journey with you, so please look out for future updates from the Kynect team!</p>
+
+                        <a href="/home/">
+                            <div class="color-white background-blue">   
+                                <div>Return Home</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END POPUP DIV -->
         </div>
 
         {% include "footer.html" %}
         
         <!-- SCRIPTS GO HERE -->
 
-        
+        <script>
+
+            $('#subscribe-form').one('submit',function(){
+                var fname = encodeURIComponent($('#fname').val());
+                var fname_id = "entry.1973480414";
+                var lname = encodeURIComponent($('#lname').val());
+                var lname_id = "entry.325082743";
+                var email = encodeURIComponent($('#email').val());
+                var email_id = "entry.1110405915";
+
+                var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdiyHonwU8mHO6ZK9zOZfKHgQaMKqaAYVoLihavfiaDUwmYQA/formResponse?';
+                var submitRef = '&submit=3017235812447159340';
+                var submitURL = (baseURL + fname_id + "=" + fname + "&" + lname_id + "=" + lname + "&" + email_id + "=" + email + submitRef);
+
+                console.log(submitURL);
+
+                $(this)[0].action=submitURL;
+
+                $('input[type="text"], textarea').val('');
+                $('input[type="email"], textarea').val('');
+
+                $('.subscribe-popup-container').css('display', 'block');
+            });
+
+        </script>
 
         <!-- SCIPTS END HERE -->
     </body>
