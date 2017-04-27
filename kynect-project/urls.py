@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 import kynect.views
@@ -34,3 +36,9 @@ urlpatterns = [
     # url(r'^login/$', views.login, {'template_name': 'login.html', 'authentication_form': LoginForm}, name="login"),
     # url(r'^logout/', views.logout, {'next_page': '/home'}),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^debug/', include(debug_toolbar.urls)),
+    ] + urlpatterns

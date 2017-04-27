@@ -183,7 +183,7 @@ TABLE OF CONTENTS:
     padding-top: 50px;
 
 	/* Cover background for homepage */
-	background: url(/static/media/images/dog_background_blur_3.jpg) no-repeat center center; 
+	background: url(/static/media/images/dog_background_blur_4.jpg) no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -306,12 +306,12 @@ TABLE OF CONTENTS:
 
     @media (min-width: 1200px) {
         .index-section-2 .description-container {
-            padding-top: 100px; }
+            padding-top: 60px; }
     }
 
     @media (max-width: 1199px) {
         .index-section-2 .description-container {
-            padding-top: 60px; }
+            padding-top: 20px; }
     }
 
     .index-section-2 .description-container > p {
@@ -357,8 +357,8 @@ TABLE OF CONTENTS:
         text-align: center; }
 
 .index-section-3 {
-    padding-top: 80px;
-    padding-bottom: 80px; }
+    padding-top: 50px;
+    padding-bottom: 50px; }
 
     .index-section-3 > .row > div {
         padding-top: 20px;
@@ -391,12 +391,12 @@ TABLE OF CONTENTS:
 
     @media (min-width: 1200px) {
         .index-section-4 .description-container {
-            padding-top: 90px; }
+            padding-top: 70px; }
     }
 
     @media (max-width: 1199px) {
         .index-section-4 .description-container {
-            padding-top: 60px; }
+            padding-top: 20px; }
     }
 
     .index-section-4 .description-container > p {
@@ -629,7 +629,7 @@ TABLE OF CONTENTS:
 
         .features-section-2 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 80%;
             margin: 0 auto; }
 
         .features-section-2 .feature-description-container > div > div > span {
@@ -650,7 +650,7 @@ TABLE OF CONTENTS:
 
         .features-section-2 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 60%;
             margin: 0 auto; }
 
         .features-section-2 .feature-description-container > div > div > span {
@@ -699,7 +699,9 @@ TABLE OF CONTENTS:
 
     .features-section-2 .feature-description-container > div > div > span {
         display: block;
-        margin-bottom: 10px; }
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 20px; }
 
     .features-section-2 .image-container {
         padding-left: 0 !important;
@@ -733,7 +735,7 @@ TABLE OF CONTENTS:
 
         .features-section-3 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 80%;
             margin: 0 auto; }
 
         .features-section-3 .feature-description-container > div > div > span {
@@ -754,7 +756,7 @@ TABLE OF CONTENTS:
 
         .features-section-3 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 60%;
             margin: 0 auto; }
 
         .features-section-3 .feature-description-container > div > div > span {
@@ -803,7 +805,9 @@ TABLE OF CONTENTS:
 
     .features-section-3 .feature-description-container > div > div > span {
         display: block;
-        margin-bottom: 10px; }
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 20px; }
 
     .features-section-3 .image-container {
         padding-left: 0 !important;
@@ -837,7 +841,7 @@ TABLE OF CONTENTS:
 
         .features-section-4 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 80%;
             margin: 0 auto; }
 
         .features-section-4 .feature-description-container > div > div > span {
@@ -858,7 +862,7 @@ TABLE OF CONTENTS:
 
         .features-section-4 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 60%;
             margin: 0 auto; }
 
         .features-section-4 .feature-description-container > div > div > span {
@@ -907,7 +911,9 @@ TABLE OF CONTENTS:
 
     .features-section-4 .feature-description-container > div > div > span {
         display: block;
-        margin-bottom: 10px; }
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 20px; }
 
     .features-section-4 .image-container {
         padding-left: 0 !important;
@@ -948,13 +954,6 @@ TABLE OF CONTENTS:
         border-style: none;
         border-radius: 23px;
 
-        /* Background for buttons */
-        background: url(/static/media/images/icons/safety_feat_placeholder_46px.jpg) no-repeat center center; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-
         /* Box Shadow for Button */
         -webkit-box-shadow: 0px 1px 4px 0px #ccc; 
         -moz-box-shadow:    0px 1px 4px 0px #ccc; 
@@ -973,8 +972,15 @@ TABLE OF CONTENTS:
     .features-section-5 .feature-description-container .safety-impact,
     .features-section-5 .feature-description-container .safety-water,
     .features-section-5 .feature-description-container .safety-led {
-        display: none;
-    }
+        display: none; }
+
+    .features-section-5 .feature-description-container .safety-features img {
+        display: block;
+        margin: 8px 0 0 8px; }
+
+    .features-section-5 .feature-description-container .safety-features .safety-r2 img {
+        display: block;
+        margin: 8px 0 0 6px; }
 
     @media (max-width: 767px) {
         .features-section-5 .feature-description-container .safety-features {
@@ -982,14 +988,9 @@ TABLE OF CONTENTS:
             width: 234px;
             margin: 5px auto 10px auto; }
 
-        .features-section-5 .feature-description-container img {
-            display: block;
-            float: none;
-            margin: 0 auto 15px auto; }
-
         .features-section-5 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 80%;
             margin: 0 auto; }
 
         .features-section-5 .feature-description-container > div > div > span {
@@ -1008,20 +1009,10 @@ TABLE OF CONTENTS:
             width: 234px;
             margin: 5px auto 10px auto; }
 
-        .features-section-5 .feature-description-container img {
-            display: block;
-            float: none;
-            margin: 0 auto 15px auto; }
-
         .features-section-5 .feature-description-container > div {
             display: block;
-            width: 70%;
+            width: 60%;
             margin: 0 auto; }
-
-        .features-section-5 .feature-description-container > div > div > span {
-            display: block;
-            width: 100%;
-            text-align: center; }
 
         .features-section-5 .feature-description-container > div > div > span {
             display: block;
@@ -1037,21 +1028,14 @@ TABLE OF CONTENTS:
         .features-section-5 .feature-description-container .safety-features {
             display: inline-block;
             width: 234px;
-            margin: 15px 0 20px 0; }
+            margin: 15px 0 15px 0; }
 
         .features-section-5 .feature-description-container > span {
             margin-top: 80px; }
 
-        .features-section-5 .feature-description-container .media > img {
-            float:left;
-        }
-
         .features-section-5 .feature-description-container > div {
             display: block;
             width: 100%; }
-
-        .features-section-5 .feature-description-container > div > div {
-            padding-left: 20px !important; }
 
         .features-section-5 .feature-description-container > div > div > span {
             display: block;
@@ -1584,7 +1568,7 @@ span.index-features-subheader {
 }
 
 .index-section-3 img {
-    width: 150px;
+    width: 120px;
     height: auto; }
 
 .feats-xs img {
@@ -1616,10 +1600,6 @@ span.index-features-subheader {
         width: 200px;
         height: auto; }
 
-    .features-section-1 .features-container img {
-        width: 70px;
-        height: auto; }
-
     .features-section-2 .image-container img {
         width: 230px;
         height: auto; }
@@ -1642,10 +1622,6 @@ span.index-features-subheader {
         width: 330px;
         height: auto; }
 
-    .features-section-1 .features-container img {
-        width: 70px;
-        height: auto; }
-
     .features-section-2 .image-container img {
         width: 330px;
         height: auto; }
@@ -1666,10 +1642,6 @@ span.index-features-subheader {
 @media (min-width: 768px) {
     .features-section-1 .image-container img {
         width: 330px;
-        height: auto; }
-
-    .features-section-1 .features-container img {
-        width: 70px;
         height: auto; }
 
     .features-section-2 .image-container img {
@@ -1733,17 +1705,24 @@ span.index-features-subheader {
         height: auto; }
 }
 
+.features-section-1 .features-container img {
+    width: 50px;
+    height: auto; }
+
 .features-section-1 .selector-container img {
-    width: 70px;
+    width: 90px;
     height: auto; }
 
 .features-section-2 .feature-description-container img,
 .features-section-3 .feature-description-container img,
 .features-section-4 .feature-description-container img,
 .features-section-5 .feature-description-container img {
-    width: 55px;
-    height: auto;
-}
+    width: 40px;
+    height: auto; }
+
+.features-section-5 .feature-description-container .safety-features img {
+    width: 30px;
+    height: auto; }
 
 .about-us-portrait-container img {
 	display: block;
