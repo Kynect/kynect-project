@@ -51,40 +51,8 @@ Windows:
 ```sh
 > virtualenv venv_kynect
 ```
-**4) Install Necessary Packages in Virtual Environment:**
 
-- Enter virtual environment using command:
-
-Ubuntu:
-```sh
-$ source bin/activate
-```
-Windows (As Administrator in Powershell):
-```sh
-> Set-ExecutionPolicy RemoteSigned				// Changes Systems Execution Policy
-> .\activate									// Run in /Scripts
-```
-- Install Django via pip using below commands:
-
-Ubuntu:
-```sh
-$ pip install django
-```
-Windows:
-```sh
-> pip install django
-```
-- If you get a message "*Error loading psycopg2 module: No module named 'psycopg2'*", Run:  
-
-Ubuntu:
-```sh
-$ pip install psycopg2
-```
-Windows:
-```sh
-> pip install psycopg2
-```
-**5) Clone the Git Repository** 
+**4) Clone the Git Repository** 
 
 - Download Git for Windows
 - If you need to set up Git, run these commands to set it up:
@@ -108,18 +76,34 @@ Windows:
 ```sh
 > git clone https://github.com/EKOTracking/kynect-project.git
 ```
+
+**5) Install Necessary Packages in Virtual Environment:**
+
+- Enter virtual environment using command:
+
+Ubuntu:
+```sh
+$ source bin/activate
+```
+Windows (As Administrator in Powershell):
+```sh
+> Set-ExecutionPolicy RemoteSigned				// Changes Systems Execution Policy
+> .\Scripts\activate							// Run in Root of Virtual Env.	
+```
+- Install all dependencies from our requirements.txt (Move into /kynect-project):
+
+```sh
+pip install -r requirements.txt 
+```
+
 **6) Run the server:**
 
 - Now you can run the server by entering the directory containing 'manage.py' and running the following:
 
-Ubuntu:
 ```sh
 $ python manage.py runserver
 ```
-Windows:
-```sh
-> .\manage.py runserver
-```
+
 ### Access the Website by navigating to *localhost:8000* in your web Browser!
 
 **Testing**

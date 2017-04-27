@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static from staticfiles %}
 
 <html lang="en">
     <head>
         <title>Kynect - Monitoring Collar</title>
         <meta charset=utf-8 />
+
+        <!-- Favicon Import -->
+        <link   rel="icon" 
+                href="{% static 'media/images/favicon/favicon.ico' %}">
 
         <!-- Bootstrap Stylesheets -->
         <link   rel="stylesheet" 

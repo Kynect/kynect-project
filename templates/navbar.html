@@ -1,3 +1,5 @@
+{% load static from staticfiles %}
+
 <nav class="navbar navbar-fixed-top navbar-default nav-container" id="navbar">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,7 +12,7 @@
             </button>
 
             <a class="navbar-brand nav-brand-name" href="/home/">
-                <img src="/static/media/images/logo/Kynect_Logo_4px_Blue_Gradient.png">
+                <img src="{% static 'media/images/logo/kynect_logo.png' %}">
                 <span class="color-darkgrey">kynect</span>
             </a>
             
