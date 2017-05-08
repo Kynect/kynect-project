@@ -42,17 +42,17 @@
                 <div class="col-md-1 hidden-xs hidden-sm"></div>
 
                 <div class="col-md-5 hidden-xs hidden-sm image-container">
-                    <img src="/static/media/images/image_placeholder_2.png">
+                    <img src="{% static 'media/images/image_placeholder_2.png' %}">
                 </div>
 
                 <div id="carousel" class="carousel hidden-md hidden-lg" data-interval="false">
                     <div class="carousel-inner">
                         <div class="item image-container active">
-                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="First slide">
+                            <img class="d-block img-fluid" src="{% static 'media/images/image_placeholder_2.png' %}" alt="First slide">
 
                             <div class="col-xs-12 col-md-5 features-container">
                                 <div>
-                                    <img src="/static/media/images/icons/main_features/icon1_test.png">
+                                    <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                                     <span class="feature-section-1-heading">Health Monitoring</span>
 
@@ -64,11 +64,11 @@
                         </div>
 
                         <div class="item image-container">
-                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="Second slide">
+                            <img class="d-block img-fluid" src="{% static 'media/images/image_placeholder_2.png' %}" alt="Second slide">
 
                             <div class="col-xs-12 col-md-5 features-container">
                                 <div>
-                                    <img src="/static/media/images/icons/main_features/icon1_test.png">
+                                    <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                                     <span class="feature-section-1-heading">Location Services</span>
 
@@ -80,11 +80,11 @@
                         </div>
 
                         <div class="item image-container">
-                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="Third slide">
+                            <img class="d-block img-fluid" src="{% static 'media/images/image_placeholder_2.png' %}" alt="Third slide">
 
                             <div class="col-xs-12 col-md-5 features-container">
                                 <div>
-                                    <img src="/static/media/images/icons/main_features/icon1_test.png">
+                                    <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                                     <span class="feature-section-1-heading">Activity Tracking</span>
 
@@ -96,11 +96,11 @@
                         </div>
 
                         <div class="item image-container">
-                            <img class="d-block img-fluid" src="/static/media/images/image_placeholder_2.png" alt="Fourth slide">
+                            <img class="d-block img-fluid" src="{% static 'media/images/image_placeholder_2.png' %}" alt="Fourth slide">
 
                             <div class="col-xs-12 col-md-5 features-container">
                                 <div>
-                                    <img src="/static/media/images/icons/main_features/icon1_test.png">
+                                    <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                                     <span class="feature-section-1-heading">Safety & Security</span>
 
@@ -113,19 +113,19 @@
                     </div>
 
                     <a class="carousel-control left" href="#carousel" role="button" data-slide="prev">
-                        <img src="/static/media/images/menu-arrow-left.png" class="color-white">
+                        <img src="{% static 'media/images/menu-arrow-left.png' %}" class="color-white">
                         <span class="sr-only">Previous</span>
                     </a>
 
                     <a class="carousel-control right" href="#carousel" role="button" data-slide="next">
-                        <img src="/static/media/images/menu-arrow-right.png" class="color-white">
+                        <img src="{% static 'media/images/menu-arrow-right.png' %}" class="color-white">
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
 
                 <div class="col-xs-12 col-md-5 hidden-xs hidden-sm features-container">
                     <div class="featureHealth" id="featureHealth">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <br />
 
@@ -137,7 +137,7 @@
                     </div>
 
                     <div class="featureLocation" id="featureLocation">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <br />
 
@@ -149,7 +149,7 @@
                     </div>
 
                     <div class="featureActivity" id="featureActivity">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <br />
 
@@ -161,7 +161,7 @@
                     </div>
 
                     <div class="featureSafety" id="featureSafety">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <br />
 
@@ -179,25 +179,25 @@
             <div class="row hidden-xs hidden-sm selector-container">
                 <div>
                     <div class="health border-blue" id="health" onclick="changeHealth()">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <span><b>Health Monitoring</b></span>
                     </div>
 
                     <div class="border-grey" id="location" onclick="changeLocation()">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <span><b>Location Services</b></span>
                     </div>
 
                     <div class="border-grey" id="activity" onclick="changeActivity()">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <span><b>Activity Tracking</b></span>
                     </div>
 
                     <div class="border-grey" id="safety" onclick="changeSafety()">
-                        <img src="/static/media/images/icons/main_features/icon1_test.png">
+                        <img src="{% static 'media/images/icons/main_features/icon1_test.png' %}">
 
                         <span><b>Safety & Security</b></span>
                     </div>
@@ -224,7 +224,7 @@
                     <span>Health Monitoring</span>
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/001-music-1.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/001-music-1.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Medical Alerts</span>
@@ -236,7 +236,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/037-medical.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/037-medical.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Vital Sign Monitoring</span>
@@ -248,7 +248,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/007-circle.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/007-circle.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Health Recommendations</span>
@@ -260,17 +260,17 @@
 
                 <!-- Appears In Screen XS to MD-->
                 <div class="col-xs-12 hidden-md hidden-lg image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <!-- Appears In Screen LG and Up -->
                 <div class="col-md-6 hidden-xs hidden-sm image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <div class="col-xs-12 hidden-md hidden-lg feature-description-container">
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/001-music-1.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/001-music-1.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Medical Alerts</span>
@@ -282,7 +282,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/037-medical.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/037-medical.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Vital Sign Monitoring</span>
@@ -294,7 +294,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/007-circle.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/007-circle.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Health Recommendations</span>
@@ -312,19 +312,19 @@
 
                 <!-- Appears In Screen XS to MD-->
                 <div class="col-xs-12 hidden-md hidden-lg image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <!-- Appears In Screen LG and Up -->
                 <div class="col-md-6 hidden-xs hidden-sm image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <div class="col-xs-12 col-md-5 feature-description-container">
                     <span class="hidden-xs hidden-sm">Location Services</span>
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/blue/location-arrow.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/blue/location-arrow.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Real-Time GPS</span>
@@ -336,7 +336,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/blue/025-location.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/blue/025-location.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Geofencing</span>
@@ -360,7 +360,7 @@
                     <span>Activity Tracking</span>
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/015-stats.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/015-stats.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Fitness Levels</span>
@@ -372,7 +372,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/zzz.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/zzz.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Sleep Monitoring</span>
@@ -384,19 +384,19 @@
 
                 <!-- Appears In Screen XS to MD-->
                 <div class="col-xs-12 hidden-md hidden-lg image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <!-- Appears In Screen LG and Up -->
                 <div class="col-md-6 hidden-xs hidden-sm image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <div class="col-xs-12 hidden-md hidden-lg feature-description-container">
                     <span class="hidden-xs hidden-sm">Activity Tracking</span>
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/015-stats.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/015-stats.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Fitness Levels</span>
@@ -408,7 +408,7 @@
                     <br />
 
                     <div class="media">
-                        <img class="d-flex" src="/static/media/images/icons/orange/zzz.png" alt="Generic placeholder image">
+                        <img class="d-flex" src="{% static 'media/images/icons/orange/zzz.png' %}" alt="Generic placeholder image">
 
                         <div class="media-body color-grey">
                             <span class="color-black">Sleep Monitoring</span>
@@ -426,12 +426,12 @@
 
                 <!-- Appears In Screen XS to MD-->
                 <div class="col-xs-12 hidden-md hidden-lg image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <!-- Appears In Screen LG and Up -->
                 <div class="col-md-6 hidden-xs hidden-sm image-container">
-                    <img src="/static/media/images/placeholder_image_square.png">
+                    <img src="{% static 'media/images/placeholder_image_square.png' %}">
                 </div>
 
                 <div class="col-xs-12 col-md-5 feature-description-container">
@@ -440,22 +440,22 @@
                     <div class="safety-features">
                         <input type="radio" name="rGroup" value="1" id="r1" checked="checked" />
                         <label class="radio safety-r1" for="r1" onclick="changeTemp()">
-                            <img src="/static/media/images/icons/blue/032-low-temperature-thermometer.png">
+                            <img src="{% static 'media/images/icons/blue/032-low-temperature-thermometer.png' %}">
                         </label>
 
                         <input type="radio" name="rGroup" value="1" id="r2"/>
                         <label class="radio safety-r2" for="r2" onclick="changeImpact()">
-                            <img src="/static/media/images/icons/blue/023-interface.png">
+                            <img src="{% static 'media/images/icons/blue/023-interface.png' %}">
                         </label>
 
                         <input type="radio" name="rGroup" value="1" id="r3"/>
                         <label class="radio safety-r3" for="r3" onclick="changeWater()">
-                            <img src="/static/media/images/icons/blue/018-nature.png">
+                            <img src="{% static 'media/images/icons/blue/018-nature.png' %}">
                         </label>
 
                         <input type="radio" name="rGroup" value="1" id="r4"/>
                         <label class="radio safety-r4" for="r4" onclick="changeLED()">
-                            <img src="/static/media/images/icons/blue/012-idea.png">
+                            <img src="{% static 'media/images/icons/blue/012-idea.png' %}">
                         </label>
                     </div>
 
