@@ -115,7 +115,8 @@ TABLE OF CONTENTS:
         padding: 0 !important; }
 
     .navbar-nav > li > .nav-updateme > button {
-        margin-top: 13px; }
+        margin-top: 13px;
+        font-size: 15px; }
 
 .navbar-nav .nav-dropdown-updateme:hover {
     background-color: #80dfff; }
@@ -623,7 +624,7 @@ TABLE OF CONTENTS:
         .features-section-2 .feature-description-container img {
             display: block;
             float: none;
-            margin: 0 auto 15px auto; }
+            margin: 0 auto 5px auto; }
 
         .features-section-2 .feature-description-container > div {
             display: block;
@@ -729,7 +730,7 @@ TABLE OF CONTENTS:
         .features-section-3 .feature-description-container img {
             display: block;
             float: none;
-            margin: 0 auto 15px auto; }
+            margin: 0 auto 5px auto; }
 
         .features-section-3 .feature-description-container > div {
             display: block;
@@ -835,7 +836,7 @@ TABLE OF CONTENTS:
         .features-section-4 .feature-description-container img {
             display: block;
             float: none;
-            margin: 0 auto 15px auto; }
+            margin: 0 auto 5px auto; }
 
         .features-section-4 .feature-description-container > div {
             display: block;
@@ -984,7 +985,7 @@ TABLE OF CONTENTS:
         .features-section-5 .feature-description-container .safety-features {
             display: block;
             width: 234px;
-            margin: 5px auto 10px auto; }
+            margin: 5px auto 5px auto; }
 
         .features-section-5 .feature-description-container > div {
             display: block;
