@@ -62,7 +62,7 @@ a) First, download the OSGeo4W installer, and run it
 b) Select Express Web-GIS Install and click next.  
 c) In the ‘Select Packages’ list, ensure that GDAL is selected; MapServer and Apache are also enabled by default, but are not required by GeoDjango and may be unchecked safely.  
 d) Click Next  
-e) Modify Windows environment  
+e) Modify Windows environment:  
   
 In order to use GeoDjango, you will need to add your Python and OSGeo4W directories to your Windows system Path, as well as create GDAL_DATA and PROJ_LIB environment variables. The following set of commands, executable with cmd.exe, will set this up:
 
