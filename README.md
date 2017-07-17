@@ -45,10 +45,10 @@ $ sudo apt-get install -y postgis postgresql-9.6-postgis-2.3
 ```
 Windows:
 
-a) From within the Application Stack Builder (to run outside of the installer, Start ‣ Programs ‣ PostgreSQL 9.x)
-b) Select PostgreSQL Database Server 9.x on port 5432 from the drop down menu
-c) Next, expand the Categories ‣ Spatial Extensions menu tree and select PostGIS X.Y for PostgreSQL 9.x.
-d) After clicking next, you will be prompted to select your mirror, PostGIS will be downloaded, and the PostGIS installer will begin. Select only the default options during install (e.g., do not uncheck the option to create a default PostGIS database).
+a) From within the Application Stack Builder (to run outside of the installer, Start ‣ Programs ‣ PostgreSQL 9.x)  
+b) Select PostgreSQL Database Server 9.x on port 5432 from the drop down menu  
+c) Next, expand the Categories ‣ Spatial Extensions menu tree and select PostGIS X.Y for PostgreSQL 9.x.  
+d) After clicking next, you will be prompted to select your mirror, PostGIS will be downloaded, and the PostGIS installer will begin. Select only the default options during install (e.g., do not uncheck the option to create a default PostGIS database).  
 
 - Then install the necessary libraries for PostGIS:
 
@@ -58,12 +58,12 @@ $ sudo apt-get install binutils libproj-dev gdal-bin
 ```
 Windows:
 
-a) First, download the OSGeo4W installer, and run it
-b) Select Express Web-GIS Install and click next.
-c) In the ‘Select Packages’ list, ensure that GDAL is selected; MapServer and Apache are also enabled by default, but are not required by GeoDjango and may be unchecked safely.
-d) Click Next
-e) Modify Windows environment
-
+a) First, download the OSGeo4W installer, and run it  
+b) Select Express Web-GIS Install and click next.  
+c) In the ‘Select Packages’ list, ensure that GDAL is selected; MapServer and Apache are also enabled by default, but are not required by GeoDjango and may be unchecked safely.  
+d) Click Next  
+e) Modify Windows environment  
+  
 In order to use GeoDjango, you will need to add your Python and OSGeo4W directories to your Windows system Path, as well as create GDAL_DATA and PROJ_LIB environment variables. The following set of commands, executable with cmd.exe, will set this up:
 
 ```sh
@@ -148,8 +148,7 @@ $ python manage.py createsuperuser
 ```sh
 $ sudo su - postgres
 $ psql
-```
-```sh
+
 postgres=# ALTER ROLE *username* WITH superuser;
 postgres=# ALTER ROLE *username* WITH createrole;
 postgres=# ALTER ROLE *username* WITH createdb;
