@@ -91,6 +91,8 @@ DEBUG_TOOLBAR_PANELS = [
     
 LOGIN_REDIRECT_URL = '/' # It means home view
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 WSGI_APPLICATION = 'kynect-project.wsgi.application'
 
 
@@ -99,7 +101,7 @@ WSGI_APPLICATION = 'kynect-project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'testdb',
         'USER': 'marcoprouve',
         'PASSWORD': 'Polopwns11',

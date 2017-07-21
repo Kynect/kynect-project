@@ -1,22 +1,21 @@
-from django.contrib import admin
-from kynect.models import Owner, Owner_Address, Device_Type, Service_Plan, Device, Pet, Geofence, Location
 from django.contrib.gis import admin
-from django.contrib.gis import forms
-from django.contrib.gis.db import models 
+from kynect.models import User_Profile
+from kynect.models import Device_Type
+from kynect.models import Service_Plan
+from kynect.models import Device
+from kynect.models import Pet
+from kynect.models import Geofence
+from kynect.models import Location
+from kynect.forms import CoordinateAdminEntryForm
 
-class LocationAdminForm(forms.ModelForm):
-    point = forms.PointField(widget=forms.OSMWidget(attrs={
-            'display_raw': True}))
-
-class LocationAdmin(admin.GeoModelAdmin):
-    form = LocationAdminForm
+class CoordinateAdminEntry(admin.GeoModelAdmin):
+    form = CoordinateAdminEntryForm
 
 # Register your models here.
-admin.site.register(Owner)
-admin.site.register(Owner_Address)
+admin.site.register(User_Profile)
 admin.site.register(Device_Type)
 admin.site.register(Service_Plan)
 admin.site.register(Device)
 admin.site.register(Pet)
-admin.site.register(Geofence)
-admin.site.register(Location, LocationAdmin)
+admin.site.register(Geofence, CoordinateAdminEntry)
+admin.site.register(Location, CoordinateAdminEntry)

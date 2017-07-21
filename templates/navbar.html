@@ -25,9 +25,30 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- BEGIN: IMPLEMENT THIS WHEN BACKEND IS BEING SET UP -->
 
-                <!-- {% if user.is_authenticated %}
-                    <li class="dropdown navLinks visible-xs">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT&nbsp&nbsp<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span></a>
+                <li class="hidden-xs nav-updateme-container">
+                    <a class="nav-updateme" href="/subscribe/">
+                        <button type="button" 
+                                class="btn btn-default navbar-btn nav-button">UPDATE ME</button>
+                    </a>
+                </li>
+
+                <li class="nav-links visible-xs nav-dropdown-updateme background-blue">
+                    <a href="/subscribe/"><span class="color-white">UPDATE ME</span></a>
+                </li>
+
+                <li class="nav-links">
+                    <a href="/features/"><span class="color-darkgrey">FEATURES</span></a>
+                </li>
+
+                <li class="nav-links">
+                    <a href="/about_us/"><span class="color-darkgrey">ABOUT US</span></a>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="dropdown nav-links visible-xs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            ACCOUNT&nbsp&nbsp<span class="glyphicon glyphicon-menu-down"></span>
+                        </a>
 
                         <ul class="dropdown-menu">
                             <li><a href="/profile/"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp&nbsp {{ user.get_username }}</a></li>
@@ -41,14 +62,10 @@
                         </ul>
                     </li>
 
-                    <li class="navLinks hidden-xs"><a href="/purchase"><span><b>BUY NOW</b></span></a></li>
-                    <li class="navLinks"><a href="/testimonials"><span>TESTIMONIALS</span></a></li>
-                    <li class="navLinks"><a href="/team"><span>OUR TEAM</span></a></li>
-                    <li class="navLinks"><a href="/contact_us"><span>CONTACT US</span></a></li>
-                    <li class="navLinks"><a href="/help"><span>HELP</span></a></li>
-
-                    <li class="dropdown navLinks hidden-xs">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:12px;"></span>&nbsp&nbsp&nbsp ACCOUNT</a>
+                    <li class="dropdown nav-links hidden-xs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp&nbsp&nbspACCOUNT
+                        </a>
 
                         <ul class="dropdown-menu">
                             <li><a href="/profile/"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp&nbsp {{ user.get_username }}</a></li>
@@ -62,38 +79,10 @@
                         </ul>
                     </li>
                 {% else  %}
-                    <li class="navLinks hidden-xs"><a href="/purchase"><span><b>BUY NOW</b></span></a></li>
-                    <li class="navLinks"><a href="/testimonials"><span>TESTIMONIALS</span></a></li>
-                    <li class="navLinks"><a href="/team"><span>OUR TEAM</span></a></li>
-                    <li class="navLinks"><a href="/contact_us"><span>CONTACT US</span></a></li>
-                    <li class="navLinks"><a href="/help"><span>HELP</span></a></li>                                    
-                    <li class="navLinks hidden-xs"><a href="/login"><span><u>LOGIN</u></span></a></li>
-                    <li class="navLinks visible-xs"><a href="/login"><span><b>LOGIN</b></span></a></li>
+                    <li class="nav-links"><a href="/login"><span>LOGIN</span></a></li>
                 {% endif %}
 
                 <!-- END: IMPLEMENT THIS WHEN BACKEND IS BEING SET UP -->
-
-                <li class="hidden-xs nav-updateme-container">
-                    <a class="nav-updateme" href="/subscribe/">
-                        <button type="button" 
-                                class="btn btn-default navbar-btn nav-button">UPDATE ME</button>
-                    </a>
-                </li>
-
-                <li class="nav-links visible-xs nav-dropdown-updateme background-blue">
-                    <a href="/subscribe/"><span class="color-white">UPDATE ME</span></a>
-                </li>
-
-                <!-- <li class="nav-links"><a href="/how_it_works"><span>HOW IT WORKS</span></a></li> -->
-
-                <li class="nav-links">
-                    <a href="/features/"><span class="color-darkgrey">FEATURES</span></a>
-                </li>
-
-                <li class="nav-links">
-                    <a href="/about_us/"><span class="color-darkgrey">ABOUT US</span></a>
-                </li>
-                <!-- <li class="nav-links"><a href="/FAQ"><span>FAQ</span></a></li> -->
             </ul>
         </div>
     </div> <!-- /.container-fluid -->

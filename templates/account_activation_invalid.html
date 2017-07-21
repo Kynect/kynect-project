@@ -37,15 +37,11 @@
     <body>
         {% include "navbar.html" %}
 
-        <h2 class="first-div">Sign up</h2>
-
-        <form method="post">
-            {% csrf_token %}
-
-            {{ form.as_p }}
-
-            <button type="submit">Sign up</button>
-        </form>
+        <div class="first-div">
+            <h3>We're sorry, your email verification failed.</h3>
+            <br />
+            <span>We apologize for the inconvenience</span>
+        </div>
 
         {% include "footer.html" %}
         

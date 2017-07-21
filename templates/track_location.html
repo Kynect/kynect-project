@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Kynect - Track Your Pet</title>
+        <meta charset=utf-8 />
+
+        <!-- Favicon Import -->
+        <link   rel="icon" 
+                href="{% static 'media/images/favicon/favicon.ico' %}">
+
+        <!-- Bootstrap Stylesheets -->
+        <link   rel="stylesheet" 
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External Stylesheets -->
+        <link   rel="stylesheet"
+                type="text/css" 
+                href="{% static 'css/master.css' %}">
+
+        <!-- Google Web Fonts -->
+        <link   rel="stylesheet"
+                href="https://fonts.googleapis.com/css?family=Raleway">
+        <link   href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" 
+                rel="stylesheet">
+        <link   href="https://fonts.googleapis.com/css?family=Muli" 
+                rel="stylesheet">    
+
+        <!-- JQuery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <!-- Bootstrap Javascript Library -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            #mapContainer {
+                background-color:lightblue;
+                display:block;
+                padding:0px;
+                margin:0px;                
+                width:100%;
+                height:100%; }
+
+            #map {
+                display:block;
+                padding:0px;
+                margin:0px;
+                width:100%;
+                height:100%; }
+        </style>
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+
+        <div id="mapContainer">
+            <div id="map"></div>
+        </div>
+
+        <!-- SCRIPTS GO HERE -->
+
+        <script>
+            var map;
+            var markers = [];
+
+            function initMap() {
+                var markerLatLng = new google.maps.LatLng(41.893107, -87.61854);
+
+                var mapDiv = document.getElementById('map');
+                
+                map = new google.maps.Map(mapDiv, {
+                    center: markerLatLng,
+                    zoom: 15
+                });
+
+                createMarker(markerLatLng);
+            }
+
+            // Adds a marker to the map and push to the array.
+            function createMarker(location) {
+                var marker = new google.maps.Marker({
+                  position: location,
+                  map: map
+                });
+
+                markers.push(marker);
+            }
+        </script>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlmTuazt2sCxBRgv9UGuO00jtK6MST1mA&callback=initMap"></script>
+
+        <!-- SCIPTS END HERE -->
+    </body>
+</html>

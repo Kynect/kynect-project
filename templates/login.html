@@ -4,16 +4,20 @@
 
 <html lang="en">
     <head>
-        <title>Login</title>
+        <title>Kynect - Login</title>
         <meta charset=utf-8 />
+
+        <!-- Favicon Import -->
+        <link   rel="icon" 
+                href="{% static 'media/images/favicon/favicon.ico' %}">
 
         <!-- Bootstrap Stylesheets -->
         <link   rel="stylesheet" 
-                href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- External Stylesheets -->
-        <link   rel="stylesheet" 
-                type="text/css"
+        <link   rel="stylesheet"
+                type="text/css" 
                 href="{% static 'css/master.css' %}">
 
         <!-- Google Web Fonts -->
@@ -24,35 +28,30 @@
         <link   href="https://fonts.googleapis.com/css?family=Muli" 
                 rel="stylesheet">    
 
-        <!-- JQuery & JavaScript -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <!-- JQuery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <!-- Bootstrap Javascript Library -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
         {% include "navbar.html" %}
 
-        {% if form.errors %}
-            <p>Your username and password didn't match. Please try again.</p>
-        {% endif %}
-
-        {% if next %}
-            {% if user.is_authenticated %}
-
-                <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-            {% else %}
-                <p>Please login to see this page.</p>
+        <div class="first-div">
+            {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
             {% endif %}
-        {% endif %}
+        </div>
 
-        <div class="container">
+        <div class="container first-div">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Please Sign In</h3>
+                            <span class="panel-title">Please Sign In</span>
                         </div>
+
                         <div class="panel-body">
                             <form method="post" action="{% url 'login' %}">
                                 {% csrf_token %}
@@ -60,11 +59,9 @@
                                 <p class="bs-component">
                                     <table>
                                         <tr>
-                                            <td>{{ form.username.label_tag }}</td>
                                             <td>{{ form.username }}</td>
                                         </tr>
                                         <tr>
-                                            <td>{{ form.password.label_tag }}</td>
                                             <td>{{ form.password }}</td>
                                         </tr>
                                     </table>
@@ -72,7 +69,9 @@
 
                                 <p class="bs-component">
                                     <center>
-                                        <input class="btn btn-success btn-sm" type="submit" value="LOG IN" />
+                                        <input class="btn btn-success btn-sm" type="submit" value="LOGIN" />
+                                        or
+                                        <a href="/sign_up/">Sign Up!</a>
                                     </center>
                                 </p>
 

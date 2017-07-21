@@ -23,6 +23,9 @@ TABLE OF CONTENTS:
 /*------------------------ COMMON SHARED FORMATTING --------------------------*/
 /*----------------------------------------------------------------------------*/
 
+.first-div {
+    padding-top: 60px;
+}
 
 .section-header-container {
     padding-top: 30px;
@@ -98,13 +101,16 @@ TABLE OF CONTENTS:
     margin-bottom: 0; }
 
 @media (max-width: 767px) {
-    .navbar-nav li a {
+    .navbar-nav > li > a {
         line-height: 20px; }
 }
 
 @media (min-width: 768px) {
-    .navbar-nav li a {
+    .navbar-nav > li > a {
         line-height: 30px; }
+
+    .navbar-nav > li > a > span {
+        top: 2px !important; }
 }
 
 .navbar-nav .nav-updateme-container {
@@ -180,7 +186,6 @@ TABLE OF CONTENTS:
     height: 100%;
     min-height: 100%;
     width: 100%; 
-    padding-top: 50px;
 
 	/* Cover background for homepage */
 	background: url(/static/media/images/dog_background_blur_4.jpg) no-repeat center center; 
@@ -500,7 +505,7 @@ TABLE OF CONTENTS:
 
 .features-section-1 {
     font-family: 'Raleway', sans-serif; 
-    padding-top: 150px;
+    padding-top: 160px;
     padding-bottom: 100px; }
 
     .features-section-1 .image-container img {
@@ -1059,7 +1064,6 @@ TABLE OF CONTENTS:
 
 .about-us-top-header {
     height: 50%;
-    margin-top: 50px; 
 
     /* Cover background for about-us */
     background: url(/static/media/images/dog_sunset_background.jpg) no-repeat center center; 
@@ -1119,7 +1123,6 @@ TABLE OF CONTENTS:
     height: 100%;
     min-height: 100%;
     width: 100%; 
-    padding-top: 50px;
 
     /* Cover background for homepage */
     background: url(/static/media/images/dog_background_blur_2.jpg) no-repeat center center; 

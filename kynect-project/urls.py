@@ -24,17 +24,17 @@ from django.contrib.auth import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', kynect.views.home, name="home"),
-	url(r'^home/', kynect.views.home),
-    url(r'^how_it_works/', kynect.views.how_it_works),
+    url(r'^home/', kynect.views.home),
     url(r'^features/', kynect.views.features),
     url(r'^about_us/', kynect.views.about_us),
-    url(r'^FAQ/', kynect.views.FAQ),
     url(r'^subscribe/', kynect.views.subscribe),
-
-    # *** IMPLEMENT BELOW ONCE BACKEND IS BEING SET UP ***
-
-    # url(r'^login/$', views.login, {'template_name': 'login.html', 'authentication_form': LoginForm}, name="login"),
-    # url(r'^logout/', views.logout, {'next_page': '/home'}),
+    url(r'^profile/', kynect.views.profile),
+    url(r'^track_location/', kynect.views.track_location),
+    url(r'^sign_up/$', kynect.views.sign_up, name='sign_up'),
+    url(r'^account_activation_sent/$', kynect.views.account_activation_sent, name='account_activation_sent'),
+    url(r'^activate_account/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', kynect.views.activate_account, name='activate_account'),
+    url(r'^login/$', views.login, {'template_name': 'login.html', 'authentication_form': LoginForm}, name="login"),
+    url(r'^logout/', views.logout, {'next_page': '/home'}),
 ]
 
 if settings.DEBUG:
