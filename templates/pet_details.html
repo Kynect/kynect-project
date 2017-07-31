@@ -3,7 +3,7 @@
 
 <html lang="en">
     <head>
-        <title>Kynect - Account Settings</title>
+        <title>Kynect - My Pets</title>
         <meta charset=utf-8 />
 
         <!-- Favicon Import -->
@@ -36,8 +36,33 @@
 
     <body>
         {% include "navbar.html" %}
-            
 
+        <div class="first-div">
+            {% for pet in pets %}  
+                <h1><u>Pet Information:</u></h1>
+
+                <ul>
+                    <li>Name: {{ pet.name }}</li>
+                    <li>Owner: {{ user.first_name }} {{ user.last_name }}</li>
+                    <li>Breed: {{ pet.breed }}</li>
+                    <li>Date of Birth: {{ pet.dob }}</li>
+                    <li>Device ID: {{ pet.device.id }}</li>
+                    <li>Date Added: {{ pet.date_added }}</li>
+                </ul>
+
+                <br />
+
+                <form action="/update_pet_details/{{ pet.id }}/" method="post">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <input type="submit" value="Apply Changes" />
+                </form>
+
+                <br />
+            {% endfor %}
+        </div>
 
         {% include "footer.html" %}
         

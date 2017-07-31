@@ -54,7 +54,7 @@ class Service_Plan(models.Model):
 	cost_per_year = models.IntegerField()
 
 	def __str__(self):
-		return str(self.id) + '_' + str(self.data_interval) + 'min_$' + str(self.cost_per_year)
+		return str(self.id) + '_' + str(self.data_interval) + '_$' + str(self.cost_per_year)
 
 class Device(models.Model):
 	user_profile = models.ForeignKey(User_Profile, on_delete=models.CASCADE, related_name='devices')
@@ -78,6 +78,8 @@ class Pet(models.Model):
 
 class Geofence(models.Model):
 	pet = models.OneToOneField(Pet, on_delete=models.CASCADE, related_name='geofence')
+	latitude = models.DecimalField(max_digits=10, decimal_places=6)
+	longitude = models.DecimalField(max_digits=10, decimal_places=6)
 	coordinates = models.PointField(srid=4326)
 	objects = models.GeoManager()
 	radius = models.IntegerField()
@@ -87,7 +89,9 @@ class Geofence(models.Model):
 		return self.pet.name + '_' + str(self.id)
 
 class Location(models.Model):
-	pet = models.ForeignKey(Pet, on_delete=models.CASCADE, related_name='locations')
+	pet = models.OneToOneField(Pet, on_delete=models.CASCADE, related_name='location')
+	latitude = models.DecimalField(max_digits=10, decimal_places=6)
+	longitude = models.DecimalField(max_digits=10, decimal_places=6)
 	coordinates = models.PointField(geography=True, srid=4326)
 	objects = models.GeoManager()
 	alt = models.DecimalField(max_digits=5, decimal_places=1, default=0000.0)

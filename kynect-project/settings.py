@@ -88,13 +88,14 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
+
+GOOGLE_MAPS_API_KEY = 'AIzaSyAlmTuazt2sCxBRgv9UGuO00jtK6MST1mA'
     
 LOGIN_REDIRECT_URL = '/' # It means home view
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 WSGI_APPLICATION = 'kynect-project.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

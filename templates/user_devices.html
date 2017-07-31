@@ -3,7 +3,7 @@
 
 <html lang="en">
     <head>
-        <title>Kynect - Account Settings</title>
+        <title>Kynect - My Devices</title>
         <meta charset=utf-8 />
 
         <!-- Favicon Import -->
@@ -37,7 +37,32 @@
     <body>
         {% include "navbar.html" %}
             
+        <div class="first-div">
+            {% for device in devices %}  
+                <span><b>Collar ID: {{ device.id }}</b></span>
 
+                <h1><u>Device Type:</u></h1>
+
+                <ul>
+                    <li>Version: {{ device.device_type.version }}</li>
+                    <li>Size: {{ device.device_type.size }}</li>
+                    <li>Color: {{ device.device_type.color }}</li>
+                </ul>
+
+                <br />
+
+                <h1><u>Device Service Plan:</u></h1>
+
+                <ul>
+                    <li>Data Limit: {{ device.service_plan.data_limit }}</li>
+                    <li>Data Interval: {{ device.service_plan.data_interval }}</li>
+                    <li>Cost/Month: ${{ device.service_plan.cost_per_month }}</li>
+                    <li>Cost/Year: ${{ device.service_plan.cost_per_year }}</li>
+                </ul>
+
+                <br />
+            {% endfor %}
+        </div>
 
         {% include "footer.html" %}
         

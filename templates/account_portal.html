@@ -3,7 +3,7 @@
 
 <html lang="en">
     <head>
-        <title>Kynect - Account Settings</title>
+        <title>Account Portal</title>
         <meta charset=utf-8 />
 
         <!-- Favicon Import -->
@@ -36,8 +36,33 @@
 
     <body>
         {% include "navbar.html" %}
-            
 
+        <div class="mainContainer first-div">
+            <div class="iconContainerMiddle">
+                <a href="/user_devices/"><u>My Devices</u></a>
+            </div>
+
+            <div class="iconContainerLeft">
+                <a href="/track_location/"><u>Locate Device</u></a>
+            </div>
+
+            <div class="">
+                <a href="/pet_details/"><u>My Pets</u></a>
+            </div>
+
+            <div class="">
+                <!--<a href="/pet_health/">Pet Health</a>-->
+                <span style="color:grey"><u>Pet Health</u> --> ** COMING SOON **</span>
+            </div>
+
+            <div class="">
+                <a href="/user_log/"><u>My Log</u></a>
+            </div>
+
+            <div class="">
+                <a href="/account_settings/"><u>Account Settings</u></a>
+            </div>   
+        </div>
 
         {% include "footer.html" %}
         

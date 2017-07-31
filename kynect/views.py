@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from kynect.forms import SignUpForm
+from kynect.forms import SignUpForm, PetDetailsForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
@@ -10,7 +10,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.utils.http import urlsafe_base64_encode
 from kynect.tokens import account_activation_token
 
-from .models import Device
+from .models import Device, Pet
 
 
 def home(request):
@@ -28,11 +28,118 @@ def about_us(request):
 def subscribe(request):
 	return render(request, 'subscribe.html')
 
-def profile(request):
-	return render(request, 'profile.html')
+def account_portal(request):
+	return render(request, 'account_portal.html')
+
+def pet_health(request):
+	return render(request, 'pet_health.html')
 
 def track_location(request):
-	return render(request, 'track_location.html')
+	if not request.user.is_authenticated():
+		return redirect('/home')
+
+	current_user = request.user
+	pets = current_user.user_profile.pets.all()
+
+	context = {
+		# include contexts for here
+		'user': current_user,
+		'pets': pets,						
+	}
+
+	return render(request, 'track_location.html', context)
+
+def user_devices(request):
+	if not request.user.is_authenticated():
+		return redirect('/home')
+
+	current_user = request.user
+	devices = current_user.user_profile.devices.all()
+
+	context = {
+		# include contexts for here
+		'user': current_user,
+		'devices': devices, 			
+	}
+
+	return render(request, 'user_devices.html', context)
+
+def pet_details(request):
+	if not request.user.is_authenticated():
+		return redirect('/home')
+
+	current_user = request.user	
+	pets = current_user.user_profile.pets.all()									
+	form = PetDetailsForm()
+
+	context = {
+		# include contexts for here
+		'user': current_user,
+		'pets': pets,
+		'form': form,						
+	}
+
+	return render(request, 'pet_details.html', context)
+
+def update_pet_details(request, pet_id):
+	if not request.user.is_authenticated():
+		return redirect('/home')
+
+	pet_instance = get_object_or_404(Pet, id = pet_id)
+
+	if request.method == 'POST':
+		form = PetDetailsForm(request.POST)					# Create a form instance and populate it with data from the request (binding):
+
+		if form.is_valid():
+			# process the data in form.cleaned_data as required (here we just write it to the model fields)
+			pet_instance.name = form.cleaned_data['name']
+			pet_instance.breed = form.cleaned_data['breed']
+			pet_instance.dob = form.cleaned_data['dob']
+			pet_instance.save()
+
+			current_user = request.user
+			pets = current_user.user_profile.pets.all()	
+		
+			context = {
+				# include contexts for here
+				'user': current_user,
+				'pets': pets,
+				'form': form,						
+			}
+
+			return render(request, 'pet_details.html', context)
+	else:
+		current_user = request.user	
+		pets = current_user.user_profile.pets.all()
+		form = PetDetailsForm()
+			
+		context = {
+			# include contexts for here
+			'user': current_user,
+			'pets': pets,
+			'form': form,						
+		}
+
+		return render(request, 'pet_details.html', context)
+
+	current_user = request.user
+	pets = current_user.user_profile.pets.all()	
+	form = PetDetailsForm(request.POST)
+		
+	context = {
+		# include contexts for here
+		'user': current_user,
+		'pets': pets,
+		'form': form,						
+	}
+
+	return render(request, 'pet_details.html', context)
+
+def user_log(request):
+	return render(request, 'user_log.html')
+
+def account_settings(request):
+	return render(request, 'account_settings.html')
 
 # USE THIS SIGNUP VIEW FOR EMAIL CONFIRMATION INCLUDED
 def sign_up(request):
@@ -56,7 +163,12 @@ def sign_up(request):
 			return redirect('account_activation_sent')
 	else:
 		form = SignUpForm()
-	return render(request, 'sign_up.html', {'form': form})
+
+		context = {
+			'user': current_user,
+			'form': form,						
+		}
+	return render(request, 'sign_up.html', context)
 
 # USE THIS SIGNUP VIEW FOR NO EMAIL CONFIRMATION INCLUDED
 # def sign_up(request):

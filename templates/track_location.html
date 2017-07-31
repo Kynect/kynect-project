@@ -54,6 +54,9 @@
     <body>
         {% include "navbar.html" %}
 
+        <!-- <div class="first-div"><b>lat: </b>{{ pets.first.location.latitude }}</div>
+        <div class=""><b>lng: </b>{{ pets.first.location.longitude }}</div> -->
+
         <div id="mapContainer">
             <div id="map"></div>
         </div>
@@ -62,29 +65,42 @@
 
         <script>
             var map;
+            var marker;
             var markers = [];
+            var markerLatLng;
+            var contentString;
+            var infowindow;
 
             function initMap() {
-                var markerLatLng = new google.maps.LatLng(41.893107, -87.61854);
-
+                var centerLatLng = new google.maps.LatLng({{ pets.first.location.latitude }}, {{ pets.first.location.longitude }});
                 var mapDiv = document.getElementById('map');
                 
                 map = new google.maps.Map(mapDiv, {
-                    center: markerLatLng,
+                    center: centerLatLng,
                     zoom: 15
                 });
 
-                createMarker(markerLatLng);
-            }
+                {% for pet in pets %}
+                    markerLatLng = new google.maps.LatLng({{ pet.location.latitude }}, {{ pet.location.longitude }});
 
-            // Adds a marker to the map and push to the array.
-            function createMarker(location) {
-                var marker = new google.maps.Marker({
-                  position: location,
-                  map: map
-                });
+                    marker = new google.maps.Marker({
+                        position: markerLatLng,
+                        map: map,
+                    });
 
-                markers.push(marker);
+                    content =   '<div><b>Name: </b>{{ pet.name }}</div>' +
+                                '<div><b>Breed: </b>{{ pet.breed }}</div>';
+                    infowindow = new google.maps.InfoWindow();
+
+                    google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+                        return function() {
+                            infowindow.setContent(content);
+                            infowindow.open(map,marker);
+                        };
+                    })(marker,content,infowindow)); 
+
+                    markers.push(marker);
+                {% endfor %}
             }
         </script>
 
