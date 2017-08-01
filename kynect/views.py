@@ -39,12 +39,12 @@ def track_location(request):
 		return redirect('/home')
 
 	current_user = request.user
-	pets = current_user.user_profile.pets.all()
+	devices = current_user.devices.all()
 
 	context = {
 		# include contexts for here
 		'user': current_user,
-		'pets': pets,						
+		'devices': devices,						
 	}
 
 	return render(request, 'track_location.html', context)
@@ -54,7 +54,7 @@ def user_devices(request):
 		return redirect('/home')
 
 	current_user = request.user
-	devices = current_user.user_profile.devices.all()
+	devices = current_user.devices.all()
 
 	context = {
 		# include contexts for here
@@ -69,13 +69,13 @@ def pet_details(request):
 		return redirect('/home')
 
 	current_user = request.user	
-	pets = current_user.user_profile.pets.all()									
+	devices = current_user.devices.all()									
 	form = PetDetailsForm()
 
 	context = {
 		# include contexts for here
 		'user': current_user,
-		'pets': pets,
+		'devices': devices,
 		'form': form,						
 	}
 
@@ -98,45 +98,45 @@ def update_pet_details(request, pet_id):
 			pet_instance.save()
 
 			current_user = request.user
-			pets = current_user.user_profile.pets.all()	
+			devices = current_user.devices.all()	
 		
 			context = {
 				# include contexts for here
 				'user': current_user,
-				'pets': pets,
+				'devices': devices,
 				'form': form,						
 			}
 
 			return render(request, 'pet_details.html', context)
 	else:
 		current_user = request.user	
-		pets = current_user.user_profile.pets.all()
+		devices = current_user.devices.all()
 		form = PetDetailsForm()
 			
 		context = {
 			# include contexts for here
 			'user': current_user,
-			'pets': pets,
+			'devices': devices,
 			'form': form,						
 		}
 
 		return render(request, 'pet_details.html', context)
 
 	current_user = request.user
-	pets = current_user.user_profile.pets.all()	
+	devices = current_user.devices.all()	
 	form = PetDetailsForm(request.POST)
 		
 	context = {
 		# include contexts for here
 		'user': current_user,
-		'pets': pets,
+		'devices': devices,
 		'form': form,						
 	}
 
 	return render(request, 'pet_details.html', context)
 
-def user_log(request):
-	return render(request, 'user_log.html')
+def notifications(request):
+	return render(request, 'notifications.html')
 
 def account_settings(request):
 	return render(request, 'account_settings.html')
@@ -162,6 +162,7 @@ def sign_up(request):
 
 			return redirect('account_activation_sent')
 	else:
+		current_user = request.user
 		form = SignUpForm()
 
 		context = {

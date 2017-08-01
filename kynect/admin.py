@@ -7,6 +7,7 @@ from kynect.models import Device
 from kynect.models import Pet
 from kynect.models import Geofence
 from kynect.models import Location
+from kynect.models import Notification
 from kynect.forms import CoordinateAdminEntryForm
 
 class GeofenceAdmin(admin.GeoModelAdmin):
@@ -55,3 +56,4 @@ admin.site.register(Device)
 admin.site.register(Pet)
 admin.site.register(Geofence, GeofenceAdmin)
 admin.site.register(Location, LocationAdmin)
+admin.site.register(Notification)

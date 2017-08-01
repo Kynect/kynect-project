@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^pet_details/', kynect.views.pet_details),
     url(r'^update_pet_details/(?P<pet_id>\d+)/$', kynect.views.update_pet_details, name='update_pet_details'),
     url(r'^pet_health/', kynect.views.pet_health),
-    url(r'^user_log/', kynect.views.user_log),
+    url(r'^notifications/', kynect.views.notifications),
     url(r'^account_settings/', kynect.views.account_settings),
     url(r'^sign_up/$', kynect.views.sign_up, name='sign_up'),
     url(r'^account_activation_sent/$', kynect.views.account_activation_sent, name='account_activation_sent'),

@@ -72,7 +72,7 @@
             var infowindow;
 
             function initMap() {
-                var centerLatLng = new google.maps.LatLng({{ pets.first.location.latitude }}, {{ pets.first.location.longitude }});
+                var centerLatLng = new google.maps.LatLng({{ devices.first.pet.location.latitude }}, {{ devices.first.pet.location.longitude }});
                 var mapDiv = document.getElementById('map');
                 
                 map = new google.maps.Map(mapDiv, {
@@ -80,16 +80,16 @@
                     zoom: 15
                 });
 
-                {% for pet in pets %}
-                    markerLatLng = new google.maps.LatLng({{ pet.location.latitude }}, {{ pet.location.longitude }});
+                {% for device in devices %}
+                    markerLatLng = new google.maps.LatLng({{ device.pet.location.latitude }}, {{ device.pet.location.longitude }});
 
                     marker = new google.maps.Marker({
                         position: markerLatLng,
                         map: map,
                     });
 
-                    content =   '<div><b>Name: </b>{{ pet.name }}</div>' +
-                                '<div><b>Breed: </b>{{ pet.breed }}</div>';
+                    content =   '<div><b>Name: </b>{{ device.pet.name }}</div>' +
+                                '<div><b>Breed: </b>{{ device.pet.breed }}</div>';
                     infowindow = new google.maps.InfoWindow();
 
                     google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 

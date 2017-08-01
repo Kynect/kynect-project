@@ -57,16 +57,15 @@ class Service_Plan(models.Model):
 		return str(self.id) + '_' + str(self.data_interval) + '_$' + str(self.cost_per_year)
 
 class Device(models.Model):
-	user_profile = models.ForeignKey(User_Profile, on_delete=models.CASCADE, related_name='devices')
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='devices')
 	device_type = models.ForeignKey(Device_Type, on_delete=models.PROTECT, related_name='devices')
 	service_plan = models.ForeignKey(Service_Plan, on_delete=models.PROTECT, related_name='devices')
 	date_added = models.DateTimeField(default=timezone.now)
 
 	def __str__(self):
-		return str(self.id) + '_' + self.user_profile.user.username
+		return str(self.id) + '_' + self.user.username
 
 class Pet(models.Model):
-	user_profile = models.ForeignKey(User_Profile, on_delete=models.CASCADE, related_name='pets')
 	device = models.OneToOneField(Device, on_delete=models.PROTECT, related_name='pet')
 	name = models.CharField(max_length=30)
 	breed = models.CharField(max_length=35)
@@ -99,3 +98,12 @@ class Location(models.Model):
 
 	def __str__(self):
 		return self.pet.name + '_' + str(self.id)
+
+class Notification(models.Model):
+	sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications_sent')
+	receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificatios_received')
+	# subject = 
+	# content = 
+	# status = 
+	# date_opened = 
+	# date_sent = 

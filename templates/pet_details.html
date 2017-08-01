@@ -38,21 +38,21 @@
         {% include "navbar.html" %}
 
         <div class="first-div">
-            {% for pet in pets %}  
+            {% for device in devices %}  
                 <h1><u>Pet Information:</u></h1>
 
                 <ul>
-                    <li>Name: {{ pet.name }}</li>
+                    <li>Name: {{ device.pet.name }}</li>
                     <li>Owner: {{ user.first_name }} {{ user.last_name }}</li>
-                    <li>Breed: {{ pet.breed }}</li>
-                    <li>Date of Birth: {{ pet.dob }}</li>
-                    <li>Device ID: {{ pet.device.id }}</li>
-                    <li>Date Added: {{ pet.date_added }}</li>
+                    <li>Breed: {{ device.pet.breed }}</li>
+                    <li>Date of Birth: {{ device.pet.dob }}</li>
+                    <li>Device ID: {{ device.id }}</li>
+                    <li>Date Added: {{ device.pet.date_added }}</li>
                 </ul>
 
                 <br />
 
-                <form action="/update_pet_details/{{ pet.id }}/" method="post">
+                <form action="/update_pet_details/{{ device.pet.id }}/" method="post">
                     {% csrf_token %}
 
                     {{ form.as_p }}
