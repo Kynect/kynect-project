@@ -57,23 +57,28 @@
                                 {% csrf_token %}
 
                                 <p class="bs-component">
-                                    <table>
-                                        <tr>
-                                            <td>{{ form.username }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{ form.password }}</td>
-                                        </tr>
-                                    </table>
+                                    <center>
+                                        {{ form }}
+                                    </center>
                                 </p>
 
                                 <p class="bs-component">
                                     <center>
-                                        <input class="btn btn-success btn-sm" type="submit" value="LOGIN" />
-                                        or
-                                        <a href="/sign_up/">Sign Up!</a>
+                                        <p>
+                                            <br />
+                                            <input class="btn btn-success btn-sm" type="submit" value="LOGIN" />
+                                            &nbsp or &nbsp
+                                            <a href="/sign_up/">Sign Up!</a>
+                                        </p>
+
+                                        <br />
+
+                                        <p>
+                                            <a href="{% url 'password_reset' %}">Forgot your password?</a>
+                                        </p>
                                     </center>
                                 </p>
+
 
                                 <input type="hidden" name="next" value="{{ next }}" />
                             </form>

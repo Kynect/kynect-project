@@ -39,6 +39,20 @@ def create_user_profile(sender, instance, created, **kwargs):
 		User_Profile.objects.create(user=instance)
 	instance.user_profile.save()
 
+@receiver(post_save, sender=User)
+def create_welcome_notification(sender, instance, created, **kwargs):
+	if created:
+		user_admin = User.objects.get(username='Kynect')
+
+		welcome_notification = Notification.objects.create(
+			sender = user_admin,
+			receiver = instance,
+			subject = 'Welcome!',
+			content = 'Hello ' + instance.first_name + ', thank you for signing up and welcome to Kynect! Please dont hesitate to call us if you have any questions.'
+		)
+
+		welcome_notification.save()
+
 class Device_Type(models.Model):
 	version = models.CharField(max_length=10)
 	size = models.CharField(max_length=15)
@@ -101,9 +115,9 @@ class Location(models.Model):
 
 class Notification(models.Model):
 	sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications_sent')
-	receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificatios_received')
-	# subject = 
-	# content = 
-	# status = 
-	# date_opened = 
-	# date_sent = 
+	receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications_received')
+	subject = models.CharField(max_length=100)
+	content = models.TextField(max_length=300)
+	status = models.CharField(max_length=10, default='unopened')
+	date_opened = models.DateTimeField(blank=True, null=True)
+	date_sent = models.DateTimeField(default=timezone.now)

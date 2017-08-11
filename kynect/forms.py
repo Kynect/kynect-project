@@ -2,7 +2,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.gis import forms as gisforms
-from kynect.models import Location, Pet
+from kynect.models import Location, Pet, User_Profile
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models import PointField
 from django.forms.widgets import DateInput, TextInput
@@ -46,10 +46,71 @@ class PetDetailsForm(forms.ModelForm):
 			"dob": "Date of Birth"
 		}
 
+class AccountDetailsForm(forms.ModelForm):
+	def clean_phone(self):
+		data = self.cleaned_data['phone']
+
+		# DATA VALIDATION HERE:
+
+		# Remember to always return the cleaned data.
+		return data
+
+	def clean_street(self):
+		data = self.cleaned_data['street']
+
+		# DATA VALIDATION HERE:
+
+		# Remember to always return the cleaned data.
+		return data
+
+	def clean_apt(self):
+		data = self.cleaned_data['apt']
+
+		# DATA VALIDATION HERE:
+
+		# Remember to always return the cleaned data.
+		return data
+
+	def clean_city(self):
+		data = self.cleaned_data['city']
+
+		# DATA VALIDATION HERE:
+
+		# Remember to always return the cleaned data.
+		return data
+
+	def clean_state(self):
+		data = self.cleaned_data['state']
+
+		# DATA VALIDATION HERE:
+
+		# Remember to always return the cleaned data.
+		return data
+
+	def clean_zip_code(self):
+		data = self.cleaned_data['zip_code']
+
+		# DATA VALIDATION HERE:
+
+		# Remember to always return the cleaned data.
+		return data
+		
+	class Meta:
+		model = User_Profile
+		fields = ['phone', 'street', 'apt', 'city', 'state', 'zip_code']
+		labels = {
+			"phone": "Phone",
+			"street": "Street",
+			"apt": "Apt",
+			"city": "City",
+			"state": "State",
+			"zip_code": "Zip Code"
+		}
+
 class SignUpForm(UserCreationForm):
 	first_name = forms.CharField(max_length=30)
 	last_name = forms.CharField(max_length=30)
-	email = forms.EmailField(max_length=254)
+	email = forms.EmailField(max_length=100)
 
 	class Meta:
 		model = User

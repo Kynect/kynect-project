@@ -3,7 +3,7 @@
 
 <html lang="en">
     <head>
-        <title>Kynect - Sign Up</title>
+        <title>Kynect - My Pets</title>
         <meta charset=utf-8 />
 
         <!-- Favicon Import -->
@@ -38,9 +38,32 @@
         {% include "navbar.html" %}
 
         <div class="first-div">
-            <h3>We're sorry, your email verification failed.</h3>
-            <br />
-            <span>We apologize for the inconvenience</span>
+            {% for device in devices %}  
+                <h1><u>Pet Information:</u></h1>
+
+                <ul>
+                    <li>Name: {{ device.pet.name }}</li>
+                    <li>Owner: {{ user.first_name }} {{ user.last_name }}</li>
+                    <li>Breed: {{ device.pet.breed }}</li>
+                    <li>Date of Birth: {{ device.pet.dob }}</li>
+                    <li>Device ID: {{ device.id }}</li>
+                    <li>Date Added: {{ device.pet.date_added }}</li>
+                </ul>
+
+                <br />
+
+                <form action="/update_pet_details/{{ device.pet.id }}/" method="post">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <input type="submit" value="Apply Changes" />
+                </form>
+
+                <br />
+            {% empty %}
+                <p>There no pets to display.</p>
+            {% endfor %}
         </div>
 
         {% include "footer.html" %}
